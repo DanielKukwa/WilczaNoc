@@ -1770,6 +1770,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd327631b04a6649806dc7892895680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSpeed: 1
+  attackCooldown: 0
+  attackDelay: 0.6
 --- !u!114 &225626818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4690,6 +4693,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd327631b04a6649806dc7892895680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSpeed: 5
+  attackCooldown: 0
+  attackDelay: 0.6
 --- !u!114 &1179250970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4719,6 +4725,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7801c052b7bdb684c9fe5047ebbaf707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  replaceableAttackAnim: {fileID: -816219278648834085, guid: cc0d4475049c891439cdc300631903bb,
+    type: 3}
+  defaultAttackAnimSet:
+  - {fileID: -816219278648834085, guid: cc0d4475049c891439cdc300631903bb, type: 3}
 --- !u!1001 &1192855571
 PrefabInstance:
   m_ObjectHideFlags: 0
