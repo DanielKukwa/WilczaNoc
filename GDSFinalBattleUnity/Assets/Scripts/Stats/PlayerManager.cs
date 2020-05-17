@@ -8,7 +8,7 @@ public class PlayerManager : MonoBehaviour
 
     public static PlayerManager instance;
 
-    void Awake()
+    private void Awake()
     {
         instance = this;
     }
@@ -17,8 +17,4 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject player;
 
-    public void KillPlayer()
-    {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 }
