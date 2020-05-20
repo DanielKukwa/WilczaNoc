@@ -16,9 +16,14 @@ public class CharacterCombat : MonoBehaviour
 
     public event System.Action OnAttack;
 
+    private GameObject bloodSplash;
+    private RaycastHit hitInfo;
+
     void Start()
     {
         myStats = GetComponent<CharacterStats>();
+        var blood = Resources.Load("Prefabs/BloodSplash");
+        bloodSplash = blood as GameObject;
     }
 
      void Update()
@@ -32,7 +37,7 @@ public class CharacterCombat : MonoBehaviour
 
     public void Attack(CharacterStats targetStats)
     {
-        if (attackCooldown <= 0f)
+        if (attackCooldown <= 0f && myStats != null)
         {
             StartCoroutine(DoDamage(targetStats, attackDelay));
 
@@ -49,6 +54,8 @@ public class CharacterCombat : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         stats.TakeDamage(myStats.damage.GetValue());
+        Instantiate(bloodSplash, new Vector3(stats.transform.position.x, 1.3f, stats.transform.position.z), Quaternion.LookRotation(hitInfo.normal));
+
         if (stats.currentHealth <= 0)
         {
             InCombat = false;
