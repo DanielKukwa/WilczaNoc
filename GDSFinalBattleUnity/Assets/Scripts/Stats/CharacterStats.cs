@@ -6,7 +6,7 @@ public class CharacterStats : MonoBehaviour
     // Health
     public int maxHealth = 100;
     public int currentHealth { get; private set; }
-
+    private Healthbar _healthbar;
     public Stat damage;
     public Stat armor;
 
@@ -17,6 +17,11 @@ public class CharacterStats : MonoBehaviour
         currentHealth = maxHealth;
     }
 
+    private void Start()
+    {
+        _healthbar = GetComponentInChildren<Healthbar>();
+        _healthbar.SetSliderMaxValue(maxHealth);
+    }
     // Damage the character
     public void TakeDamage(int damage)
     {
@@ -27,6 +32,7 @@ public class CharacterStats : MonoBehaviour
         // Damage the character
         currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
+        _healthbar.UpdateHealth(currentHealth);
 
         // If health reaches zero
         if (currentHealth <= 0)
