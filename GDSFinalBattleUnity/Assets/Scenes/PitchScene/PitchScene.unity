@@ -3210,6 +3210,7 @@ GameObject:
   - component: {fileID: 669021892}
   - component: {fileID: 669021891}
   - component: {fileID: 669021890}
+  - component: {fileID: 669021898}
   m_Layer: 0
   m_Name: Wolf
   m_TagString: Untagged
@@ -3231,7 +3232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpeed: 0.6
   attackCooldown: 0
-  attackDelay: 0
+  attackDelay: 0.24
 --- !u!114 &669021891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3344,6 +3345,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: -67.026, z: 0}
+--- !u!114 &669021898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 669021889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7801c052b7bdb684c9fe5047ebbaf707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  replaceableAttackAnim: {fileID: -816219278648834085, guid: cc0d4475049c891439cdc300631903bb,
+    type: 3}
+  defaultAttackAnimSet:
+  - {fileID: 2825456272524282428, guid: b1c2c48e60ed7664fa5b10e8c796e861, type: 3}
+  overrideController: {fileID: 22100000, guid: 0b9dc4597222303448ba08610e25d123, type: 2}
 --- !u!4 &670154283 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 99b2900beee466e4b84b2d217f814c4b,
@@ -4742,6 +4760,7 @@ MonoBehaviour:
     type: 3}
   defaultAttackAnimSet:
   - {fileID: -816219278648834085, guid: cc0d4475049c891439cdc300631903bb, type: 3}
+  overrideController: {fileID: 0}
 --- !u!1 &1195895596
 GameObject:
   m_ObjectHideFlags: 0
