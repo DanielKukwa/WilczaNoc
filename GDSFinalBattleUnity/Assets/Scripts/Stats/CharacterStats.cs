@@ -34,6 +34,10 @@ public class CharacterStats : MonoBehaviour
         Debug.Log(transform.name + " takes " + damage + " damage.");
         _healthbar.UpdateHealth(currentHealth);
 
+        if(this.tag != "Player")
+        {
+            CameraShake.Instance.ShakeCamera();
+        }
         // If health reaches zero
         if (currentHealth <= 0)
         {
