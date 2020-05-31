@@ -9656,5 +9656,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd3f47934c0f4f4aa81545e6c005fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bloodPaddlePrefab: {fileID: 563267477447937893, guid: 2dfcc28bbfc158c419f043a69d3c7f93,
+  _bloodPaddlePrefab: {fileID: 563267477447937893, guid: 3783af2a16f494a4aa61e699ad782dd8,
     type: 3}
