@@ -10,7 +10,6 @@ public class CharacterCombat : MonoBehaviour
     public float attackCooldown = 0f;
     public float attackDelay = 0.6f;
     const float combatCooldown = 5f;
-    [SerializeField] GameObject _splashPrefab;
     float lastAttackTime;
 
     public bool InCombat{ get; private set; }
