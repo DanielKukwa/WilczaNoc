@@ -22,7 +22,7 @@ public class CharacterCombat : MonoBehaviour
     void Start()
     {
         myStats = GetComponent<CharacterStats>();
-        var blood = Resources.Load("Prefabs/BloodSplashV3");
+        var blood = Resources.Load("Prefabs/Blood/BloodSplashV3");
         bloodSplash = blood as GameObject;
     }
 
