@@ -10,6 +10,7 @@ public class CharacterCombat : MonoBehaviour
     public float attackCooldown = 0f;
     public float attackDelay = 0.6f;
     const float combatCooldown = 5f;
+    [SerializeField] GameObject _splashPrefab;
     float lastAttackTime;
 
     public bool InCombat{ get; private set; }
@@ -22,7 +23,7 @@ public class CharacterCombat : MonoBehaviour
     void Start()
     {
         myStats = GetComponent<CharacterStats>();
-        var blood = Resources.Load("Prefabs/BloodSplash");
+        var blood = Resources.Load("Prefabs/BloodSplashV3");
         bloodSplash = blood as GameObject;
     }
 

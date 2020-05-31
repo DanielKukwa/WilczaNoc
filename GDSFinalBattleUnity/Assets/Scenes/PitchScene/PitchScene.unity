@@ -871,6 +871,7 @@ MonoBehaviour:
   attackSpeed: 0.6
   attackCooldown: 0
   attackDelay: 0
+  _splashPrefab: {fileID: 0}
 --- !u!114 &225626818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1514,6 +1515,7 @@ MonoBehaviour:
   attackSpeed: 0.8
   attackCooldown: 0
   attackDelay: 0.5
+  _splashPrefab: {fileID: 0}
 --- !u!114 &389394535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1640,6 +1642,7 @@ GameObject:
   - component: {fileID: 417793932}
   - component: {fileID: 417793933}
   - component: {fileID: 417793934}
+  - component: {fileID: 417793935}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1843,6 +1846,20 @@ MonoBehaviour:
   target: {fileID: 1179250968}
   offset: {x: 0.62, y: -1.03, z: 0.83}
   pitch: 2
+--- !u!114 &417793935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 417793928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f461bc0da5aeecf4d8650e955ef01ff4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _magnitude: 0.03
+  _duration: 0.15
 --- !u!1001 &437589754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3752,6 +3769,7 @@ MonoBehaviour:
   attackSpeed: 0.8
   attackCooldown: 0
   attackDelay: 0.5
+  _splashPrefab: {fileID: 0}
 --- !u!114 &669021891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5209,6 +5227,7 @@ MonoBehaviour:
   attackSpeed: 0.8
   attackCooldown: 0
   attackDelay: 0.5
+  _splashPrefab: {fileID: 0}
 --- !u!114 &1070721601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5567,7 +5586,7 @@ GameObject:
   - component: {fileID: 1179250970}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5684,6 +5703,7 @@ MonoBehaviour:
   attackSpeed: 2
   attackCooldown: 0
   attackDelay: 0.3
+  _splashPrefab: {fileID: 0}
 --- !u!114 &1179250970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5926,6 +5946,7 @@ MonoBehaviour:
   attackSpeed: 0.8
   attackCooldown: 0
   attackDelay: 0.5
+  _splashPrefab: {fileID: 0}
 --- !u!114 &1231044985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8370,6 +8391,7 @@ MonoBehaviour:
   attackSpeed: 0.8
   attackCooldown: 0
   attackDelay: 0.5
+  _splashPrefab: {fileID: 0}
 --- !u!114 &1961734485
 MonoBehaviour:
   m_ObjectHideFlags: 0
