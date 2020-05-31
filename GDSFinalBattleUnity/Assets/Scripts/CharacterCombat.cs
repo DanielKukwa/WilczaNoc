@@ -22,7 +22,7 @@ public class CharacterCombat : MonoBehaviour
     void Start()
     {
         myStats = GetComponent<CharacterStats>();
-        var blood = Resources.Load("Prefabs/BloodSplash");
+        var blood = Resources.Load("Prefabs/Blood/BloodSplashV3");
         bloodSplash = blood as GameObject;
     }
 
@@ -37,7 +37,7 @@ public class CharacterCombat : MonoBehaviour
 
     public void Attack(CharacterStats targetStats)
     {
-        if (attackCooldown <= 0f && myStats != null)
+        if (attackCooldown <= 0f && targetStats != null)
         {
             StartCoroutine(DoDamage(targetStats, attackDelay));
 
