@@ -27,13 +27,32 @@ public class PlayerController : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 100, movementMask))
+            if (Physics.Raycast(ray, out hit, 100))
             {                
-                motor.MoveToPoint(hit.point);
+                
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
+                if (interactable != null)
+                {
+                    SetFocus(interactable);
+                }
+                else
+                {
+                    motor.MoveToPoint(hit.point);
+                    RemoveFocus();
+                }
 
-                RemoveFocus();
+                
 
             }
+            //else if (Physics.Raycast(ray, out hit, 100))
+            //{
+            //    Interactable interactable = hit.collider.GetComponent<Interactable>();
+            //    if (interactable != null)
+            //    {
+            //        SetFocus(interactable);
+            //    }
+            //}
+
 
         }
 

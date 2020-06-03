@@ -1753,7 +1753,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1179250968}
   offset: {x: 0.62, y: -1.03, z: 0.83}
-  pitch: 2
+  currentZoom: 10
+  pitch: 0
 --- !u!114 &417793935
 MonoBehaviour:
   m_ObjectHideFlags: 0
