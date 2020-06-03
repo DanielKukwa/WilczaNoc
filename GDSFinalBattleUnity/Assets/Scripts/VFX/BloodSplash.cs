@@ -6,6 +6,7 @@ public class BloodSplash : MonoBehaviour
 {
     private ParticleSystem part;
     private List<ParticleCollisionEvent> collisionEvents;
+    private static int _bloodCounter = 0;
 
     [SerializeField] private GameObject _bloodPaddlePrefab;
 
@@ -31,7 +32,9 @@ public class BloodSplash : MonoBehaviour
                 Vector3 pos = collisionEvents[i].intersection;
                 Vector3 dir = collisionEvents[i].normal;
                 float offset = Random.RandomRange(0.01f, 0.1f);
-                GameObject bp = Instantiate(_bloodPaddlePrefab, pos ,Quaternion.LookRotation(-dir));
+                GameObject bp = Instantiate(_bloodPaddlePrefab, pos ,Quaternion.LookRotation(dir));
+                float bloodSpeed = collisionEvents[i].velocity.magnitude;
+                Debug.Log("Speed:" + bloodSpeed);
             }                    
             i++;
         }
