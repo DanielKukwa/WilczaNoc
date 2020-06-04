@@ -1033,8 +1033,6 @@ MonoBehaviour:
   maxHealth: 30
   damage:
     baseValue: 10
-  armor:
-    baseValue: 0
   _ragdollPrefab: {fileID: 0}
 --- !u!114 &225626819
 MonoBehaviour:
@@ -5670,6 +5668,7 @@ GameObject:
   - component: {fileID: 1179250969}
   - component: {fileID: 1179250971}
   - component: {fileID: 1179250970}
+  - component: {fileID: 1179250972}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -5804,8 +5803,6 @@ MonoBehaviour:
   maxHealth: 200
   damage:
     baseValue: 10
-  armor:
-    baseValue: 0
 --- !u!114 &1179250971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5823,6 +5820,18 @@ MonoBehaviour:
   defaultAttackAnimSet:
   - {fileID: -816219278648834085, guid: cc0d4475049c891439cdc300631903bb, type: 3}
   overrideController: {fileID: 0}
+--- !u!114 &1179250972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179250962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22bf766bebfa9649a3559dfe9f8766c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1195895596
 GameObject:
   m_ObjectHideFlags: 0

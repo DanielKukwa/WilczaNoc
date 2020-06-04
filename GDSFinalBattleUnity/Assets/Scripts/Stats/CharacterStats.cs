@@ -8,7 +8,7 @@ public class CharacterStats : MonoBehaviour
     public int currentHealth { get; private set; }
     private Healthbar _healthbar;
     public Stat damage;
-    public Stat armor;
+
 
     // Set current health to max health
     // when starting the game.
@@ -26,8 +26,7 @@ public class CharacterStats : MonoBehaviour
     public void TakeDamage(int damage)
     {
         // Subtract the armor value
-        damage -= armor.GetValue();
-        damage = Mathf.Clamp(damage, 0, int.MaxValue);
+
 
         // Damage the character
         currentHealth -= damage;
@@ -43,6 +42,13 @@ public class CharacterStats : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public void Heal()
+    {
+        currentHealth += (maxHealth - currentHealth);
+        Debug.Log("HEALED!");
+        _healthbar.UpdateHealth(currentHealth);
     }
 
     public virtual void Die()
