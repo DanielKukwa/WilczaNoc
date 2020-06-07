@@ -5797,7 +5797,7 @@ MonoBehaviour:
   attackDelay: 0.3
   attack2Speed: 1
   attack2Cooldown: 0
-  attack2Delay: 2
+  attack2Delay: 0.6
 --- !u!114 &1179250970
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,14 +14,18 @@ public class Enemy : Interactable
     {
         playerManager = PlayerManager.instance;
         myStats = GetComponent<CharacterStats>();
-        playerController = GetComponent<PlayerController>();
-        isFirstAttack = playerController.GetAttackInfo();
+        playerController = PlayerManager.instance.player.GetComponent<PlayerController>();
+       
     }
 
       public override void Interact()
     {
         base.Interact();
+        
         CharacterCombat playerCombat = playerManager.player.GetComponent<CharacterCombat>();
+
+        isFirstAttack = playerController.GetAttackInfo();
+
         if (playerCombat != null && isFirstAttack == true)
         {
 
