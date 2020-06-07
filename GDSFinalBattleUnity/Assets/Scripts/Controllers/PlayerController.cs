@@ -10,8 +10,10 @@ public class PlayerController : MonoBehaviour
     public LayerMask movementMask;
     PlayerMotor motor;
     public Interactable focus;
+    public bool isFirstAttack;
 
- 
+
+
     void Start()
     {
         cam = Camera.main;
@@ -27,8 +29,10 @@ public class PlayerController : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
+
+            isFirstAttack = true;
             if (Physics.Raycast(ray, out hit, 100))
-            {                
+            {
                 
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
                 if (interactable != null)
@@ -44,15 +48,6 @@ public class PlayerController : MonoBehaviour
                 
 
             }
-            //else if (Physics.Raycast(ray, out hit, 100))
-            //{
-            //    Interactable interactable = hit.collider.GetComponent<Interactable>();
-            //    if (interactable != null)
-            //    {
-            //        SetFocus(interactable);
-            //    }
-            //}
-
 
         }
 
@@ -61,8 +56,11 @@ public class PlayerController : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
+
+            isFirstAttack = false;
             if (Physics.Raycast(ray, out hit, 100))
             {
+                
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
                 if (interactable != null)
                 {
@@ -73,6 +71,11 @@ public class PlayerController : MonoBehaviour
 
         }
 
+    }
+
+    public bool GetAttackInfo()
+    {
+        return isFirstAttack;
     }
 
     void SetFocus(Interactable newFocus)
@@ -98,4 +101,5 @@ public class PlayerController : MonoBehaviour
         focus = null;
         motor.StopFollowingTarget();
     }
+
 }
