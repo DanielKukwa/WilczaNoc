@@ -23,6 +23,7 @@ public class CharacterCombat : MonoBehaviour
     public bool InCombat{ get; private set; }
 
     public event System.Action OnAttack;
+    public event System.Action OnAttack2;
 
     private GameObject bloodSplash;
     private RaycastHit hitInfo;
@@ -67,8 +68,8 @@ public class CharacterCombat : MonoBehaviour
         {
             StartCoroutine(DoDamage2(targetStats, attack2Delay));
 
-            if (OnAttack != null)
-                OnAttack();
+            if (OnAttack2 != null)
+                OnAttack2();
 
             attack2Cooldown = 1f / attack2Speed;
             InCombat = true;
