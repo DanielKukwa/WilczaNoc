@@ -5795,7 +5795,7 @@ MonoBehaviour:
   attackSpeed: 2
   attackCooldown: 0
   attackDelay: 0.3
-  attack2Speed: 1
+  attack2Speed: 0.7
   attack2Cooldown: 0
   attack2Delay: 0.6
 --- !u!114 &1179250970
@@ -5812,9 +5812,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   damage:
-    baseValue: 1
+    baseValue: 10
   damage2:
-    baseValue: 100
+    baseValue: 30
 --- !u!114 &1179250971
 MonoBehaviour:
   m_ObjectHideFlags: 0
