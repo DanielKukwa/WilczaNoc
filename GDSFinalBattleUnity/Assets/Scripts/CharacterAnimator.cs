@@ -33,6 +33,8 @@ public class CharacterAnimator : MonoBehaviour
         currentAttackAnimSet = defaultAttackAnimSet;
 
         combat.OnAttack += OnAttack;
+        combat.OnAttack2 += OnAttack2;
+
     }
 
     // Update is called once per frame
@@ -49,6 +51,14 @@ public class CharacterAnimator : MonoBehaviour
         animator.SetTrigger("attack");
         int attackIndex = Random.Range(0, currentAttackAnimSet.Length);
         overrideController[replaceableAttackAnim.name] = currentAttackAnimSet[attackIndex];
+
+    }
+
+    void OnAttack2()
+    {
+        animator.SetTrigger("attack2");
+        int attack2Index = Random.Range(0, currentAttackAnimSet.Length);
+        overrideController[replaceableAttackAnim.name] = currentAttackAnimSet[attack2Index];
 
     }
 }
