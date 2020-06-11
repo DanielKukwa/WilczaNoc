@@ -1,8 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:GDSFinalBattleUnity/Assets/Audio.meta
 guid: f8ade3a2ec48ef84ead71b6055ba562d
 folderAsset: yes
 DefaultImporter:
+=======
+guid: c9a3a4c166368984faf5d2c0b2a21cd6
+NativeFormatImporter:
+>>>>>>> d1fb9a5... Forester dead body added.:GDSFinalBattleUnity/Assets/Textures/Forester/f_pants_m.mat.meta
   externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
