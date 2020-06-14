@@ -68,7 +68,14 @@ public class CharacterStats : MonoBehaviour
 
     public void Heal()
     {
-        currentHealth += (maxHealth - currentHealth);
+        if (currentHealth <= maxHealth / 2)
+        {
+            currentHealth += (maxHealth / 2);
+        }
+        else
+        {
+            currentHealth += (maxHealth - currentHealth);
+        }
         Debug.Log("HEALED!");
         _healthbar.UpdateHealth(currentHealth);
     }
