@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class SpecialAbilities : MonoBehaviour
 {
 
@@ -9,6 +9,8 @@ public class SpecialAbilities : MonoBehaviour
     PlayerManager playerManager;
     Transform playerPosition;
     Camera cam;
+    NavMeshAgent agent;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,7 @@ public class SpecialAbilities : MonoBehaviour
         playerManager = PlayerManager.instance;
         playerPosition = playerManager.player.GetComponent<Transform>();
         cam = Camera.main;
+        agent = GetComponent<NavMeshAgent>();
 
     }
 
@@ -42,7 +45,9 @@ public class SpecialAbilities : MonoBehaviour
 
                 FaceMousePoint(hit.point);
                 transform.position = hit.point;
-                playerPosition = transform;
+                agent.SetDestination(transform.position);
+                //agent.stoppingDistance = 0f;
+                //agent.updateRotation = true;
             }
 
         }
