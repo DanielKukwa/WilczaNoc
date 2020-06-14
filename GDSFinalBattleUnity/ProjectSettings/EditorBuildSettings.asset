@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PitchScene/PitchScene.unity
     guid: 398fb057b7a638d4b95c05752aede4b8
+  - enabled: 1
+    path: Assets/Scenes/LevelDesign.unity
+    guid: 47a535d809c93454ea7806732ef7dcaf
   m_configObjects: {}
