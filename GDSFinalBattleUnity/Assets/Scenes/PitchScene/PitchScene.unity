@@ -521,12 +521,12 @@ PrefabInstance:
     - target: {fileID: 1324257495327946467, guid: 7c545ced5edb92646ab3f534194ec2ca,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1324257495327946467, guid: 7c545ced5edb92646ab3f534194ec2ca,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7178086037357084304, guid: 7c545ced5edb92646ab3f534194ec2ca,
         type: 3}
@@ -920,7 +920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!136 &225626812
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -943,7 +943,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225626811}
   m_LocalRotation: {x: -0, y: -0.55212545, z: -0, w: 0.8337611}
-  m_LocalPosition: {x: 5.2039332, y: 0, z: -3.59465}
+  m_LocalPosition: {x: 0.03, y: 0, z: -6.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 86207932}
