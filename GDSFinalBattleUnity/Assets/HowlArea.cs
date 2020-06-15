@@ -5,14 +5,15 @@ using UnityEngine;
 public class HowlArea : MonoBehaviour
 {
     private AudioSource _audio;
-    private bool played = false;
     private MeshRenderer _mesh;
+    private SphereCollider _collider;
 
     private void Start()
     {
         _audio = GetComponent<AudioSource>();
         _mesh = GetComponent<MeshRenderer>();
         _mesh.enabled = false;
+        _collider = GetComponent<SphereCollider>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -20,12 +21,9 @@ public class HowlArea : MonoBehaviour
         
         if(other.tag == "Player")
         {
-            if(!played)
-            {
-                _audio.Play();
-                played = true;              
-            }
-            
+            _audio.Play();
+            _collider.enabled = false;             
+
         }
     }
 
