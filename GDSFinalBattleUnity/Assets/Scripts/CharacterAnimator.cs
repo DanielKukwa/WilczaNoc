@@ -61,14 +61,4 @@ public class CharacterAnimator : MonoBehaviour
         overrideController[replaceableAttackAnim.name] = currentAttackAnimSet[attack2Index];
 
     }
-
-    public void OnJump()
-    {
-        animator.SetTrigger("Jump");
-    }
-
-    public void OnMark()
-    {
-        animator.SetTrigger("Mark");
-    }
 }
