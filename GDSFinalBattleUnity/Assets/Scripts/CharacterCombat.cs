@@ -7,12 +7,14 @@ public class CharacterCombat : MonoBehaviour
 {
     CharacterStats myStats;
 
+    const float combatCooldown = 5f;
+    float lastAttackTime;
+
     [Header("First Attack")]
     public float attackSpeed = 1f;
     public float attackCooldown = 0f;
     public float attackDelay = 0.6f;
-    const float combatCooldown = 5f;
-    float lastAttackTime;
+
 
     [Header("Second Attack")]
     public float attack2Speed = 1f;
@@ -80,7 +82,7 @@ public class CharacterCombat : MonoBehaviour
     IEnumerator DoDamage(CharacterStats stats, float delay)
     {
         yield return new WaitForSeconds(delay);
-        stats.TakeDamage(myStats.damage.GetValue());
+        stats.TakeDamage(myStats.GetValue());
         Instantiate(bloodSplash, new Vector3(stats.transform.position.x, 1.3f, stats.transform.position.z), Quaternion.LookRotation(hitInfo.normal));
 
         if (stats.currentHealth <= 0)
@@ -92,7 +94,7 @@ public class CharacterCombat : MonoBehaviour
     IEnumerator DoDamage2(CharacterStats stats, float delay)
     {
         yield return new WaitForSeconds(delay);
-        stats.TakeDamage(myStats.damage2.GetValue());
+        stats.TakeDamage(myStats.GetValue2());
         Instantiate(bloodSplash, new Vector3(stats.transform.position.x, 1.3f, stats.transform.position.z), Quaternion.LookRotation(hitInfo.normal));
 
         if (stats.currentHealth <= 0)

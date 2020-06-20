@@ -561,6 +561,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2681085574709104221, guid: 7288f3a18ab57cf44b5bce84539dc207,
+        type: 3}
+      propertyPath: damageValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2681085574709104223, guid: 7288f3a18ab57cf44b5bce84539dc207,
         type: 3}
       propertyPath: m_Name
@@ -1606,6 +1611,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2681085574709104221, guid: 7288f3a18ab57cf44b5bce84539dc207,
+        type: 3}
+      propertyPath: damageValue
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2681085574709104223, guid: 7288f3a18ab57cf44b5bce84539dc207,
         type: 3}
@@ -2875,6 +2885,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2681085574709104221, guid: 7288f3a18ab57cf44b5bce84539dc207,
+        type: 3}
+      propertyPath: damageValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2681085574709104223, guid: 7288f3a18ab57cf44b5bce84539dc207,
         type: 3}
       propertyPath: m_Name
@@ -4079,10 +4094,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 200
-  damage:
-    baseValue: 10
-  damage2:
-    baseValue: 30
+  currentHealth: 0
+  damageModifier: 0
+  damageValue: 10
+  damageValue2: 30
 --- !u!114 &1179250971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5004,6 +5019,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2681085574709104221, guid: 7288f3a18ab57cf44b5bce84539dc207,
+        type: 3}
+      propertyPath: damageValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2681085574709104223, guid: 7288f3a18ab57cf44b5bce84539dc207,
         type: 3}
       propertyPath: m_Name
@@ -5012,7 +5032,7 @@ PrefabInstance:
     - target: {fileID: 2681085574709104223, guid: 7288f3a18ab57cf44b5bce84539dc207,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3965402218591437578, guid: 7288f3a18ab57cf44b5bce84539dc207,
         type: 3}
@@ -5027,12 +5047,12 @@ PrefabInstance:
     - target: {fileID: 3987255829900288970, guid: 7288f3a18ab57cf44b5bce84539dc207,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3987255829900288970, guid: 7288f3a18ab57cf44b5bce84539dc207,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7157147818386022019, guid: 7288f3a18ab57cf44b5bce84539dc207,
         type: 3}
@@ -7314,6 +7334,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1179250968}
+    - target: {fileID: 2681085574709104221, guid: 7288f3a18ab57cf44b5bce84539dc207,
+        type: 3}
+      propertyPath: damageValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2681085574709104223, guid: 7288f3a18ab57cf44b5bce84539dc207,
         type: 3}
       propertyPath: m_Name
@@ -7423,6 +7448,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boar
       objectReference: {fileID: 0}
+    - target: {fileID: 5157347820437625411, guid: 4238a31bfcb78044c9724d9999ae2b27,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5157347820437625413, guid: 4238a31bfcb78044c9724d9999ae2b27,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7486,12 +7516,12 @@ PrefabInstance:
     - target: {fileID: 6193049449795332841, guid: 4238a31bfcb78044c9724d9999ae2b27,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6193049449795332841, guid: 4238a31bfcb78044c9724d9999ae2b27,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4238a31bfcb78044c9724d9999ae2b27, type: 3}
