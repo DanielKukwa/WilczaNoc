@@ -4416,6 +4416,7 @@ GameObject:
   - component: {fileID: 3892848896853018864}
   - component: {fileID: 3892848896853018872}
   - component: {fileID: 8732187426268294301}
+  - component: {fileID: 1410557538}
   m_Layer: 0
   m_Name: WolfNormal
   m_TagString: Untagged
@@ -4430,7 +4431,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3892848896853018867}
-  m_LocalRotation: {x: -0, y: -0.55212545, z: -0, w: 0.8337611}
+  m_LocalRotation: {x: 0, y: -0.55212617, z: 0, w: 0.8337606}
   m_LocalPosition: {x: 6.02, y: 0, z: -1.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4518,10 +4519,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
-  damage:
-    baseValue: 10
-  damage2:
-    baseValue: 0
+  currentHealth: 0
+  damageValue: 0
+  damageValue2: 0
+  damageModifier: 0
   _ragdollPrefab: {fileID: 1667079743465688880, guid: 4fec615941a7b124b9002679b40067fa,
     type: 3}
 --- !u!114 &3892848896853018864
@@ -4549,7 +4550,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3892848896853018867}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7801c052b7bdb684c9fe5047ebbaf707, type: 3}
   m_Name: 
@@ -4573,6 +4574,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookRadius: 10
   target: {fileID: 0}
+--- !u!114 &1410557538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892848896853018867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ca723f10680b404e8c43718b606ae0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3902640578350679924
 GameObject:
   m_ObjectHideFlags: 0

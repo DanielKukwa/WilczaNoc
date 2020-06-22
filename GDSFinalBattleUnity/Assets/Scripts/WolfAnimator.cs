@@ -54,7 +54,7 @@ public class WolfAnimator : MonoBehaviour
 
     }
 
-    void OnHowl()
+    public void OnHowl()
     {
         animator.SetTrigger("Howl");
     }
