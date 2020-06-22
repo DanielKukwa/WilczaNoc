@@ -62,10 +62,10 @@ public class SpecialAbilities : MonoBehaviour
             {
                                
                 startPosition = transform.position;
-                targetPosition = transform.position + hit.point * dashDistance;
+                targetPosition = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                 elapsedTime = 0;
                 StartCoroutine(Dash());
-                //FaceMousePoint(hit.point);
+                FaceMousePoint(hit.point);
                
             }
         }
@@ -75,7 +75,7 @@ public class SpecialAbilities : MonoBehaviour
 
     public IEnumerator Dash()
     {
-        while (elapsedTime < 1)
+        while (elapsedTime <= 1)
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / dashDuration;
