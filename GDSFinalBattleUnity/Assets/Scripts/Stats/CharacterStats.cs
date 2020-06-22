@@ -5,36 +5,55 @@ public class CharacterStats : MonoBehaviour
 {
     // Health
     public int maxHealth = 100;
-    public int currentHealth { get; private set; }
+    public int currentHealth; //{ get; private set; }
     private Healthbar _healthbar;
-    public Stat damage;
-    public Stat damage2;
+    //public Stat damage;
+    //public Stat damage2;
+    
 
-
+    [Header("Damage")]
+    public int damageValue;
+    public int damageValue2;
+    public int damageModifier;
     // Set current health to max health
     // when starting the game.
     void Awake()
     {
         currentHealth = maxHealth;
+        damageModifier = 1;
     }
 
     private void Start()
     {
         _healthbar = GetComponentInChildren<Healthbar>();
         _healthbar.SetSliderMaxValue(maxHealth);
+        
+
     }
+
+
+    public int GetValue()
+    {
+        return damageValue * damageModifier; 
+    }
+
+    public int GetValue2()
+    {
+        return damageValue2 * damageModifier;
+    }
+
     // Damage the character
     public void TakeDamage(int damage)
     {
         // Subtract the armor value
 
-
         // Damage the character
         currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
         _healthbar.UpdateHealth(currentHealth);
+        //IncreaseDamage();    UNCOMMENT IF NEEDED
 
-        if(this.tag != "Player")
+        if (this.tag != "Player")
         {
             CameraShake.Instance.ShakeCamera();
         }
@@ -54,6 +73,7 @@ public class CharacterStats : MonoBehaviour
         currentHealth -= damage2;
         Debug.Log(transform.name + " takes " + damage2 + " damage.");
         _healthbar.UpdateHealth(currentHealth);
+        //IncreaseDamage();  UNCOMMENT IF NEEDED
 
         if (this.tag != "Player")
         {
@@ -68,7 +88,14 @@ public class CharacterStats : MonoBehaviour
 
     public void Heal()
     {
-        currentHealth += (maxHealth - currentHealth);
+        if (currentHealth <= maxHealth / 2)
+        {
+            currentHealth += (maxHealth / 2);
+        }
+        else
+        {
+            currentHealth += (maxHealth - currentHealth);
+        }
         Debug.Log("HEALED!");
         _healthbar.UpdateHealth(currentHealth);
     }
@@ -80,4 +107,37 @@ public class CharacterStats : MonoBehaviour
         Debug.Log(transform.name + " died.");
     }
 
+    public void IncreaseDamage()
+    {
+
+        //if (this.tag == "Player")
+        //{
+            if (currentHealth <= 0.75 * maxHealth && currentHealth > 0.5 * maxHealth)
+            {
+                Debug.Log("DAMAGE1");
+                damageModifier = 1 + 1/2;
+                //damageValue = damageValue * damageModifier;
+                
+            }
+            else if (currentHealth <= 0.5 * maxHealth && currentHealth > 0.25 * maxHealth)
+            {
+                Debug.Log("DAMAGE2");
+                damageModifier = 2;
+                //damageValue = damageValue * damageModifier;
+            }
+            else if (currentHealth < 0.25 * maxHealth)
+            {
+                Debug.Log("DAMAGE3");
+                damageModifier = 4;
+                //damageValue = damageValue * damageModifier;
+            }
+            else
+            {
+                damageModifier = 1;
+            }
+
+
+        //}
+
+    }
 }

@@ -8,10 +8,15 @@ public class EnemyStats : CharacterStats
 
     public override void Die()
     {
-        base.Die();
-        // add ragdoll effect / death animation
-        GameObject prefab = Instantiate(_ragdollPrefab, transform.position, transform.rotation);
-        prefab.transform.localScale = transform.localScale;
+        
+        if (_ragdollPrefab != null)
+        {
+            base.Die();
+            // add ragdoll effect / death animation
+            GameObject prefab = Instantiate(_ragdollPrefab, transform.position, transform.rotation);
+            prefab.transform.localScale = transform.localScale;
+            
+        }
         Destroy(gameObject);
     }
 

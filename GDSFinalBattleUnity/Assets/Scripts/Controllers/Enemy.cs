@@ -14,7 +14,7 @@ public class Enemy : Interactable
     {
         playerManager = PlayerManager.instance;
         myStats = GetComponent<CharacterStats>();
-        playerController = PlayerManager.instance.player.GetComponent<PlayerController>();
+        playerController = playerManager.player.GetComponent<PlayerController>();
        
     }
 
