@@ -10,11 +10,23 @@ public class SpecialAbilities : MonoBehaviour
     Transform playerPosition;
     Camera cam;
     NavMeshAgent agent;
-    
+
+    private Vector3 startPosition;
+    private Vector3 targetPosition;
+    [SerializeField] private float dashDistance = 5f;
+    //[SerializeField] private float dashForce = 5;
+    [SerializeField] private float dashDuration;
+    [SerializeField] private AnimationCurve jumpCurve;
+    private float elapsedTime = 0;
+
+    Rigidbody rb;
+
+ 
 
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         myStats = GetComponent<CharacterStats>();
         playerManager = PlayerManager.instance;
         playerPosition = playerManager.player.GetComponent<Transform>();
@@ -35,24 +47,63 @@ public class SpecialAbilities : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-
-
-            if (Physics.Raycast(ray, out hit, 100))
-            {
-
-                FaceMousePoint(hit.point);
-                transform.position = hit.point;
-                agent.SetDestination(transform.position);
-                //agent.stoppingDistance = 0f;
-                //agent.updateRotation = true;
-            }
+            Blink();
 
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
 
+            
+
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                               
+                startPosition = transform.position;
+                targetPosition = transform.position + hit.point * dashDistance;
+                elapsedTime = 0;
+                StartCoroutine(Dash());
+                //FaceMousePoint(hit.point);
+               
+            }
+        }
+
+
+    }
+
+    public IEnumerator Dash()
+    {
+        while (elapsedTime < 1)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / dashDuration;
+            float curveValue = jumpCurve.Evaluate(t);
+            transform.position = Vector3.LerpUnclamped(startPosition, targetPosition, curveValue);
+            Debug.Log("DASH!");
+            agent.SetDestination(transform.position);
+            yield return null;
+          
+        }
+    }
+
+    private void Blink()
+    {
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+
+
+        if (Physics.Raycast(ray, out hit, 100))
+        {
+
+            FaceMousePoint(hit.point);
+            transform.position = hit.point;
+            agent.SetDestination(transform.position);
+            //agent.stoppingDistance = 0f;
+            //agent.updateRotation = true;
+        }
     }
 
     private void FaceMousePoint(Vector3 hitPoint)
