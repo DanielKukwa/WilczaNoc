@@ -10,6 +10,7 @@ public class SpecialAbilities : MonoBehaviour
     Transform playerPosition;
     Camera cam;
     NavMeshAgent agent;
+    CameraController camController;
 
     private Vector3 startPosition;
     private Vector3 targetPosition;
@@ -18,6 +19,9 @@ public class SpecialAbilities : MonoBehaviour
     [SerializeField] private float dashDuration;
     [SerializeField] private AnimationCurve jumpCurve;
     private float elapsedTime = 0;
+    public float dashHigh = 0.01f;
+    public float camSmoothSpeed = 0.125f;
+
 
     Rigidbody rb;
 
@@ -32,6 +36,8 @@ public class SpecialAbilities : MonoBehaviour
         playerPosition = playerManager.player.GetComponent<Transform>();
         cam = Camera.main;
         agent = GetComponent<NavMeshAgent>();
+        camController = GetComponent<CameraController>();
+        
 
     }
 
@@ -62,20 +68,29 @@ public class SpecialAbilities : MonoBehaviour
             {
                                
                 startPosition = transform.position;
-                targetPosition = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+
+
+                targetPosition = new Vector3(hit.point.x, dashHigh, hit.point.z);
+                Vector3 vecDirection = targetPosition - startPosition;
+                targetPosition = startPosition + vecDirection.normalized * dashDistance;
                 elapsedTime = 0;
                 StartCoroutine(Dash());
                 FaceMousePoint(hit.point);
-               
-            }
-        }
 
+                //camController.SlowDownCam();
+                
+                
+            }
+
+           
+        }
+        
 
     }
 
     public IEnumerator Dash()
     {
-        while (elapsedTime <= 1)
+        while (elapsedTime <= dashDuration)
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / dashDuration;
@@ -84,7 +99,7 @@ public class SpecialAbilities : MonoBehaviour
             Debug.Log("DASH!");
             agent.SetDestination(transform.position);
             yield return null;
-          
+            
         }
     }
 
@@ -111,6 +126,17 @@ public class SpecialAbilities : MonoBehaviour
         Vector3 direction = (hitPoint - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 500f);
+
+    }
+
+    void SlowDownCam(Vector3 hitpoint)
+    {
+        Vector3 desiredPosition = hitpoint - camController.offset * camController.currentZoom;
+        Vector3 smoothedPosition = Vector3.Lerp(camController.transform.position, desiredPosition, camSmoothSpeed);
+        //transform.position = target.position - offset * currentZoom;
+        camController.transform.position = smoothedPosition;
+
+        camController.transform.LookAt(hitpoint + Vector3.up * camController.pitch);
 
     }
 

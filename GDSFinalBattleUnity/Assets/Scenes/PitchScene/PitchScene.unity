@@ -1525,6 +1525,7 @@ MonoBehaviour:
   offset: {x: 0.62, y: -1.03, z: 0.83}
   currentZoom: 10
   pitch: 0
+  smoothSpeed: 0.05
 --- !u!114 &417793935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1538,7 +1539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _magnitude: 0.03
-  _duration: 0.15
+  _duration: 0.05
 --- !u!1001 &437589754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4217,7 +4218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22bf766bebfa9649a3559dfe9f8766c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashDistance: 1
+  dashDistance: 5
   dashDuration: 0.2
   jumpCurve:
     serializedVersion: 2
@@ -4243,6 +4244,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  dashHigh: 0.08
+  camSmoothSpeed: 0.01
 --- !u!1 &1195895596
 GameObject:
   m_ObjectHideFlags: 0
