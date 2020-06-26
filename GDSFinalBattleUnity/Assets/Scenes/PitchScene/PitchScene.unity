@@ -1525,7 +1525,7 @@ MonoBehaviour:
   offset: {x: 0.62, y: -1.03, z: 0.83}
   currentZoom: 10
   pitch: 0
-  smoothSpeed: 0.05
+  smoothSpeed: 0.03
 --- !u!114 &417793935
 MonoBehaviour:
   m_ObjectHideFlags: 0
