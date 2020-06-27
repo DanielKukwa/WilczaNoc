@@ -1,0 +1,12 @@
+<Collection>
+  <Path>Assets/Materials/Enviro/Scene/Prefabs/Collection.prefab</Path>
+  <NoCache>6261</NoCache>
+  <Object>
+    <Name>Plane</Name>
+    <Prefab>Assets/Materials/Enviro/Scene/Prefabs/_PlaneTest.fbx</Prefab>
+    <Position>(0.0, 0.16341, 0.0)</Position>
+    <Rotation>(0.0, -0.0, 0.0)</Rotation>
+    <Scale>(1.0, 1.0, 1.0)</Scale>
+    <Parent>None</Parent>
+  </Object>
+</Collection>

@@ -1,0 +1,17 @@
+<Prefab>
+  <Materials>
+    <Mat>
+      <Name>Material.001</Name>
+      <Path>Assets/Materials/Enviro/Scene/Materials</Path>
+    </Mat>
+    <Mat>
+      <Name>snow</Name>
+      <Path>Assets/Materials/Enviro/Scene/Materials</Path>
+    </Mat>
+  </Materials>
+  <Tag>Untagged</Tag>
+  <Layer>Default</Layer>
+  <Static>Static</Static>
+  <Collider>Box</Collider>
+  <UV2>True</UV2>
+</Prefab>
