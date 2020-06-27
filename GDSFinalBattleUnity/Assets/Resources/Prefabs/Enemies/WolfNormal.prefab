@@ -4520,7 +4520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
-  damageValue: 0
+  damageValue: 10
   damageValue2: 0
   damageModifier: 0
   _ragdollPrefab: {fileID: 1667079743465688880, guid: 4fec615941a7b124b9002679b40067fa,
@@ -4572,7 +4572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d1e55863442a4e479df6168938e1b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 10
+  lookRadius: 50
   target: {fileID: 0}
 --- !u!114 &1410557538
 MonoBehaviour:

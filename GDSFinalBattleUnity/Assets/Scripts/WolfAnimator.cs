@@ -18,14 +18,15 @@ public class WolfAnimator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
         combat = GetComponent<CharacterCombat>();
 
-       // if (overrideController == null)
-       // {
-       //     overrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
-       // }
+        // if (overrideController == null)
+        // {
+        //     overrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
+        // }
 
         //animator.runtimeAnimatorController = overrideController;
         //overrideController["rig|K_FastSlash1"]
@@ -43,7 +44,21 @@ public class WolfAnimator : MonoBehaviour
 
         float speedPercent = agent.velocity.magnitude / agent.speed;
         animator.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
-        animator.SetBool("inCombat", combat.InCombat);
+        animator.SetBool("InCombat", combat.InCombat);
+    }
+
+    public void SetHowlAnimationLenght(float time)
+    {
+        StartCoroutine(WaitForAnimator(time));  
+    }
+
+    IEnumerator WaitForAnimator(float time)
+    {
+        while (!animator)
+        {
+            yield return null;
+        }
+        animator.SetFloat("HowlSpeed", time);
     }
 
     void OnAttack()
