@@ -9,6 +9,7 @@ using UnityEngine.AI;
 public class PlayerMotor : MonoBehaviour
 {
     Transform target;
+    [SerializeField] float rotationSpeed = 5f;
 
     NavMeshAgent agent;
     // Start is called before the first frame update
@@ -55,7 +56,7 @@ public class PlayerMotor : MonoBehaviour
     {
         Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
 
     }
 

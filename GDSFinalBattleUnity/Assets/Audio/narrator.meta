@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:GDSFinalBattleUnity/Assets/Audio/narrator.meta
 guid: 3ea7455c23e84f7459463166b5b87301
 folderAsset: yes
+=======
+guid: 47eb4354d2412c84db35adc67a85f203
+>>>>>>> DanMechanicsTests:GDSFinalBattleUnity/Assets/Scripts/Controllers/CameraController.unitypackage.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
