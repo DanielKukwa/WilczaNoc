@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 2.95
+  isFirstAttack: 0
 --- !u!114 &2681085574709104221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,10 +133,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
-  damage:
-    baseValue: 10
-  armor:
-    baseValue: 0
+  currentHealth: 0
+  damageValue: 0
+  damageValue2: 0
+  damageModifier: 0
   _ragdollPrefab: {fileID: 1667079743465688880, guid: 4fec615941a7b124b9002679b40067fa,
     type: 3}
 --- !u!114 &2681085574709104220
@@ -153,6 +154,9 @@ MonoBehaviour:
   attackSpeed: 0.8
   attackCooldown: 0
   attackDelay: 0.5
+  attack2Speed: 1
+  attack2Cooldown: 0
+  attack2Delay: 0.6
 --- !u!114 &2681085574709104212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7801c052b7bdb684c9fe5047ebbaf707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  replaceableAttackAnim: {fileID: -816219278648834085, guid: cc0d4475049c891439cdc300631903bb,
+  replaceableAttackAnim: {fileID: 2825456272524282428, guid: 01c5c40d83fb36a4597164a3a4694518,
     type: 3}
   defaultAttackAnimSet:
   - {fileID: 2825456272524282428, guid: b1c2c48e60ed7664fa5b10e8c796e861, type: 3}
