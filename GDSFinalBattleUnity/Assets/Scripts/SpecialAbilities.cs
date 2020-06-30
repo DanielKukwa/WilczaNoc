@@ -11,6 +11,7 @@ public class SpecialAbilities : MonoBehaviour
     Camera cam;
     NavMeshAgent agent;
     CameraController camController;
+    Animator animator;
 
     private Vector3 startPosition;
     private Vector3 targetPosition;
@@ -37,7 +38,7 @@ public class SpecialAbilities : MonoBehaviour
         cam = Camera.main;
         agent = GetComponent<NavMeshAgent>();
         camController = GetComponent<CameraController>();
-        
+        animator = GetComponentInChildren<Animator>();
 
     }
 
@@ -76,10 +77,12 @@ public class SpecialAbilities : MonoBehaviour
                 elapsedTime = 0;
                 StartCoroutine(Dash());
                 FaceMousePoint(hit.point);
+                animator.SetTrigger("dash");
+
 
                 //camController.SlowDownCam();
-                
-                
+
+
             }
 
            
@@ -96,6 +99,7 @@ public class SpecialAbilities : MonoBehaviour
             float t = elapsedTime / dashDuration;
             float curveValue = jumpCurve.Evaluate(t);
             transform.position = Vector3.LerpUnclamped(startPosition, targetPosition, curveValue);
+            
             Debug.Log("DASH!");
             agent.SetDestination(transform.position);
             yield return null;
