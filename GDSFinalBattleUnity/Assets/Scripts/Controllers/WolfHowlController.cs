@@ -21,6 +21,7 @@ public class WolfHowlController : MonoBehaviour
     private float _howlCooldown = 0f;
     private bool _isHowl = false;
     private float _howlTimeRemaining = 0f;
+    [SerializeField] private AudioSource _audioHowling;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class WolfHowlController : MonoBehaviour
 
         _wolfAnimator = GetComponent<WolfAnimator>();
         _wolfAnimator.SetHowlAnimationLenght(1 / _howlAnimationTime);
+
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         combat = GetComponent<CharacterCombat>();
@@ -50,6 +52,7 @@ public class WolfHowlController : MonoBehaviour
                 FaceTarget();
                 _howlCooldown = Time.time + _howlRate;
                 _wolfAnimator.OnHowl();
+                _audioHowling.Play();
             }
             else if(!_isHowl)
             {
@@ -106,6 +109,7 @@ public class WolfHowlController : MonoBehaviour
             Debug.Log("BRAK TRIGGERA!");
         }
 
+        AudioManager.Instance.PlayWolfPack();
     }
 
     private void OnDrawGizmosSelected()
