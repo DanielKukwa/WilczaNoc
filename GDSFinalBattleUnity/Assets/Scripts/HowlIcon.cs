@@ -21,8 +21,12 @@ public class HowlIcon : MonoBehaviour
 
     private void Update()
     {
-        Vector3 targetPos = Camera.main.WorldToScreenPoint(_target.transform.position);
-        transform.position = targetPos + _offsetPosition;
+        if (_target)
+        {
+            Vector3 targetPos = Camera.main.WorldToScreenPoint(_target.transform.position);
+            transform.position = targetPos + _offsetPosition;
+        }
+        
     }
 
     public void SetSliderMaxValue(float value)
@@ -44,5 +48,15 @@ public class HowlIcon : MonoBehaviour
     public void SetOffset(Vector3 offset)
     {
         _offsetPosition = offset;
+    }
+
+    public void SetTarget(GameObject target)
+    {
+        _target = target;
+    }
+
+    private void OnDisable()
+    {
+        _target = null;
     }
 }

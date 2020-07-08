@@ -10,11 +10,18 @@ public class DirIcon : MonoBehaviour
     [SerializeField] private GameObject _arrowTransform;
 
     void Update()
-    {        
-        Vector3 targetPos = Camera.main.WorldToScreenPoint(_target.transform.position);
-        if (targetPos.x > 0 + _iconOffset && targetPos.x < Screen.width - _iconOffset && targetPos.y > 0 + _iconOffset && targetPos.y < Screen.height - _iconOffset) Destroy(this.gameObject);
-        CalculateIconPositionOnScreen(targetPos);
-        RotateIcon(targetPos);      
+    {
+        if (_target)
+        {
+            Vector3 targetPos = Camera.main.WorldToScreenPoint(_target.transform.position);
+            if (targetPos.x > 0 + _iconOffset && targetPos.x < Screen.width - _iconOffset && targetPos.y > 0 + _iconOffset && targetPos.y < Screen.height - _iconOffset) DirectionIconPool.Instance.ReturnToPool(this);
+            CalculateIconPositionOnScreen(targetPos);
+            RotateIcon(targetPos);
+        }
+        else
+        {
+            Debug.Log(gameObject.name + ": brak targetu!");
+        } 
     }
 
     private void CalculateIconPositionOnScreen(Vector3 targetOnScreen)
@@ -67,4 +74,9 @@ public class DirIcon : MonoBehaviour
 
         _arrowTransform.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - _angleOffset));
     }   
+
+    public void SetTarget(GameObject target)
+    {
+        _target = target;
+    }
 }
