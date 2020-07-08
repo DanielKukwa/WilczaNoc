@@ -15,25 +15,35 @@ public class WolfHowlController : MonoBehaviour
     CharacterCombat combat;
 
     private WolfAnimator _wolfAnimator;
-    private HowlIndicator _howlIndicator;
-    [SerializeField] private float _howlAnimationTime = 2f;
+    private HowlIcon _howlIcon;
+    //private HowlIndicator _howlIndicator;
+    [SerializeField] private float _howlAnimationTime = 2f;   
     [SerializeField] private float _howlRate = 7f;
+    [SerializeField] private float _howlAnimationOffset = 0.25f;
     private float _howlCooldown = 0f;
     private bool _isHowl = false;
     private float _howlTimeRemaining = 0f;
+    private AudioSource _audioHowling;
 
     void Start()
     {
-        _howlIndicator = GetComponentInChildren<HowlIndicator>();
-        _howlIndicator.SetSliderMaxValue(_howlAnimationTime);
+        //_howlIndicator = GetComponentInChildren<HowlIndicator>();
+        //_howlIndicator.SetSliderMaxValue(_howlAnimationTime - _howlAnimationOffset);
 
         _eventTrigger = GetComponent<EventTrigger>();
 
         _wolfAnimator = GetComponent<WolfAnimator>();
         _wolfAnimator.SetHowlAnimationLenght(1 / _howlAnimationTime);
+
+        _audioHowling = GetComponent<AudioSource>();
+
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         combat = GetComponent<CharacterCombat>();
+
+        CharacterStats stats = GetComponent<CharacterStats>();
+        if (!stats) Debug.Log("Brak character stats");
+        stats.OnCharacterDie += OnHowlWolfDead;
     }
 
     // Update is called once per frame
@@ -44,12 +54,29 @@ public class WolfHowlController : MonoBehaviour
         if (distance <= lookRadius)
         {
             if(_howlCooldown < Time.time)
-            {
+            {               
                 _isHowl = true;
-                _howlTimeRemaining = _howlAnimationTime;
+                
                 FaceTarget();
                 _howlCooldown = Time.time + _howlRate;
+
+                _howlTimeRemaining = _howlAnimationTime - _howlAnimationOffset;
+
+                if (_howlIcon == null)
+                {
+                    _howlIcon = HowlIconPool.Instance.Get();
+                    GameObject canvas = GameObject.FindGameObjectWithTag("DirUI");
+                    if (!canvas) Debug.Log("brakCanvsu");
+                    _howlIcon.transform.SetParent(canvas.transform);
+                    _howlIcon.gameObject.SetActive(true);
+                    _howlIcon.SetTarget(this.gameObject);
+                    _howlIcon.SetSliderMaxValue(_howlAnimationTime - _howlAnimationOffset);
+                }
+
+                _howlIcon.UpdateIndicator(_howlTimeRemaining);
+                _howlIcon.AnimationIcon.SetTrigger("Howl_Load");
                 _wolfAnimator.OnHowl();
+                _audioHowling.Play();
             }
             else if(!_isHowl)
             {
@@ -65,13 +92,20 @@ public class WolfHowlController : MonoBehaviour
         if (_isHowl)
         {
             _howlTimeRemaining -= Time.deltaTime;
-            _howlIndicator.UpdateIndicator(_howlTimeRemaining);
 
-            if (_howlTimeRemaining <= 0)
+            if (_howlIcon)
             {
-                OnHowlEnded();
-                _howlIndicator.UpdateIndicator(_howlAnimationTime);
-                _isHowl = false;
+                _howlIcon.UpdateIndicator(_howlTimeRemaining);
+                if (_howlTimeRemaining <= 0)
+                {
+                    OnHowlEnded();
+                    _howlIcon.AnimationIcon.SetTrigger("Howl_Icon");
+                    _isHowl = false;
+                }
+            }
+            else
+            {
+                Debug.Log("Brak howl icon");
             }
         }
     }
@@ -106,11 +140,18 @@ public class WolfHowlController : MonoBehaviour
             Debug.Log("BRAK TRIGGERA!");
         }
 
+        AudioManager.Instance.PlayWolfPack();
     }
 
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+    }
+
+    private void OnHowlWolfDead()
+    {
+        HowlIconPool.Instance.ReturnToPool(_howlIcon);
+        _howlIcon = null;
     }
 }

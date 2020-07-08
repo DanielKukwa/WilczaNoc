@@ -1,0 +1,18 @@
+<Material.001>
+  <Shader>Autodesk Interactive</Shader>
+  <Rewrite>True</Rewrite>
+  <Channels>
+    <_Color>Color,#E7E7E7</_Color>
+    <_MainTex />
+    <_Metallic>Float,1.0</_Metallic>
+    <_MetallicGlossMap />
+    <_Glossiness>Float,0.3981817960739136</_Glossiness>
+    <_SpecGlossMap />
+    <_SpecularHighlights>Float,1.0</_SpecularHighlights>
+    <_GlossyReflections>Float,1.0</_GlossyReflections>
+    <_BumpMap>Texture,NORMAL,Assets/Materials/Enviro/Scene/Textures/sniegNORMAL.png</_BumpMap>
+    <_EmissionMap />
+    <_EmissionColor />
+    <_Transparent>OPAQUE</_Transparent>
+  </Channels>
+</Material.001>
