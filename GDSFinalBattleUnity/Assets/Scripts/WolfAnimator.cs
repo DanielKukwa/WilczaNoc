@@ -11,7 +11,8 @@ public class WolfAnimator : MonoBehaviour
 
     const float locomotionAnimationSmoothTime = 0.1f;
     NavMeshAgent agent;
-    Animator animator;
+    [HideInInspector] public Animator Animator;
+
     CharacterCombat combat;
     //public AnimatorOverrideController overrideController;
 
@@ -20,7 +21,7 @@ public class WolfAnimator : MonoBehaviour
     {
         
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponentInChildren<Animator>();
+        Animator = GetComponentInChildren<Animator>();
         combat = GetComponent<CharacterCombat>();
 
         // if (overrideController == null)
@@ -43,8 +44,8 @@ public class WolfAnimator : MonoBehaviour
     {
 
         float speedPercent = agent.velocity.magnitude / agent.speed;
-        animator.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
-        animator.SetBool("InCombat", combat.InCombat);
+        Animator.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
+        Animator.SetBool("InCombat", combat.InCombat);
     }
 
     public void SetHowlAnimationLenght(float time)
@@ -54,16 +55,16 @@ public class WolfAnimator : MonoBehaviour
 
     IEnumerator WaitForAnimator(float time)
     {
-        while (!animator)
+        while (!Animator)
         {
             yield return null;
         }
-        animator.SetFloat("HowlSpeed", time);
+        Animator.SetFloat("HowlSpeed", time);
     }
 
     void OnAttack()
     {
-        animator.SetTrigger("Attack");
+        Animator.SetTrigger("Attack");
         //int attackIndex = Random.Range(0, currentAttackAnimSet.Length);
         //overrideController[replaceableAttackAnim.name] = currentAttackAnimSet[attackIndex];
 
@@ -71,16 +72,16 @@ public class WolfAnimator : MonoBehaviour
 
     public void OnHowl()
     {
-        animator.SetTrigger("Howl");
+        Animator.SetTrigger("Howl");
     }
 
-    void OnMark()
+    public void OnMark()
     {
-        animator.SetTrigger("Mark");
+        Animator.SetTrigger("Mark");
     }
 
-    void OnJump()
+    public void OnJump()
     {
-        animator.SetTrigger("Jump");
+        Animator.SetTrigger("Jump");
     }
 }

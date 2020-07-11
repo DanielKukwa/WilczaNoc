@@ -10,6 +10,17 @@ public class WolfJumpController : MonoBehaviour
     public Transform target;
     NavMeshAgent agent;
 
+    private WolfAnimator _wolfAnimator;
+
+    private bool _isJump = false;
+    [SerializeField] private float _jumpRadius = 5f;
+    [SerializeField] private float _markingTime = 2f;
+    [SerializeField] private float _jumpingTime = 1f;
+    [SerializeField] private float _restingTime = 2f;
+
+
+
+
     // TODO use it to enemy attack
     CharacterCombat combat;
 
@@ -18,6 +29,7 @@ public class WolfJumpController : MonoBehaviour
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         combat = GetComponent<CharacterCombat>();
+        _wolfAnimator = GetComponent<WolfAnimator>();
     }
 
     // Update is called once per frame
@@ -28,22 +40,53 @@ public class WolfJumpController : MonoBehaviour
 
         if (distance <= lookRadius)
         {
-            agent.SetDestination(target.position);
-
-            if (distance <= agent.stoppingDistance)
-            {
-                CharacterStats targetStats = target.GetComponent<CharacterStats>();
-                if (targetStats != null)
-                {
-                    combat.Attack(targetStats);
-                }
-                FaceTarget();
+            if (distance <= _jumpRadius && !_isJump)
+            {          
+               StartCoroutine(Jump());
             }
 
+            if (!_isJump)
+            {
+                agent.SetDestination(target.position);
+
+                if (distance <= agent.stoppingDistance)
+                {
+                    CharacterStats targetStats = target.GetComponent<CharacterStats>();
+                    if (targetStats != null)
+                    {
+                        combat.Attack(targetStats);
+                    }
+                    FaceTarget();
+                }
+            }
+                     
         }
 
     }
 
+    IEnumerator Jump()
+    {
+        _isJump = true;
+        agent.enabled = false;
+        _wolfAnimator.Animator.SetTrigger("Mark");
+        yield return new WaitForSeconds(_markingTime);
+        _wolfAnimator.Animator.SetTrigger("Jump");
+        float time = 0f;
+        Vector3 startPosition = transform.position;
+        Vector3 direction = target.position - transform.position;
+        Vector3 targetPosition = transform.position + direction * _jumpRadius;
+        while(time < _jumpingTime)
+        {
+            time += Time.deltaTime;
+            transform.position = Vector3.Lerp(startPosition, targetPosition, time / _jumpingTime);
+            yield return null;
+        }
+
+        _isJump = false;
+
+        yield return new WaitForSeconds(_restingTime);
+        
+    }
 
     void FaceTarget()
     {
