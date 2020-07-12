@@ -63,8 +63,8 @@ public class SpecialAbilities : MonoBehaviour
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            
 
+            animator.SetTrigger("dash");
             if (Physics.Raycast(ray, out hit, 100))
             {
                                
@@ -77,7 +77,7 @@ public class SpecialAbilities : MonoBehaviour
                 elapsedTime = 0;
                 StartCoroutine(Dash());
                 FaceMousePoint(hit.point);
-                animator.SetTrigger("dash");
+                
 
 
                 //camController.SlowDownCam();
