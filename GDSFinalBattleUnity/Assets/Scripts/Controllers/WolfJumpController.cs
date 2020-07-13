@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class WolfJumpController : MonoBehaviour
 {
@@ -12,13 +13,18 @@ public class WolfJumpController : MonoBehaviour
 
     private WolfAnimator _wolfAnimator;
 
+
+
+    private bool _isMark = false;
     private bool _isJump = false;
     [SerializeField] private float _jumpRadius = 5f;
     [SerializeField] private float _markingTime = 2f;
     [SerializeField] private float _jumpingTime = 1f;
     [SerializeField] private float _restingTime = 2f;
+    [SerializeField] private AnimationCurve _animationCurve;
+    private float _correctAnimationTime = 0f;
 
-
+    [SerializeField] private Image _arrowImage;
 
 
     // TODO use it to enemy attack
@@ -30,6 +36,7 @@ public class WolfJumpController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         combat = GetComponent<CharacterCombat>();
         _wolfAnimator = GetComponent<WolfAnimator>();
+        _arrowImage.fillAmount = 0f;
     }
 
     // Update is called once per frame
@@ -45,19 +52,26 @@ public class WolfJumpController : MonoBehaviour
                StartCoroutine(Jump());
             }
 
+
+            if (distance <= agent.stoppingDistance && _isJump)
+            {
+                CharacterStats targetStats = target.GetComponent<CharacterStats>();
+                if (targetStats != null)
+                {
+                    combat.Attack(targetStats);
+                }
+            }
+
             if (!_isJump)
             {
                 agent.SetDestination(target.position);
+                FaceTarget();
+               
+            }
 
-                if (distance <= agent.stoppingDistance)
-                {
-                    CharacterStats targetStats = target.GetComponent<CharacterStats>();
-                    if (targetStats != null)
-                    {
-                        combat.Attack(targetStats);
-                    }
-                    FaceTarget();
-                }
+            if (_isMark)
+            {
+                FaceTarget();
             }
                      
         }
@@ -67,25 +81,42 @@ public class WolfJumpController : MonoBehaviour
     IEnumerator Jump()
     {
         _isJump = true;
+        _isMark = true;
         agent.enabled = false;
         _wolfAnimator.Animator.SetTrigger("Mark");
-        yield return new WaitForSeconds(_markingTime);
+        float _timeMarked = 0f;
+        while(_timeMarked <= _markingTime)
+        {
+            _timeMarked += Time.deltaTime;
+            _arrowImage.fillAmount = _timeMarked / _markingTime;
+            yield return null;
+        }
+        // yield return new WaitForSeconds(_markingTime);
+        _arrowImage.fillAmount = 0f;
+        _isMark = false;
         _wolfAnimator.Animator.SetTrigger("Jump");
-        float time = 0f;
+        
         Vector3 startPosition = transform.position;
         Vector3 direction = target.position - transform.position;
-        Vector3 targetPosition = transform.position + direction * _jumpRadius;
-        while(time < _jumpingTime)
+        Vector3 targetPosition = transform.position + direction.normalized * _jumpRadius * 2;
+
+        float elapsedTime = 0f;
+        _correctAnimationTime = 0f;
+        while (elapsedTime < _jumpingTime)
         {
-            time += Time.deltaTime;
-            transform.position = Vector3.Lerp(startPosition, targetPosition, time / _jumpingTime);
+            elapsedTime += Time.deltaTime;
+            float t = _animationCurve.Evaluate(elapsedTime / _jumpingTime);
+
+            transform.position = Vector3.LerpUnclamped(startPosition, targetPosition, t);
             yield return null;
         }
 
-        _isJump = false;
-
-        yield return new WaitForSeconds(_restingTime);
         
+        yield return new WaitForSeconds(_restingTime);
+
+        _isJump = false;
+        agent.enabled = true;
+
     }
 
     void FaceTarget()
