@@ -1,8 +1,10 @@
 ﻿
 using UnityEngine;
+using System;
 
 public class CharacterStats : MonoBehaviour
 {
+    public event Action OnCharacterDie;
     // Health
     public int maxHealth = 100;
     public int currentHealth; //{ get; private set; }
@@ -56,6 +58,8 @@ public class CharacterStats : MonoBehaviour
         if (this.tag != "Player")
         {
             CameraShake.Instance.ShakeCamera();
+            AudioManager.Instance.PlayWolfHit();
+            Debug.Log("WOWOWF");
         }
         // If health reaches zero
         if (currentHealth <= 0)
@@ -78,6 +82,8 @@ public class CharacterStats : MonoBehaviour
         if (this.tag != "Player")
         {
             CameraShake.Instance.ShakeCamera();
+            AudioManager.Instance.PlayWolfHit();
+            Debug.Log("WOWOWF");
         }
         // If health reaches zero
         if (currentHealth <= 0)
@@ -102,6 +108,7 @@ public class CharacterStats : MonoBehaviour
 
     public virtual void Die()
     {
+        OnCharacterDie?.Invoke();
         // Die in some way
         // This method is meant to be overwritten
         Debug.Log(transform.name + " died.");
