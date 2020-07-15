@@ -13,10 +13,13 @@ public class WolfJumpController : MonoBehaviour
 
     private WolfAnimator _wolfAnimator;
 
-
+    [SerializeField] private float _attackDistance = 1f;
+    
 
     private bool _isMark = false;
     private bool _isJump = false;
+    [SerializeField] private float _jumpRate = 5f;
+    private float _jumpCooldown = 0f;
     [SerializeField] private float _jumpRadius = 5f;
     [SerializeField] private float _markingTime = 2f;
     [SerializeField] private float _jumpingTime = 1f;
@@ -24,6 +27,7 @@ public class WolfJumpController : MonoBehaviour
     [SerializeField] private AnimationCurve _animationCurve;
     private float _correctAnimationTime = 0f;
 
+    [SerializeField] private Slider _slider;
     [SerializeField] private Image _arrowImage;
 
 
@@ -34,9 +38,11 @@ public class WolfJumpController : MonoBehaviour
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
+        agent.stoppingDistance = _jumpRadius;
         combat = GetComponent<CharacterCombat>();
         _wolfAnimator = GetComponent<WolfAnimator>();
         _arrowImage.fillAmount = 0f;
+        _slider.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -47,13 +53,20 @@ public class WolfJumpController : MonoBehaviour
 
         if (distance <= lookRadius)
         {
-            if (distance <= _jumpRadius && !_isJump)
-            {          
+            if (distance <= _jumpRadius && !_isJump && _jumpCooldown < Time.time)
+            {      
+               _jumpCooldown = Time.time + _jumpRate;
                StartCoroutine(Jump());
+            }
+            else if (!_isJump)
+            {
+                agent.SetDestination(target.position);
+                FaceTarget();
+
             }
 
 
-            if (distance <= agent.stoppingDistance && _isJump)
+            if (distance <= _attackDistance && _isJump)
             {
                 CharacterStats targetStats = target.GetComponent<CharacterStats>();
                 if (targetStats != null)
@@ -61,17 +74,19 @@ public class WolfJumpController : MonoBehaviour
                     combat.Attack(targetStats);
                 }
             }
-
-            if (!_isJump)
+            else if(distance <= _attackDistance + 0.75f)
             {
-                agent.SetDestination(target.position);
-                FaceTarget();
-               
+                CharacterStats targetStats = target.GetComponent<CharacterStats>();
+                if (targetStats != null)
+                {
+                    combat.Attack(targetStats);
+                }
             }
+           
 
             if (_isMark)
             {
-                FaceTarget();
+                //FaceTarget();
             }
                      
         }
@@ -80,11 +95,16 @@ public class WolfJumpController : MonoBehaviour
 
     IEnumerator Jump()
     {
+        Vector3 startPosition = transform.position;
+        Vector3 direction = target.position - transform.position;
+        Vector3 targetPosition = transform.position + direction.normalized * _jumpRadius * 2;
         _isJump = true;
         _isMark = true;
         agent.enabled = false;
         _wolfAnimator.Animator.SetTrigger("Mark");
         float _timeMarked = 0f;
+        _slider.gameObject.SetActive(true);
+
         while(_timeMarked <= _markingTime)
         {
             _timeMarked += Time.deltaTime;
@@ -93,12 +113,13 @@ public class WolfJumpController : MonoBehaviour
         }
         // yield return new WaitForSeconds(_markingTime);
         _arrowImage.fillAmount = 0f;
+        _slider.gameObject.SetActive(false);
         _isMark = false;
         _wolfAnimator.Animator.SetTrigger("Jump");
         
-        Vector3 startPosition = transform.position;
-        Vector3 direction = target.position - transform.position;
-        Vector3 targetPosition = transform.position + direction.normalized * _jumpRadius * 2;
+        //Vector3 startPosition = transform.position;
+        //Vector3 direction = target.position - transform.position;
+        //Vector3 targetPosition = transform.position + direction.normalized * _jumpRadius * 2;
 
         float elapsedTime = 0f;
         _correctAnimationTime = 0f;
