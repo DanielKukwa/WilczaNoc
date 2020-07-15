@@ -1532,7 +1532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1179250968}
   offset: {x: 0.62, y: -1.03, z: 0.83}
-  currentZoom: 10
+  currentZoom: 11
   pitch: 0
   smoothSpeed: 0.03
 --- !u!114 &417793935
@@ -2536,7 +2536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &800725309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4313,7 +4313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22bf766bebfa9649a3559dfe9f8766c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashDistance: 5
+  dashDistance: 4
   dashDuration: 0.2
   jumpCurve:
     serializedVersion: 2
