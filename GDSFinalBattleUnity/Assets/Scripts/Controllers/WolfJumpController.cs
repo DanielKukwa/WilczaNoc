@@ -134,7 +134,7 @@ public class WolfJumpController : MonoBehaviour
 
         
         yield return new WaitForSeconds(_restingTime);
-
+        _wolfAnimator.Animator.SetTrigger("BattlePose");
         _isJump = false;
         agent.enabled = true;
 
