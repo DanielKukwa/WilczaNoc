@@ -12,8 +12,9 @@ public class SpecialAbilities : MonoBehaviour
     NavMeshAgent agent;
     CameraController camController;
     Animator animator;
-    TrailRenderer trail;
+    //TrailRenderer trail;
     GameObject dashTrails;
+    ParticleSystem particles;
 
     private Vector3 startPosition;
     private Vector3 targetPosition;
@@ -41,13 +42,15 @@ public class SpecialAbilities : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         camController = GetComponent<CameraController>();
         animator = GetComponentInChildren<Animator>();
-        trail = GetComponentInChildren<TrailRenderer>();
+        //trail = GetComponentInChildren<TrailRenderer>();
         dashTrails = GameObject.Find("DashTrails");
+        particles = GetComponentInChildren<ParticleSystem>();
     }
 
     void Update()
     {
         dashTrails.active = false;
+        particles.enableEmission = false;
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -102,6 +105,7 @@ public class SpecialAbilities : MonoBehaviour
         while (elapsedTime <= dashDuration)
         {
             dashTrails.active = true;
+            particles.enableEmission = true;
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / dashDuration;
             float curveValue = jumpCurve.Evaluate(t);
