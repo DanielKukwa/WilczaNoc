@@ -4200,8 +4200,9 @@ MonoBehaviour:
   lookRadius: 20
   target: {fileID: 0}
   _attackDistance: 0.75
-  _jumpRate: 7
-  _jumpRadius: 6
+  _jumpRate: 6
+  _jumpRadiusTrigger: 9.5
+  _landingDistanceBehindPlayer: 3.5
   _markingTime: 1.5
   _jumpingTime: 1.5
   _restingTime: 2

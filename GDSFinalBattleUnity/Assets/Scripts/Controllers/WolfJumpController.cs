@@ -20,7 +20,8 @@ public class WolfJumpController : MonoBehaviour
     private bool _isJump = false;
     [SerializeField] private float _jumpRate = 5f;
     private float _jumpCooldown = 0f;
-    [SerializeField] private float _jumpRadius = 5f;
+    [SerializeField] private float _jumpRadiusTrigger = 5f;
+    [SerializeField] private float _landingDistanceBehindPlayer = 2f;
     [SerializeField] private float _markingTime = 2f;
     [SerializeField] private float _jumpingTime = 1f;
     [SerializeField] private float _restingTime = 2f;
@@ -38,7 +39,7 @@ public class WolfJumpController : MonoBehaviour
     {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
-        agent.stoppingDistance = _jumpRadius;
+        agent.stoppingDistance = _jumpRadiusTrigger;
         combat = GetComponent<CharacterCombat>();
         _wolfAnimator = GetComponent<WolfAnimator>();
         _arrowImage.fillAmount = 0f;
@@ -53,7 +54,7 @@ public class WolfJumpController : MonoBehaviour
 
         if (distance <= lookRadius)
         {
-            if (distance <= _jumpRadius && !_isJump && _jumpCooldown < Time.time)
+            if (distance <= _jumpRadiusTrigger && !_isJump && _jumpCooldown < Time.time)
             {      
                _jumpCooldown = Time.time + _jumpRate;
                StartCoroutine(Jump());
@@ -97,7 +98,7 @@ public class WolfJumpController : MonoBehaviour
     {
         Vector3 startPosition = transform.position;
         Vector3 direction = target.position - transform.position;
-        Vector3 targetPosition = transform.position + direction.normalized * _jumpRadius * 2;
+        Vector3 targetPosition = transform.position + direction.normalized *( _jumpRadiusTrigger + _landingDistanceBehindPlayer);
         _isJump = true;
         _isMark = true;
         agent.enabled = false;
