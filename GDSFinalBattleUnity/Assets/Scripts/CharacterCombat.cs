@@ -28,12 +28,15 @@ public class CharacterCombat : MonoBehaviour
     public event System.Action OnAttack2;
 
     private GameObject bloodSplash;
+    private GameObject bloodDecay;
     private RaycastHit hitInfo;
 
-    void Start()
+    protected virtual void Start()
     {
         myStats = GetComponent<CharacterStats>();
-        var blood = Resources.Load("Prefabs/Blood/BloodSplashV3");
+        var blood = Resources.Load("Prefabs/Blood/HitSplashNormal");
+        bloodDecay = (GameObject) Resources.Load("Prefabs/Blood/BloodDecay");
+        //var blood = Resources.Load("Prefabs/Blood/BloodSplashV3");
         bloodSplash = blood as GameObject;
     }
 
@@ -84,6 +87,13 @@ public class CharacterCombat : MonoBehaviour
         yield return new WaitForSeconds(delay);
         stats.TakeDamage(myStats.GetValue());
         Instantiate(bloodSplash, new Vector3(stats.transform.position.x, 1.3f, stats.transform.position.z), Quaternion.LookRotation(hitInfo.normal));
+        if(stats.gameObject.tag != "Player")
+        {
+            GameObject bloodD = Instantiate(bloodDecay, new Vector3(stats.transform.position.x, 0.015f, stats.transform.position.z), Quaternion.LookRotation(Vector3.up));
+            float randZ = Random.Range(0, 359);
+            bloodD.transform.Rotate(0, 0, randZ);
+        }
+        
 
         if (stats.currentHealth <= 0)
         {
@@ -97,6 +107,11 @@ public class CharacterCombat : MonoBehaviour
         stats.TakeDamage(myStats.GetValue2());
         Instantiate(bloodSplash, new Vector3(stats.transform.position.x, 1.3f, stats.transform.position.z), Quaternion.LookRotation(hitInfo.normal));
 
+        {
+            GameObject bloodD = Instantiate(bloodDecay, new Vector3(stats.transform.position.x, 0.015f, stats.transform.position.z), Quaternion.LookRotation(Vector3.up));
+            float randZ = Random.Range(0, 359);
+            bloodD.transform.Rotate(0, 0, randZ);
+        }
         if (stats.currentHealth <= 0)
         {
             InCombat = false;

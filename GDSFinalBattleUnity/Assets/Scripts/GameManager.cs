@@ -17,5 +17,9 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("LevelDesign");
         }
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            SceneManager.LoadScene("MasterScene");
+        }
     }
 }

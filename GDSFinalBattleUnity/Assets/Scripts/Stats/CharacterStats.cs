@@ -25,7 +25,7 @@ public class CharacterStats : MonoBehaviour
         damageModifier = 1;
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         _healthbar = GetComponentInChildren<Healthbar>();
         _healthbar.SetSliderMaxValue(maxHealth);
