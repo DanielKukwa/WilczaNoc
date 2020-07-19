@@ -9754,6 +9754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 200
   currentHealth: 0
+  restartDelay: 3
   damageValue: 10
   damageValue2: 30
   damageModifier: 0
@@ -9786,7 +9787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f22bf766bebfa9649a3559dfe9f8766c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashDistance: 4
+  dashDistance: 5
   dashDuration: 0.2
   jumpCurve:
     serializedVersion: 2

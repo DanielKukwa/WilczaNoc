@@ -19,8 +19,8 @@ public class CameraController : MonoBehaviour
     {
         Vector3 desiredPosition = target.position - offset * currentZoom;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        //transform.position = target.position - offset * currentZoom;
-        transform.position = smoothedPosition;
+        transform.position = target.position - offset * currentZoom;
+        //transform.position = smoothedPosition;
 
         transform.LookAt(target.position + Vector3.up * pitch);
     }

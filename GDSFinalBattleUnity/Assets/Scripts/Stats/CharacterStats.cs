@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class CharacterStats : MonoBehaviour
     private Healthbar _healthbar;
     //public Stat damage;
     //public Stat damage2;
+    bool gameEnded = false;
+    public float restartDelay = 1f;
+    Animator animator;
     
 
     [Header("Damage")]
@@ -29,7 +33,8 @@ public class CharacterStats : MonoBehaviour
     {
         _healthbar = GetComponentInChildren<Healthbar>();
         _healthbar.SetSliderMaxValue(maxHealth);
-        
+        animator = GetComponentInChildren<Animator>();
+
 
     }
 
@@ -109,10 +114,24 @@ public class CharacterStats : MonoBehaviour
     public virtual void Die()
     {
         OnCharacterDie?.Invoke();
-        // Die in some way
         // This method is meant to be overwritten
         Debug.Log(transform.name + " died.");
+        if(this.tag == "Player")
+        {
+            if (gameEnded == false)
+            {animator = GetComponentInChildren<Animator>();
+                animator.SetTrigger("died");
+                gameEnded = true;
+                Invoke("Restart", restartDelay);
+            }
+        }
     }
+
+    void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 
     public void IncreaseDamage()
     {
