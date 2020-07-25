@@ -15,6 +15,7 @@ public class CharacterStats : MonoBehaviour
     bool gameEnded = false;
     public float restartDelay = 1f;
     Animator animator;
+    public bool godMode = false;
     
 
     [Header("Damage")]
@@ -116,7 +117,7 @@ public class CharacterStats : MonoBehaviour
         OnCharacterDie?.Invoke();
         // This method is meant to be overwritten
         Debug.Log(transform.name + " died.");
-        if(this.tag == "Player")
+        if(this.tag == "Player" && godMode == false)
         {
             if (gameEnded == false)
             {animator = GetComponentInChildren<Animator>();

@@ -49,7 +49,7 @@ public class SpecialAbilities : MonoBehaviour
 
     void Update()
     {
-        dashTrails.active = false;
+        dashTrails.SetActive(false);
         particles.enableEmission = false;
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -75,8 +75,8 @@ public class SpecialAbilities : MonoBehaviour
             animator.SetTrigger("dash");
             if (Physics.Raycast(ray, out hit, 100))
             {
-                
 
+                
                 startPosition = transform.position;
 
 
@@ -104,7 +104,7 @@ public class SpecialAbilities : MonoBehaviour
     {
         while (elapsedTime <= dashDuration)
         {
-            dashTrails.active = true;
+            dashTrails.SetActive(true);
             particles.enableEmission = true;
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / dashDuration;
