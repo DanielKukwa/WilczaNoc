@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 398313862851219974}
   - component: {fileID: 1320347424754586924}
+  - component: {fileID: 3797538045513843013}
   m_Layer: 0
   m_Name: BloodPuddleV3
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 398313862851219975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.225, y: 0.29999998, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -70,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a157dda6d1db16446808a1a9aa33eeab, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89ed3d8af5214104aac72fe964449e76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,3 +82,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3797538045513843013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398313862851219975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b70f80db79615c47a03656114d5715e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sprites:
+  - {fileID: 21300000, guid: 89ed3d8af5214104aac72fe964449e76, type: 3}
+  - {fileID: 21300000, guid: 82b278bc6cda47e40b2295669a1e0b67, type: 3}
+  - {fileID: 21300000, guid: 5123feaaa15b33e40a009d6e33797e56, type: 3}
