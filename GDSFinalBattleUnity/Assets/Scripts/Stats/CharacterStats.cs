@@ -2,6 +2,7 @@
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class CharacterStats : MonoBehaviour
     public float restartDelay = 1f;
     Animator animator;
     public bool godMode = false;
+    NavMeshAgent agent;
     
 
     [Header("Damage")]
@@ -35,6 +37,7 @@ public class CharacterStats : MonoBehaviour
         _healthbar = GetComponentInChildren<Healthbar>();
         _healthbar.SetSliderMaxValue(maxHealth);
         animator = GetComponentInChildren<Animator>();
+        agent = GetComponent<NavMeshAgent>();
 
 
     }
@@ -123,6 +126,7 @@ public class CharacterStats : MonoBehaviour
             {animator = GetComponentInChildren<Animator>();
                 animator.SetTrigger("died");
                 gameEnded = true;
+                agent.isStopped = true;
                 Invoke("Restart", restartDelay);
             }
         }
