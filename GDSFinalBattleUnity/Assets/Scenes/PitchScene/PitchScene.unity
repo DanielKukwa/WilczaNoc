@@ -9755,6 +9755,7 @@ MonoBehaviour:
   maxHealth: 200
   currentHealth: 0
   restartDelay: 3
+  godMode: 0
   damageValue: 10
   damageValue2: 30
   damageModifier: 0
