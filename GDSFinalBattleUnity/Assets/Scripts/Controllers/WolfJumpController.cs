@@ -97,8 +97,8 @@ public class WolfJumpController : MonoBehaviour
     IEnumerator Jump()
     {
         Vector3 startPosition = transform.position;
-        Vector3 direction = target.position - transform.position;
-        Vector3 targetPosition = transform.position + direction.normalized *( _jumpRadiusTrigger + _landingDistanceBehindPlayer);
+        //Vector3 direction = target.position - transform.position;
+        Vector3 targetPosition = transform.position + transform.forward *( _jumpRadiusTrigger + _landingDistanceBehindPlayer);
         _isJump = true;
         _isMark = true;
         agent.enabled = false;
