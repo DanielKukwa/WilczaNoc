@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MasterScene/MasterScene.unity
     guid: 0a505deffacf8c74baf4217f4cd33f27
+  - enabled: 1
+    path: Assets/Scenes/LevelDesignAlek.unity
+    guid: 151e523bd38c4b644a1caff4575d1020
+  - enabled: 1
+    path: Assets/Scenes/LevelDesignAnti.unity
+    guid: e2646c7b95b5eaa478dc731b1c4d07a9
+  - enabled: 1
+    path: Assets/Scenes/Kamil_enviro.unity
+    guid: 8ca3310babea5a043b497a9eb12b97ff
   m_configObjects: {}

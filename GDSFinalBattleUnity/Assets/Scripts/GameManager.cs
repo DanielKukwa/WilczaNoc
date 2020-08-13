@@ -11,11 +11,13 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F1))
         {
-            SceneManager.LoadScene("PitchScene");
+            SceneManager.LoadScene("LevelDesign");
+            SceneManager.LoadScene("LevelDesignAnti", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Kamil_enviro", LoadSceneMode.Additive);
         }
         if (Input.GetKeyDown(KeyCode.F2))
         {
-            SceneManager.LoadScene("LevelDesign");
+            SceneManager.LoadScene("PitchScene");
         }
         if (Input.GetKeyDown(KeyCode.F3))
         {
