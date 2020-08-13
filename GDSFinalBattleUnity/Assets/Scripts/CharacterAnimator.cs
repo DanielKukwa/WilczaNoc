@@ -8,6 +8,8 @@ public class CharacterAnimator : MonoBehaviour
     public AnimationClip replaceableAttackAnim;
     public AnimationClip[] defaultAttackAnimSet;
     AnimationClip[] currentAttackAnimSet;
+    private AudioSource _audio;
+    [SerializeField] private float _runSoundTrigger;
 
     const float locomotionAnimationSmoothTime = 0.1f;
     NavMeshAgent agent;
@@ -21,8 +23,11 @@ public class CharacterAnimator : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
         combat = GetComponent<CharacterCombat>();
+        _audio = GetComponent<AudioSource>();
+        if(_audio) _audio.Pause();
 
-        if(overrideController == null)
+
+        if (overrideController == null)
         {
             overrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
         }
@@ -42,6 +47,13 @@ public class CharacterAnimator : MonoBehaviour
     {
 
         float speedPercent = agent.velocity.magnitude / agent.speed;
+        if(_audio)
+        {
+            if (speedPercent > _runSoundTrigger) _audio.UnPause();
+            else _audio.Pause();
+        }
+       
+
         animator.SetFloat("speedPercent", speedPercent, locomotionAnimationSmoothTime, Time.deltaTime);
         animator.SetBool("inCombat", combat.InCombat);
     }
