@@ -68,6 +68,7 @@ public class CharacterStats : MonoBehaviour
         {
             CameraShake.Instance.ShakeCamera();
             AudioManager.Instance.PlayWolfHit();
+            AudioManager.Instance.PlayImpactSounds();
             Debug.Log("WOWOWF");
         }
         // If health reaches zero
@@ -92,6 +93,7 @@ public class CharacterStats : MonoBehaviour
         {
             CameraShake.Instance.ShakeCamera();
             AudioManager.Instance.PlayWolfHit();
+            AudioManager.Instance.PlayImpactSounds();
             Debug.Log("WOWOWF");
         }
         // If health reaches zero

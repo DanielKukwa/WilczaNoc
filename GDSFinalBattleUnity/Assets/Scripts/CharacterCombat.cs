@@ -84,6 +84,8 @@ public class CharacterCombat : MonoBehaviour
 
     IEnumerator DoDamage(CharacterStats stats, float delay)
     {
+        if (stats.gameObject.tag == "Player") AudioManager.Instance.PlayWolfAttack();
+
         yield return new WaitForSeconds(delay);
         stats.TakeDamage(myStats.GetValue());
         Instantiate(bloodSplash, new Vector3(stats.transform.position.x, 1.3f, stats.transform.position.z), Quaternion.LookRotation(hitInfo.normal));

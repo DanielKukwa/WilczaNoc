@@ -3624,7 +3624,7 @@ PrefabInstance:
     - target: {fileID: 2681085574709104219, guid: 7288f3a18ab57cf44b5bce84539dc207,
         type: 3}
       propertyPath: lookRadius
-      value: 2.1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2681085574709104219, guid: 7288f3a18ab57cf44b5bce84539dc207,
         type: 3}
@@ -8903,7 +8903,7 @@ PrefabInstance:
     - target: {fileID: 2681085574709104219, guid: 7288f3a18ab57cf44b5bce84539dc207,
         type: 3}
       propertyPath: lookRadius
-      value: 2.1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2681085574709104219, guid: 7288f3a18ab57cf44b5bce84539dc207,
         type: 3}

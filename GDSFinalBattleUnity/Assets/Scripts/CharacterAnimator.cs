@@ -49,6 +49,8 @@ public class CharacterAnimator : MonoBehaviour
     void OnAttack()
     {
         animator.SetTrigger("attack");
+        if(this.gameObject.tag == "Player") AudioManager.Instance.PlayRedLightHit();
+
         int attackIndex = Random.Range(0, currentAttackAnimSet.Length);
         overrideController[replaceableAttackAnim.name] = currentAttackAnimSet[attackIndex];
 
