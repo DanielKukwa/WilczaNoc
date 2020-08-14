@@ -42,9 +42,24 @@ ModelImporter:
   - first:
       74: -5512783131158397014
     second: rig|wolf_T_pose3
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wolf_body_m
+    second: {fileID: 2100000, guid: f6354dddf0c555846a12d3c95d63427e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wolf_eyes_m
+    second: {fileID: 2100000, guid: dcc2f4fed08fdf8408243646b51ce7da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wolf_tooth_m
+    second: {fileID: 2100000, guid: f5a8278a8b3160c4b90bfe1f0c9e245b, type: 2}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
