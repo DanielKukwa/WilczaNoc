@@ -23,11 +23,15 @@ public class EnemySpawner : MonoBehaviour
     private void OnTriggerActive()
     {
         GameObject spawnedEnemy = Instantiate(_enemyToSpawn, transform.position, Quaternion.identity);
-        DirIcon dirIcon = DirectionIconPool.Instance.Get();
-        GameObject canvas = GameObject.FindGameObjectWithTag("DirUI");
-        if (!canvas) Debug.Log("brakCanvsu");
-        dirIcon.transform.SetParent(canvas.transform);
-        dirIcon.gameObject.SetActive(true);
-        dirIcon.SetTarget(spawnedEnemy);
+        if(_eventTrigger.gameObject.tag == "WolfHowl")
+        {
+            DirIcon dirIcon = DirectionIconPool.Instance.Get();
+            GameObject canvas = GameObject.FindGameObjectWithTag("DirUI");
+            if (!canvas) Debug.Log("brakCanvsu");
+            dirIcon.transform.SetParent(canvas.transform);
+            dirIcon.gameObject.SetActive(true);
+            dirIcon.SetTarget(spawnedEnemy);
+        }
+        
     }
 }
