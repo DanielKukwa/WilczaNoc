@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: 897e474aebbfded49b3af579771c8626
+ModelImporter:
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      74: -4579785965118217265
+    second: rig|K_360Slash5
+  - first:
+      74: 4119881220813425412
+    second: rig|K_BattlePose5
+  - first:
+      74: -8638905802302737378
+    second: rig|K_Damage6
+  - first:
+      74: -955239331503253136
+    second: rig|K_Damage7
+  - first:
+      74: 7182305682148031067
+    second: rig|K_Dash7
+  - first:
+      74: 8282908301187707777
+    second: rig|K_Dash8
+  - first:
+      74: 4218805250127484400
+    second: rig|K_Dash_bp2
+  - first:
+      74: -7293755430172343018
+    second: rig|K_Dash_idle7
+  - first:
+      74: 6101659393134402105
+    second: rig|K_Dash_idle8
+  - first:
+      74: 346800869654243119
+    second: rig|K_Dash_idle9
+  - first:
+      74: 4902799725187820839
+    second: rig|K_Dead4
+  - first:
+      74: -5139112956656846527
+    second: rig|K_FastSlash4
+  - first:
+      74: -6599404445886782978
+    second: rig|K_FastSlash5
+  - first:
+      74: 2058762243753221839
+    second: rig|K_FastSlash7
+  - first:
+      74: 2816186450184632717
+    second: rig|K_FastSlash8
+  - first:
+      74: -1982159865687998040
+    second: rig|K_HeartBreaker7
+  - first:
+      74: 5645158565108674922
+    second: rig|K_HeartBreaker8
+  - first:
+      74: 2760454731573685791
+    second: rig|K_HeavySlam5
+  - first:
+      74: -900727526386735890
+    second: rig|K_Idle4
+  - first:
+      74: 1731931818606396504
+    second: rig|K_Jump4
+  - first:
+      74: 8137715513385437849
+    second: rig|K_RunCycle4
+  - first:
+      74: -986160508550512302
+    second: rig|K_WalkCycle4
+  - first:
+      74: 5541469569139093731
+    second: rig|T-pose4
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
