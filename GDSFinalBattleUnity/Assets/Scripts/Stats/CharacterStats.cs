@@ -61,7 +61,8 @@ public class CharacterStats : MonoBehaviour
         // Damage the character
         currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
-        _healthbar.UpdateHealth(currentHealth);
+        if(_healthbar) _healthbar.UpdateHealth(currentHealth);
+       
         //IncreaseDamage();    UNCOMMENT IF NEEDED
 
         if (this.tag != "Player")
