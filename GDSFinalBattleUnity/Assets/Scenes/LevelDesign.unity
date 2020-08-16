@@ -11053,7 +11053,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &800725309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15811,7 +15811,7 @@ PrefabInstance:
     - target: {fileID: 8781937998715656685, guid: 6d23eaf44a3f101418dad1b782b09c27,
         type: 3}
       propertyPath: _isTextBased
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8781937998715656685, guid: 6d23eaf44a3f101418dad1b782b09c27,
         type: 3}
@@ -15822,7 +15822,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _voiceOver
       value: 
-      objectReference: {fileID: 8300000, guid: 57478761ce6a77149992b5867b24aacd, type: 3}
+      objectReference: {fileID: 8300000, guid: 5f09563f0c441494cb436598c6577bf1, type: 3}
     - target: {fileID: 8781937998715656685, guid: 6d23eaf44a3f101418dad1b782b09c27,
         type: 3}
       propertyPath: m_Enabled
@@ -27880,7 +27880,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _voiceOver
       value: 
-      objectReference: {fileID: 8300000, guid: 963fb871820568e4d923ddfeeb3aa330, type: 3}
+      objectReference: {fileID: 8300000, guid: ef368fb9875d08346ada0a40f8bb1572, type: 3}
     - target: {fileID: 8781937998715656685, guid: 6d23eaf44a3f101418dad1b782b09c27,
         type: 3}
       propertyPath: m_Enabled
