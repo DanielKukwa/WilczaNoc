@@ -5932,7 +5932,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5862628165221569485}
-  m_LocalRotation: {x: -0, y: 0.62091696, z: -0, w: 0.7838763}
+  m_LocalRotation: {x: 0, y: 0.6209153, z: 0, w: 0.78387773}
   m_LocalPosition: {x: 80.53, y: 0, z: -128.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7045,6 +7045,24 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &1037415321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6012549541981045163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff00febf6864e314e85c464aa26ab043, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _textures:
+  - {fileID: 2800000, guid: eb49423e47b2ce34589692a60466c562, type: 3}
+  - {fileID: 2800000, guid: 8da21e0630b6d354393888d72c938214, type: 3}
+  - {fileID: 2800000, guid: 8fd3807ae2ca6a34c9d1b17eb6a316a8, type: 3}
+  - {fileID: 2800000, guid: 9a19a55ae0c9fcb43a2441acb9e79c0a, type: 3}
+  _material: {fileID: 2100000, guid: 0c0633f991ee66342b2cf9b779aeda92, type: 2}
 --- !u!1001 &5862628164786831748
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7292,6 +7310,12 @@ PrefabInstance:
 --- !u!4 &1451999180319486401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 4952a394d8ebffd40ae7ccc28cccaa8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 5862628165326756571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6012549541981045163 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 156747145930054512, guid: 4952a394d8ebffd40ae7ccc28cccaa8a,
     type: 3}
   m_PrefabInstance: {fileID: 5862628165326756571}
   m_PrefabAsset: {fileID: 0}

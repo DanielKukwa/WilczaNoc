@@ -63,7 +63,72 @@ ModelImporter:
   - first:
       74: 5541469569139093731
     second: rig|T-pose4
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_m.001
+    second: {fileID: 2100000, guid: 0d8bb2eee584cd34684a15588460a362, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: checker
+    second: {fileID: 2100000, guid: f700d40d1a7ce0b4a83390bc81a33d96, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: checker.001
+    second: {fileID: 2100000, guid: 1fbc77620262a824796edbe79bce6d09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: defaultMat.003
+    second: {fileID: 2100000, guid: bd139b7ab1a98b3448a9e3b6b3f61d4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: dress_blood_m
+    second: {fileID: 2100000, guid: d887f5f226dfc3045a625529e0dc8433, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: eye_white_m.001
+    second: {fileID: 2100000, guid: 4c4a7220a64038a4b9e3c25f6939b36d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: frill
+    second: {fileID: 2100000, guid: 5dc1003012668bd49a6e1bafe3c8cb11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gums.001
+    second: {fileID: 2100000, guid: 11bbe87bcef2e574fa56165881b3ba86, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hood_m.001
+    second: {fileID: 2100000, guid: 0c0633f991ee66342b2cf9b779aeda92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: iris_m.001
+    second: {fileID: 2100000, guid: bc7a341456a1e934dbf1b40f94b44b7b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pupil_m.001
+    second: {fileID: 2100000, guid: c0ef5291e95a3734fa3f3a3a5352fe5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tooth.001
+    second: {fileID: 2100000, guid: c95e35bebf2d5e747a6926ec81ce15a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: underwear_m.001
+    second: {fileID: 2100000, guid: c1bc351e4db80ff49abd15217cd663eb, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
