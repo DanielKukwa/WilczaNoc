@@ -5,8 +5,8 @@ using UnityEngine;
 public class EmisionControl : MonoBehaviour
 {
     private GameObject _player;
-    [SerializeField] private float _fullEmmision = 5f;
-    [SerializeField] private float _noEmmision = 10f;
+    private float _fullEmmision = 2f;
+    private float _noEmmision = 10f;
     Renderer _renderer;
     // Start is called before the first frame update
     void Start()

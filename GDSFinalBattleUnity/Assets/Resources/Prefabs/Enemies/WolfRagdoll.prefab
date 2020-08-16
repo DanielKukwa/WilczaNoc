@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 364925020343913513}
   - component: {fileID: 364925020343913514}
   - component: {fileID: 364925020343913515}
+  - component: {fileID: 8029481614926088156}
   m_Layer: 0
   m_Name: wolf_LA_p
   m_TagString: Untagged
@@ -157,6 +158,18 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &8029481614926088156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364925020343913516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04868342cca6a644d8021860c0c2e773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1282229189730766314
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +184,7 @@ GameObject:
   - component: {fileID: 1282229189730766311}
   - component: {fileID: 1282229189730766312}
   - component: {fileID: 1282229189730766313}
+  - component: {fileID: 3953249351418908187}
   m_Layer: 0
   m_Name: wolf_RL_p
   m_TagString: Untagged
@@ -314,6 +328,18 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &3953249351418908187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282229189730766314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04868342cca6a644d8021860c0c2e773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1667079743465688880
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +385,7 @@ GameObject:
   - component: {fileID: 4142584545711348445}
   - component: {fileID: 4142584545711348446}
   - component: {fileID: 4142584545711348447}
+  - component: {fileID: 2996296862988809467}
   m_Layer: 0
   m_Name: wolf_spine_p
   m_TagString: Untagged
@@ -504,6 +531,18 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &2996296862988809467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4142584545711348448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04868342cca6a644d8021860c0c2e773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5856022109442822563
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,6 +557,7 @@ GameObject:
   - component: {fileID: 5856022109442822560}
   - component: {fileID: 5856022109442822561}
   - component: {fileID: 5856022109442822562}
+  - component: {fileID: 7217782096233149512}
   m_Layer: 0
   m_Name: wolf_ass_p
   m_TagString: Untagged
@@ -661,6 +701,18 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &7217782096233149512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5856022109442822563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04868342cca6a644d8021860c0c2e773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6176797148802725533
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,6 +727,7 @@ GameObject:
   - component: {fileID: 6176797148802725530}
   - component: {fileID: 6176797148802725531}
   - component: {fileID: 6176797148802725532}
+  - component: {fileID: 3634896231735019567}
   m_Layer: 0
   m_Name: wolf_head_p
   m_TagString: Untagged
@@ -820,6 +873,18 @@ CharacterJoint:
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &3634896231735019567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6176797148802725533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04868342cca6a644d8021860c0c2e773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7206679865927926895
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +949,7 @@ GameObject:
   - component: {fileID: 7408643747284944577}
   - component: {fileID: 7408643747284944578}
   - component: {fileID: 7408643747284944579}
+  - component: {fileID: 2827814165855362560}
   m_Layer: 0
   m_Name: root_chest
   m_TagString: Untagged
@@ -997,3 +1063,15 @@ CapsuleCollider:
   m_Height: 0.3691134
   m_Direction: 2
   m_Center: {x: 0.06987926, y: -0.32000005, z: 0.15157862}
+--- !u!114 &2827814165855362560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7408643747284944580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04868342cca6a644d8021860c0c2e773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
