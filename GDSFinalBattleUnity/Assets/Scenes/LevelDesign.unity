@@ -29976,6 +29976,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5862628165221569480, guid: f3165760c2431a34095b6f259126fc17,
+        type: 3}
+      propertyPath: attack2Speed
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862628165221569480, guid: f3165760c2431a34095b6f259126fc17,
+        type: 3}
+      propertyPath: attack2Delay
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5862628165221569484, guid: f3165760c2431a34095b6f259126fc17,
         type: 3}
       propertyPath: m_LocalPosition.x
