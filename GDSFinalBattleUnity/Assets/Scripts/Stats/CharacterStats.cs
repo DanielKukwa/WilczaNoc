@@ -35,7 +35,8 @@ public class CharacterStats : MonoBehaviour
     protected virtual void Start()
     {
         _healthbar = GetComponentInChildren<Healthbar>();
-        _healthbar.SetSliderMaxValue(maxHealth);
+        if(_healthbar) _healthbar.SetSliderMaxValue(maxHealth);
+
         animator = GetComponentInChildren<Animator>();
         agent = GetComponent<NavMeshAgent>();
 
@@ -61,7 +62,8 @@ public class CharacterStats : MonoBehaviour
         // Damage the character
         currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
-        _healthbar.UpdateHealth(currentHealth);
+        if(_healthbar) _healthbar.UpdateHealth(currentHealth);
+       
         //IncreaseDamage();    UNCOMMENT IF NEEDED
 
         if (this.tag != "Player")
