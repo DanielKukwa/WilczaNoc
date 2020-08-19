@@ -8,6 +8,7 @@ public class CutsceneStart : MonoBehaviour
 {
     private float _holdTime = 1f;
     private float _currentHoldTime = 0f;
+    private bool _skip = false;
     [SerializeField] private float _blackScreenTime;
     [SerializeField] private Animator _blackScreen;
     [SerializeField] private Animator _letterbox;
@@ -37,11 +38,12 @@ public class CutsceneStart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKey)
+        if (Input.anyKey && _skip == false)
         {
             _currentHoldTime += Time.deltaTime;
             if(_currentHoldTime >= _holdTime)
             {
+                _skip = true;
                 Final();
             }
         }
@@ -70,13 +72,18 @@ public class CutsceneStart : MonoBehaviour
         PlayerManager.instance.player.transform.position = _destination.position;
         PlayerManager.instance.player.transform.rotation = _destination.rotation;
         _letterbox.SetTrigger("LetterOut");
-        _blackScreen.Play("BS_clear");
-        _playerController.enabled = true;
+        _blackScreen.Play("BS_clear");       
         _slider.value = 0f;
         _anyKey.SetActive(false);
-        Destroy(gameObject, _destroyTime);
+        StartCoroutine(DestroyObject());
     }
 
+    IEnumerator DestroyObject()
+    {
+        yield return new WaitForSeconds(_destroyTime);
+        _playerController.enabled = true;
+        Destroy(gameObject);
+    }
     IEnumerator FadeIn()
     {
         yield return new WaitForSeconds(_blackScreenTime);
