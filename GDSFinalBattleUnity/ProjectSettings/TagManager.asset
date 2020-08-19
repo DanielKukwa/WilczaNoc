@@ -6,6 +6,8 @@ TagManager:
   tags:
   - DirUI
   - WolfHowl
+  - BabciaLight
+  - FinalSceneTrigger
   layers:
   - Default
   - TransparentFX
