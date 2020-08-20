@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Cutscene : MonoBehaviour
 {
-    private bool _play = false;
+    protected bool _play = false;
 
     [SerializeField] private float _unmovableTime = 1f;
 
@@ -34,7 +34,7 @@ public class Cutscene : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if (Input.anyKey && _skip == false)
         {
@@ -55,12 +55,18 @@ public class Cutscene : MonoBehaviour
 
     protected virtual void StartEvent()
     {
-
+        _anyKey.SetActive(true);
+        _playerController.enabled = false;
+        _letterbox.SetTrigger("LetterIn");
     }
 
     protected virtual void Final()
     {
-
+        _skip = true;
+        _letterbox.SetTrigger("LetterOut");
+        _slider.value = 0f;
+        _anyKey.SetActive(false);
+        StartCoroutine(DestroyObject());
     }
 
     protected virtual IEnumerator DestroyObject()

@@ -42,11 +42,9 @@ public class CutsceneStart : Cutscene
     protected override void Final()
     {
         _playerAgent.SetDestination(_destination.position);
-        _letterbox.SetTrigger("LetterOut");
         _blackScreen.Play("BS_clear");       
-        _slider.value = 0f;
-        _anyKey.SetActive(false);
-        StartCoroutine(DestroyObject());
+       
+        base.Final();
     }
 
     IEnumerator FadeIn()
