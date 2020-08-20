@@ -69,9 +69,11 @@ public class CharacterStats : MonoBehaviour
         if (this.tag != "Player")
         {
             CameraShake.Instance.ShakeCamera();
-            AudioManager.Instance.PlayWolfHit();
             AudioManager.Instance.PlayImpactSounds();
-            Debug.Log("WOWOWF");
+            if (this.tag != "Thing")
+            {
+                AudioManager.Instance.PlayWolfHit();
+            }
         }
         // If health reaches zero
         if (currentHealth <= 0)
@@ -93,10 +95,12 @@ public class CharacterStats : MonoBehaviour
 
         if (this.tag != "Player")
         {
-            CameraShake.Instance.ShakeCamera();
-            AudioManager.Instance.PlayWolfHit();
+            CameraShake.Instance.ShakeCamera();          
             AudioManager.Instance.PlayImpactSounds();
-            Debug.Log("WOWOWF");
+            if (this.tag != "Thing")
+            {
+                AudioManager.Instance.PlayWolfHit();
+            }
         }
         // If health reaches zero
         if (currentHealth <= 0)

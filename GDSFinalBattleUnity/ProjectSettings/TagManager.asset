@@ -10,6 +10,7 @@ TagManager:
   - FinalSceneTrigger
   - LetterBox
   - AnyKey
+  - Thing
   layers:
   - Default
   - TransparentFX
