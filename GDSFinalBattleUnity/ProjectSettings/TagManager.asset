@@ -8,6 +8,8 @@ TagManager:
   - WolfHowl
   - BabciaLight
   - FinalSceneTrigger
+  - LetterBox
+  - AnyKey
   layers:
   - Default
   - TransparentFX
