@@ -75,4 +75,19 @@ public class Cutscene : MonoBehaviour
         _playerController.enabled = true;
         Destroy(gameObject);
     }
+
+    protected IEnumerator LookAt(Transform transform)
+    {
+        Vector3 direction = (transform.position - _playerController.transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
+
+        float elapsedTime = 0f;
+        while(elapsedTime < 1f)
+        {
+            elapsedTime += Time.deltaTime;
+            _playerController.transform.rotation = Quaternion.Slerp(_playerController.transform.rotation, lookRotation, elapsedTime);
+            yield return null;
+        }
+        
+    }
 }

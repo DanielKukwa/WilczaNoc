@@ -63,12 +63,12 @@ public class ForesterCutscene : Cutscene
     IEnumerator GoToPoint()
     {
         _playerAgent.SetDestination(_destination.position);
-        _playerController.motor.SetTarget(_destination);
+        StartCoroutine(LookAt(_destination));
         while (Vector3.Distance(_playerAgent.transform.position, _destination.position) > _destinationDistanceOffset)
         {
             yield return null;
         }
-        _playerController.motor.SetTarget(_foresterTransform);
+        StartCoroutine(LookAt(_foresterTransform));
         _audio.Play();
 
         yield return new WaitForSeconds(_audioTime);
