@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     Camera cam;
     public LayerMask movementMask;
-    PlayerMotor motor;
+    public PlayerMotor motor;
     public Interactable focus;
     public bool isFirstAttack;
 
