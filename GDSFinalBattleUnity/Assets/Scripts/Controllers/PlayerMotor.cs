@@ -60,5 +60,8 @@ public class PlayerMotor : MonoBehaviour
 
     }
 
-  
+    public void SetTarget(Transform target)
+    {
+            this.target = target;
+    }
 }
