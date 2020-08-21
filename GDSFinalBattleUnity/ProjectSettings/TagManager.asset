@@ -11,6 +11,7 @@ TagManager:
   - LetterBox
   - AnyKey
   - Thing
+  - Forester
   layers:
   - Default
   - TransparentFX
