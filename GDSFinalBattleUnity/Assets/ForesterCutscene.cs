@@ -7,7 +7,7 @@ public class ForesterCutscene : Cutscene
     [SerializeField] Animator[] _wolfAnimators;
 
     [SerializeField] LookRadiusTrigger _trigger;
-    private Transform _foresterTransform;
+    private Forester _forester;
     [SerializeField] GameObject[] _wolves;
     private bool _wolfStopEat = false;
 
@@ -21,7 +21,7 @@ public class ForesterCutscene : Cutscene
     {
         base.Start();
 
-        _foresterTransform = GameObject.FindGameObjectWithTag("Forester").transform;
+        _forester = GameObject.FindGameObjectWithTag("Forester").GetComponent<Forester>();
         foreach (Animator anim in _wolfAnimators)
         {
             anim.SetTrigger("Eat");
@@ -68,7 +68,7 @@ public class ForesterCutscene : Cutscene
         {
             yield return null;
         }
-        StartCoroutine(LookAt(_foresterTransform));
+        StartCoroutine(LookAt(_forester.transform));
         _audio.Play();
 
         yield return new WaitForSeconds(_audioTime);
@@ -78,6 +78,9 @@ public class ForesterCutscene : Cutscene
     protected override void Final()
     {
         _playerAgent.SetDestination(_destination.position);
+        _forester.Healthbar.gameObject.SetActive(true);
+        _forester.Healthbar.SetSliderMaxValue(10);
+        _forester.Healthbar.SetSliderValue(1);
         base.Final();
     }
 }

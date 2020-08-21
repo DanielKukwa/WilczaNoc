@@ -25,6 +25,11 @@ public class Healthbar : MonoBehaviour
         _slider.value = value;
     }
 
+    public void SetSliderValue(int value)
+    {
+        _slider.value = value;
+    }
+
     public void UpdateHealth(int value)
     {
         _slider.value = value;
