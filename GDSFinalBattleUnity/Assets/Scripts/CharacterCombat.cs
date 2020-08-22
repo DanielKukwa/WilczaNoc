@@ -58,16 +58,32 @@ public class CharacterCombat : MonoBehaviour
 
     public void Attack(CharacterStats targetStats)
     {
-        if (attackCooldown <= 0f && targetStats != null && handAxe.active)
+        if (this.gameObject.tag == "Player" && handAxe.active)
         {
-            StartCoroutine(DoDamage(targetStats, attackDelay));
+            if (attackCooldown <= 0f && targetStats != null)
+            {
+                StartCoroutine(DoDamage(targetStats, attackDelay));
 
-            if (OnAttack != null)
-                OnAttack();
+                if (OnAttack != null)
+                    OnAttack();
 
-            attackCooldown = 1f / attackSpeed;
-            InCombat = true;
-            lastAttackTime = Time.time;
+                attackCooldown = 1f / attackSpeed;
+                InCombat = true;
+                lastAttackTime = Time.time;
+            }
+        } else if(this.gameObject.tag != "Player")
+        {
+            if (attackCooldown <= 0f && targetStats != null)
+            {
+                StartCoroutine(DoDamage(targetStats, attackDelay));
+
+                if (OnAttack != null)
+                    OnAttack();
+
+                attackCooldown = 1f / attackSpeed;
+                InCombat = true;
+                lastAttackTime = Time.time;
+            }
         }
     }
 
