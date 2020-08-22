@@ -349,4 +349,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f329f15b740e4f14e80bfb378f38778c, type: 2}
   beforeTransparentCustomPostProcesses: []
   beforePostProcessCustomPostProcesses: []
-  afterPostProcessCustomPostProcesses: []
+  afterPostProcessCustomPostProcesses:
+  - Knife.HDRPOutline.Core.HDRPOutline, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
