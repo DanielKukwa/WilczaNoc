@@ -13,13 +13,15 @@ public class Pickable : Interactable
         handAxe.SetActive(false);
     }
 
+
     public override void Interact()
     {
+
         base.Interact();
         handAxe.SetActive(true);
         Destroy(gameObject);
+        
     }
     
-      
-    
+
 }

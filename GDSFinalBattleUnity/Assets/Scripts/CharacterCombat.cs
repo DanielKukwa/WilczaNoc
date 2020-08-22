@@ -31,6 +31,8 @@ public class CharacterCombat : MonoBehaviour
     private GameObject bloodDecay;
     private RaycastHit hitInfo;
 
+    GameObject handAxe;
+
     protected virtual void Start()
     {
         myStats = GetComponent<CharacterStats>();
@@ -38,6 +40,8 @@ public class CharacterCombat : MonoBehaviour
         bloodDecay = (GameObject) Resources.Load("Prefabs/Blood/BloodDecay");
         //var blood = Resources.Load("Prefabs/Blood/BloodSplashV3");
         bloodSplash = blood as GameObject;
+
+        handAxe = GameObject.Find("HandAxe");
     }
 
      void Update()
@@ -54,7 +58,7 @@ public class CharacterCombat : MonoBehaviour
 
     public void Attack(CharacterStats targetStats)
     {
-        if (attackCooldown <= 0f && targetStats != null)
+        if (attackCooldown <= 0f && targetStats != null && handAxe.active)
         {
             StartCoroutine(DoDamage(targetStats, attackDelay));
 
@@ -69,7 +73,7 @@ public class CharacterCombat : MonoBehaviour
 
     public void Attack2(CharacterStats targetStats)
     {
-        if (attack2Cooldown <= 0f && targetStats != null)
+        if (attack2Cooldown <= 0f && targetStats != null && handAxe.active)
         {
             StartCoroutine(DoDamage2(targetStats, attack2Delay));
 
