@@ -12,6 +12,7 @@ TagManager:
   - AnyKey
   - Thing
   - Forester
+  - Interact
   layers:
   - Default
   - TransparentFX
