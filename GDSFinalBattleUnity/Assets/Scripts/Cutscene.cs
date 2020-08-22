@@ -36,25 +36,30 @@ public class Cutscene : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        if (Input.anyKey && _skip == false)
+        if (_play)
         {
-            _currentHoldTime += Time.deltaTime;
-            if (_currentHoldTime >= _holdTime)
+            if (Input.anyKey && _skip == false)
             {
-                _skip = true;
-                Final();
+                _currentHoldTime += Time.deltaTime;
+                if (_currentHoldTime >= _holdTime)
+                {
+                    _skip = true;
+                    Final();
+                }
             }
-        }
-        else
-        {
-            _currentHoldTime = 0f;
-        }
+            else
+            {
+                _currentHoldTime = 0f;
+            }
 
-        _slider.value = _currentHoldTime;
+            _slider.value = _currentHoldTime;
+        }
+        
     }
 
     protected virtual void StartEvent()
     {
+        _play = true;
         _anyKey.SetActive(true);
         _playerController.enabled = false;
         _letterbox.SetTrigger("LetterIn");

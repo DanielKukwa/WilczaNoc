@@ -22,9 +22,7 @@ public class CutsceneStart : Cutscene
     {
         base.Start();
 
-        _playerController.enabled = false;
-
-        _letterbox.SetTrigger("LetterIn");
+        StartEvent();
         StartCoroutine(FadeIn());       
     }
 

@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CutsceneBabcia : MonoBehaviour
+public class CutsceneBabcia : Cutscene
 {
     private GameObject _light;
 
-    private void Start()
+    [SerializeField] EventTrigger _eventTrigger;
+
+    protected override void Start()
     {
-        //GameObject
+        base.Start();
+        _eventTrigger.OnEventTrigger += StartEvent;
+        _eventTrigger.gameObject.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    
 }
