@@ -21,6 +21,7 @@ public class EatableCorpse : Interactable
         base.Interact();
 
         Eat();
+        Destroy(this);
 
     }
 
