@@ -5,6 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    private void Awake()
+    {
+        if (!Application.isEditor)
+        {         
+            SceneManager.LoadScene("LevelDesignAnti", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Kamil_enviro", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Events", LoadSceneMode.Additive);
+            SceneManager.LoadScene("DanInteracts", LoadSceneMode.Additive);
+        }
+        
+    }
 
     // Update is called once per frame
     void Update()
@@ -12,8 +23,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F1))
         {
             SceneManager.LoadScene("LevelDesign");
-            SceneManager.LoadScene("LevelDesignAnti", LoadSceneMode.Additive);
-            SceneManager.LoadScene("Kamil_enviro", LoadSceneMode.Additive);
+            
         }
         if (Input.GetKeyDown(KeyCode.F2))
         {
