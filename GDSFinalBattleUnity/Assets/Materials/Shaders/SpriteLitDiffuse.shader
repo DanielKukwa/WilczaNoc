@@ -317,7 +317,7 @@ Shader "Sprites/SpriteLit"
                         float _SampleTexture2D_A9FE4D87_G_5 = _SampleTexture2D_A9FE4D87_RGBA_0.g;
                         float _SampleTexture2D_A9FE4D87_B_6 = _SampleTexture2D_A9FE4D87_RGBA_0.b;
                         float _SampleTexture2D_A9FE4D87_A_7 = _SampleTexture2D_A9FE4D87_RGBA_0.a;
-                        surface.Alpha = _SampleTexture2D_A9FE4D87_A_7;
+                        surface.Alpha = _SampleTexture2D_A9FE4D87_A_7 * _Color.a;
                         surface.AlphaClipThreshold = 0;
                         return surface;
                     }
@@ -859,7 +859,7 @@ Shader "Sprites/SpriteLit"
                         surface.Emission = IsGammaSpace() ? float3(0, 0, 0) : SRGBToLinear(float3(0, 0, 0));
                         surface.Smoothness = 0.5;
                         surface.Occlusion = 1;
-                        surface.Alpha = _SampleTexture2D_A9FE4D87_A_7;
+                        surface.Alpha = _SampleTexture2D_A9FE4D87_A_7 * _Color.a;
                         surface.AlphaClipThreshold = 0;
                         return surface;
                     }
@@ -1369,7 +1369,7 @@ Shader "Sprites/SpriteLit"
                         float _SampleTexture2D_A9FE4D87_G_5 = _SampleTexture2D_A9FE4D87_RGBA_0.g;
                         float _SampleTexture2D_A9FE4D87_B_6 = _SampleTexture2D_A9FE4D87_RGBA_0.b;
                         float _SampleTexture2D_A9FE4D87_A_7 = _SampleTexture2D_A9FE4D87_RGBA_0.a;
-                        surface.Alpha = _SampleTexture2D_A9FE4D87_A_7;
+                        surface.Alpha = _SampleTexture2D_A9FE4D87_A_7 * _Color.a;
                         surface.AlphaClipThreshold = 0;
                         return surface;
                     }
@@ -1957,7 +1957,7 @@ Shader "Sprites/SpriteLit"
                         surface.Emission = IsGammaSpace() ? float3(0, 0, 0) : SRGBToLinear(float3(0, 0, 0));
                         surface.Smoothness = 0.5;
                         surface.Occlusion = 1;
-                        surface.Alpha = _SampleTexture2D_A9FE4D87_A_7;
+                        surface.Alpha = _SampleTexture2D_A9FE4D87_A_7 * _Color.a;
                         surface.AlphaClipThreshold = 0;
                         return surface;
                     }
