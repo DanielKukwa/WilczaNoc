@@ -6609,17 +6609,17 @@ PrefabInstance:
     - target: {fileID: 8781937998715656674, guid: 6d23eaf44a3f101418dad1b782b09c27,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.7
+      value: 33.9
       objectReference: {fileID: 0}
     - target: {fileID: 8781937998715656674, guid: 6d23eaf44a3f101418dad1b782b09c27,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.9
       objectReference: {fileID: 0}
     - target: {fileID: 8781937998715656674, guid: 6d23eaf44a3f101418dad1b782b09c27,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 95
+      value: 88.48
       objectReference: {fileID: 0}
     - target: {fileID: 8781937998715656674, guid: 6d23eaf44a3f101418dad1b782b09c27,
         type: 3}
@@ -8051,7 +8051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &800725309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18947,10 +18947,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.65
+  m_Radius: 0.66462517
+  m_Height: 1.6565425
   m_Direction: 1
-  m_Center: {x: 0, y: 0.47, z: 0}
+  m_Center: {x: 0.16364512, y: 0.4699998, z: 0.32827058}
 --- !u!82 &1961920460
 AudioSource:
   m_ObjectHideFlags: 0
