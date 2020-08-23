@@ -1,0 +1,72 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[RequireComponent(typeof(CharacterStats))]
+public class Destructables : Interactable
+{
+    PlayerManager playerManager;
+    CharacterStats myStats;
+    PlayerController playerController;
+    public bool isFirstAttack;
+    private GameObject _particlesSmall;
+    //private GameObject _particlesBig;
+    private bool _playOnce = false;
+
+    void Start()
+    {
+        _particlesSmall = (GameObject)Resources.Load("Prefabs/Enviro/DestructablesSmall");
+        //_particlesBig = (GameObject)Resources.Load("Prefabs/Enviro/DestructablesBig");
+
+        playerManager = PlayerManager.instance;
+        myStats = GetComponent<CharacterStats>();
+        playerController = playerManager.player.GetComponent<PlayerController>();
+
+        myStats.OnCharacterDie += Destruct;
+
+    }
+
+    public override void Interact()
+    {
+        base.Interact();
+
+        CharacterCombat playerCombat = playerManager.player.GetComponent<CharacterCombat>();
+
+        isFirstAttack = playerController.GetAttackInfo();
+
+        if (playerCombat != null && isFirstAttack == true)
+        {
+
+            playerCombat.Attack(myStats);
+
+            if (!_playOnce)
+            {
+                _playOnce = true;
+                playerCombat.OnDeleyedAttack += SmallParticles;
+            }
+            
+        }
+        else if (playerCombat != null && isFirstAttack == false)
+        {
+            if (!_playOnce)
+            {
+                _playOnce = true;
+                playerCombat.OnDeleyedAttack += SmallParticles;
+            }
+        }
+
+
+    }
+
+    private void SmallParticles()
+    {
+        Vector3 partPosition = new Vector3(transform.position.x, 1f, transform.position.z);
+        Instantiate(_particlesSmall, partPosition, Quaternion.LookRotation(Vector3.up));
+        _playOnce = false;
+    }
+
+    private void Destruct()
+    {
+        Destroy(this.gameObject);
+    }
+}

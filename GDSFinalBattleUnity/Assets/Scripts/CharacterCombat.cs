@@ -26,6 +26,8 @@ public class CharacterCombat : MonoBehaviour
 
     public event System.Action OnAttack;
     public event System.Action OnAttack2;
+    public event System.Action OnDeleyedAttack;
+    public event System.Action OnDeleyedAttack2;
 
     private GameObject bloodSplash;
     private GameObject bloodDecay;
@@ -108,6 +110,10 @@ public class CharacterCombat : MonoBehaviour
 
         yield return new WaitForSeconds(delay);
         stats.TakeDamage(myStats.GetValue());
+
+        OnDeleyedAttack?.Invoke();
+        OnDeleyedAttack = null;
+
         if(stats.gameObject.tag != "Thing")
         {
             Instantiate(bloodSplash, new Vector3(stats.transform.position.x, 1.3f, stats.transform.position.z), Quaternion.LookRotation(hitInfo.normal));
@@ -129,6 +135,10 @@ public class CharacterCombat : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         stats.TakeDamage(myStats.GetValue2());
+
+        OnDeleyedAttack2?.Invoke();
+        OnDeleyedAttack2 = null;
+
         Instantiate(bloodSplash, new Vector3(stats.transform.position.x, 1.3f, stats.transform.position.z), Quaternion.LookRotation(hitInfo.normal));
 
         {
