@@ -9,7 +9,8 @@ public class CharacterCombat : MonoBehaviour
 
     const float combatCooldown = 5f;
     float lastAttackTime;
-
+    public bool axeActive = false;
+    
     [Header("First Attack")]
     public float attackSpeed = 1f;
     public float attackCooldown = 0f;
@@ -55,6 +56,12 @@ public class CharacterCombat : MonoBehaviour
         {
             InCombat = false;
         }
+
+        if(axeActive == true)
+        {
+            handAxe.SetActive(true);
+        }
+     
 
     }
 
