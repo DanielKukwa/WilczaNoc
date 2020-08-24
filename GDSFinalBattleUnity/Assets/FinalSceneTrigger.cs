@@ -18,6 +18,7 @@ public class FinalSceneTrigger : MonoBehaviour
     private void OnDie()
     {
         _lightAnim.SetTrigger("LightOn");
+        // BabciaCutscene wyłącza trigger
         _finalSceneTrigger.transform.GetChild(0).gameObject.SetActive(true);
     }
 }
