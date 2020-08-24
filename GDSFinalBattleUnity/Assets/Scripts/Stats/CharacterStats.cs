@@ -131,7 +131,8 @@ public class CharacterStats : MonoBehaviour
         if(this.tag == "Player" && godMode == false)
         {
             if (gameEnded == false)
-            {animator = GetComponentInChildren<Animator>();
+            {
+                animator = GetComponentInChildren<Animator>();
                 animator.SetTrigger("died");
                 gameEnded = true;
                 agent.isStopped = true;
@@ -140,9 +141,14 @@ public class CharacterStats : MonoBehaviour
         }
     }
 
+
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("LevelDesignAnti", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Kamil_enviro", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Events", LoadSceneMode.Additive);
+        SceneManager.LoadScene("DanInteracts", LoadSceneMode.Additive);
     }
 
 
