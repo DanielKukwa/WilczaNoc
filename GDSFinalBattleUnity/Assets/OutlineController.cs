@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class OutlineController : MonoBehaviour
 {
-    MeshRenderer renderer;
     Camera cam;
-    public float dist;
+    
     // Start is called before the first frame update
     void Start()
     {
-        renderer = GetComponentInChildren<MeshRenderer>();
-        renderer.enabled = false;
-        cam = Camera.FindObjectOfType<Camera>();
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -27,18 +24,20 @@ public class OutlineController : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, dist))
+        if(Physics.Raycast(ray, out hit, 100))
         {
-            if (hit.collider.CompareTag("Interact"))
+            if (hit.collider.GetComponent<Interactable>())
             {
-                renderer.enabled = true;
+                hit.collider.GetComponentInChildren<Knife.HDRPOutline.Core.OutlineObject>().enabled = true;
+                
             }
+            else
+            {
+               
+            }
+           
+        }
 
-        }
-        else
-        {
-            renderer.enabled = false;
-        }
 
 
     }
