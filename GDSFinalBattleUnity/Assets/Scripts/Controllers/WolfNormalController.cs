@@ -10,6 +10,7 @@ public class WolfNormalController: MonoBehaviour
     public Transform target;
     NavMeshAgent agent;
 
+    private bool _closeToPlayer = false;
     // TODO use it to enemy attack
     CharacterCombat combat;
 
@@ -28,7 +29,17 @@ public class WolfNormalController: MonoBehaviour
 
         if (distance <= lookRadius)
         {
-            agent.SetDestination(target.position);
+            if (!_closeToPlayer)
+            {
+                agent.SetDestination(target.position);
+                _closeToPlayer = true;
+            }
+
+            if(distance < 50f)
+            {
+                agent.SetDestination(target.position);
+            }
+            
 
             if (distance <= agent.stoppingDistance)
             {
