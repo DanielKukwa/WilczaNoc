@@ -4,41 +4,32 @@ using UnityEngine;
 
 public class OutlineController : MonoBehaviour
 {
-    Camera cam;
-    
-    // Start is called before the first frame update
+    Knife.HDRPOutline.Core.OutlineObject outline;
+    Knife.HDRPOutline.Core.OutlineObject[] outlinesList;
+
     void Start()
     {
-        cam = Camera.main;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        LookAtRay();
         
+        outline = GetComponentInChildren<Knife.HDRPOutline.Core.OutlineObject>();
+        outlinesList = GetComponentsInChildren<Knife.HDRPOutline.Core.OutlineObject>();
+        outline.enabled = false;
     }
 
-    private void LookAtRay()
+    public void ShowOutline()
     {
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if(Physics.Raycast(ray, out hit, 100))
+        foreach(Knife.HDRPOutline.Core.OutlineObject outline in outlinesList) 
         {
-            if (hit.collider.GetComponent<Interactable>())
-            {
-                hit.collider.GetComponentInChildren<Knife.HDRPOutline.Core.OutlineObject>().enabled = true;
-                
-            }
-            else
-            {
-               
-            }
-           
+            outline.enabled = true;
         }
 
-
-
     }
+
+    public void HideOutline()
+    {
+        foreach (Knife.HDRPOutline.Core.OutlineObject outline in outlinesList)
+        {
+            outline.enabled = false;
+        }
+    }
+
 }

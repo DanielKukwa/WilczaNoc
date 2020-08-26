@@ -134,7 +134,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71624777}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -142,8 +142,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9528302, g: 0.085395135, b: 0.085395135, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.48
-  fresnelPower: 3.03
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &148824007 stripped
 GameObject:
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 148824007}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -166,8 +166,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9528302, g: 0.085395135, b: 0.085395135, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.48
-  fresnelPower: 3.03
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &212970716 stripped
 GameObject:
@@ -182,7 +182,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212970716}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -190,8 +190,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.21
-  fresnelPower: 2.65
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1001 &398564156
 PrefabInstance:
@@ -275,7 +275,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544447425}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -283,8 +283,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.21
-  fresnelPower: 2.65
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &674236865 stripped
 GameObject:
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674236865}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -307,8 +307,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.21
-  fresnelPower: 2.65
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &732302459 stripped
 GameObject:
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732302459}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -331,8 +331,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9528302, g: 0.085395135, b: 0.085395135, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.48
-  fresnelPower: 3.03
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &785107232
 GameObject:
@@ -344,6 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 785107235}
   - component: {fileID: 785107234}
+  - component: {fileID: 785107236}
   - component: {fileID: 785107233}
   m_Layer: 0
   m_Name: ManCorpse
@@ -394,6 +395,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -5.0490003, y: 60.9, z: 0}
+--- !u!114 &785107236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785107232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6294588f5c5d34cb6a68be5d8e1d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &966539987 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7513393785145475931, guid: 8ef293098847205489060b8b077140a7,
@@ -407,7 +420,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 966539987}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -415,8 +428,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.21
-  fresnelPower: 2.65
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &1003006283 stripped
 GameObject:
@@ -431,7 +444,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003006283}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -439,8 +452,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.21
-  fresnelPower: 2.65
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1001 &1004838218
 PrefabInstance:
@@ -524,7 +537,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092839231}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -532,8 +545,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.990566, g: 0.06074228, b: 0.06074228, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.51
-  fresnelPower: 3.01
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &1125315453 stripped
 GameObject:
@@ -548,7 +561,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125315453}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -556,8 +569,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9528302, g: 0.085395135, b: 0.085395135, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.48
-  fresnelPower: 3.03
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &1135996952 stripped
 GameObject:
@@ -572,7 +585,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135996952}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -580,8 +593,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.21
-  fresnelPower: 2.65
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &1194979910 stripped
 GameObject:
@@ -596,7 +609,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194979910}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -604,8 +617,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.21
-  fresnelPower: 2.65
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &1251750148 stripped
 GameObject:
@@ -620,7 +633,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251750148}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -628,8 +641,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9528302, g: 0.085395135, b: 0.085395135, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.48
-  fresnelPower: 3.03
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &1272517366 stripped
 GameObject:
@@ -644,7 +657,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272517366}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -652,8 +665,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9528302, g: 0.085395135, b: 0.085395135, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.48
-  fresnelPower: 3.03
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &1405520962 stripped
 GameObject:
@@ -668,7 +681,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405520962}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -676,8 +689,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9528302, g: 0.085395135, b: 0.085395135, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.48
-  fresnelPower: 3.03
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &1433414454 stripped
 GameObject:
@@ -692,7 +705,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433414454}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -700,8 +713,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9528302, g: 0.085395135, b: 0.085395135, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.48
-  fresnelPower: 3.03
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1001 &1473271171
 PrefabInstance:
@@ -815,7 +828,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498752657}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -823,8 +836,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.21
-  fresnelPower: 2.65
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &1512819412 stripped
 GameObject:
@@ -839,7 +852,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512819412}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -847,8 +860,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9528302, g: 0.085395135, b: 0.085395135, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.48
-  fresnelPower: 3.03
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &1533303833 stripped
 GameObject:
@@ -863,7 +876,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533303833}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -871,8 +884,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9528302, g: 0.085395135, b: 0.085395135, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.48
-  fresnelPower: 3.03
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &1643820319 stripped
 GameObject:
@@ -887,7 +900,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643820319}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -895,8 +908,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.21
-  fresnelPower: 2.65
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1 &1663436774 stripped
 GameObject:
@@ -911,7 +924,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663436774}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
   m_Name: 
@@ -919,8 +932,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.9528302, g: 0.085395135, b: 0.085395135, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 2.48
-  fresnelPower: 3.03
+  fresnelScale: 5
+  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!4 &1766270185 stripped
 Transform:
