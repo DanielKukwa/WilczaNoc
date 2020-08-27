@@ -12,7 +12,7 @@ public class Cutscene : MonoBehaviour
 
     protected Animator _letterbox;
 
-    private bool _skip = false;
+    protected bool _skip = false;
     private float _holdTime = 1f;
     private float _currentHoldTime = 0f;
     protected GameObject _anyKey;
