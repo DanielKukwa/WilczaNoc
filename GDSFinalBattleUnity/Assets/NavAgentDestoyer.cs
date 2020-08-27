@@ -7,16 +7,19 @@ public class NavAgentDestoyer : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        
-        WolfNormalController wolfNormalController = other.gameObject.GetComponent<WolfNormalController>();
-        if (wolfNormalController)
+        if(other.tag != "Player")
         {
-            NavMeshAgent agent = other.gameObject.GetComponent<NavMeshAgent>();
-            Destroy(agent);
-            WolfAnimator wolfAnimator = other.gameObject.GetComponent<WolfAnimator>();
-            wolfAnimator.Animator.SetFloat("speedPercent", 0);
-            Destroy(wolfAnimator);
-            Destroy(wolfNormalController);
+            WolfNormalController wolfNormalController = other.gameObject.GetComponent<WolfNormalController>();
+            if (wolfNormalController)
+            {
+                NavMeshAgent agent = other.gameObject.GetComponent<NavMeshAgent>();
+                Destroy(agent);
+                WolfAnimator wolfAnimator = other.gameObject.GetComponent<WolfAnimator>();
+                wolfAnimator.Animator.SetFloat("speedPercent", 0);
+                Destroy(wolfAnimator);
+                Destroy(wolfNormalController);
+            }
         }
+        
     }
 }
