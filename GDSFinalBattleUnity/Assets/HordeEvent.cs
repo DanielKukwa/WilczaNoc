@@ -7,11 +7,15 @@ public class HordeEvent : Cutscene
     [SerializeField] private bool _iconBase = false;
     private EventTrigger _eventTrigger;
     private AudioSource _audio;
+    [SerializeField] private Transform _destination;
+    [SerializeField] private float _destinationDistanceOffset = 2f;
+    [SerializeField] private GameObject _screemingGuy;
     [SerializeField] private EventTrigger[] _eventTriggers;
     [SerializeField] private GameObject _spawner;
     [SerializeField] private float _blackScreenTime = 2f;
     [SerializeField] private Animator _blackScreen;
     [SerializeField] private float _audioTime = 2f;
+    private CameraController _camController;
     [SerializeField] private Transform _cameraDestination;
     [SerializeField] private GameObject _camLight;
     [SerializeField] private float _camFlyTime = 2f;
@@ -23,7 +27,9 @@ public class HordeEvent : Cutscene
         _spawner.gameObject.SetActive(false);
         _audio = GetComponent<AudioSource>();
         _eventTrigger = GetComponent<EventTrigger>();
-        if(_eventTriggers != null)
+        _camController = Camera.main.GetComponent<CameraController>();
+
+        if (_eventTriggers != null)
         {
             foreach (EventTrigger e in _eventTriggers)
             {
@@ -36,7 +42,7 @@ public class HordeEvent : Cutscene
 
     private void OnTriggerActive()
     {
-        StartCoroutine(HordeAttackDelay());
+        StartCoroutine(GoToPoint());
         if (!_iconBase)
         {
             StartEvent();
@@ -68,8 +74,8 @@ public class HordeEvent : Cutscene
             //_eventTrigger.Triggered();
             
 
-            CameraController camController = Camera.main.GetComponent<CameraController>();
-            camController.enabled = false;
+            
+            _camController.enabled = false;
             _camLight.gameObject.SetActive(true);
             // set  camer to position
             Vector3 camStartposition = Camera.main.transform.position;
@@ -82,15 +88,42 @@ public class HordeEvent : Cutscene
             yield return new WaitForSeconds(_camStayTime);
             _blackScreen.Play("BS_fadeout");
             yield return new WaitForSeconds(_blackScreenTime);
-            Camera.main.transform.position = camStartposition;
+            Camera.main.transform.position = _playerController.transform.position;
             _blackScreen.Play("BS_fadein");
-            _spawner.SetActive(false);
+            //_spawner.SetActive(false);
             _camLight.gameObject.SetActive(false);
-            camController.enabled = true;
+            _camController.enabled = true;
             Final();
         }               
 
         
     }
 
+    IEnumerator GoToPoint()
+    {
+        _playerAgent.SetDestination(_destination.position);
+        StartCoroutine(LookAt(_destination));
+        while (Vector3.Distance(_playerAgent.transform.position, _destination.position) > _destinationDistanceOffset)
+        {
+            yield return null;
+        }
+        StartCoroutine(LookAt(_screemingGuy.transform));
+        StartCoroutine(HordeAttackDelay());
+    }
+
+    protected override void Final()
+    {
+        if (_skip)
+        {
+            _playerAgent.SetDestination(_destination.position);
+            StopAllCoroutines();
+            _camController.enabled = true;
+            _camLight.gameObject.SetActive(false);
+            Camera.main.transform.position = _playerController.transform.position;
+            _blackScreen.Play("BS_clear");
+            
+        }
+        base.Final();
+
+    }
 }
