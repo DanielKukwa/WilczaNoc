@@ -19,6 +19,7 @@ public class Cutscene : MonoBehaviour
     protected Slider _slider;
 
     protected PlayerController _playerController;
+    private SpecialAbilities _playerAbilities;
     protected NavMeshAgent _playerAgent;
     // Start is called before the first frame update
     protected virtual void Start()
@@ -31,6 +32,7 @@ public class Cutscene : MonoBehaviour
 
         _playerAgent = PlayerManager.instance.player.GetComponent<NavMeshAgent>();
         _playerController = PlayerManager.instance.player.GetComponent<PlayerController>();
+        _playerAbilities = PlayerManager.instance.player.GetComponent<SpecialAbilities>();
     }
 
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class Cutscene : MonoBehaviour
     {
         if (_play)
         {
-            if (Input.anyKey && _skip == false)
+            if (Input.GetKey(KeyCode.Space) && _skip == false)
             {
                 _currentHoldTime += Time.deltaTime;
                 if (_currentHoldTime >= _holdTime)
@@ -62,6 +64,7 @@ public class Cutscene : MonoBehaviour
         _play = true;
         _anyKey.SetActive(true);
         _playerController.enabled = false;
+        _playerAbilities.enabled = false;
         _letterbox.SetTrigger("LetterIn");
     }
 
@@ -78,6 +81,7 @@ public class Cutscene : MonoBehaviour
     {
         yield return new WaitForSeconds(_unmovableTime);
         _playerController.enabled = true;
+        _playerAbilities.enabled = true;
         Destroy(gameObject);
     }
 
