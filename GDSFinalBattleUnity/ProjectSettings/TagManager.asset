@@ -13,6 +13,8 @@ TagManager:
   - Thing
   - Forester
   - Interact
+  - SnowOld
+  - SnowNew
   layers:
   - Default
   - TransparentFX
