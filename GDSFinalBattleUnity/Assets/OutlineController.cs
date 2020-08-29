@@ -12,7 +12,7 @@ public class OutlineController : MonoBehaviour
         
         outline = GetComponentInChildren<Knife.HDRPOutline.Core.OutlineObject>();
         outlinesList = GetComponentsInChildren<Knife.HDRPOutline.Core.OutlineObject>();
-        outline.enabled = false;
+        //outline.enabled = false;
     }
 
     public void ShowOutline()
