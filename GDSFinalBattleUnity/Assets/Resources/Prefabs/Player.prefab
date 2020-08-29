@@ -49,8 +49,9 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 8da21e0630b6d354393888d72c938214, type: 3}
   - {fileID: 2800000, guid: 8fd3807ae2ca6a34c9d1b17eb6a316a8, type: 3}
   - {fileID: 2800000, guid: 9a19a55ae0c9fcb43a2441acb9e79c0a, type: 3}
-  _material: {fileID: 7787948279438662801, guid: 19451e80e1db64b449659cffc9a7ceca,
-    type: 3}
+  _material: {fileID: 2100000, guid: 701726bf1f673334497f718fba101789, type: 2}
+  _baseCoatColor: 0.012
+  _lastCoatColor: 0.0235
 --- !u!1 &5862628164341995172
 GameObject:
   m_ObjectHideFlags: 0
@@ -6064,6 +6065,7 @@ MonoBehaviour:
   movementMask:
     serializedVersion: 2
     m_Bits: 256
+  motor: {fileID: 0}
   focus: {fileID: 0}
   isFirstAttack: 0
 --- !u!114 &5862628165221569483
@@ -6091,6 +6093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd327631b04a6649806dc7892895680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  axeActive: 0
   attackSpeed: 2.6
   attackCooldown: 0
   attackDelay: 0.4
