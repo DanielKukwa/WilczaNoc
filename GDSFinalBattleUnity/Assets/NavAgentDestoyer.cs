@@ -16,6 +16,7 @@ public class NavAgentDestoyer : MonoBehaviour
                 Destroy(agent);
                 WolfAnimator wolfAnimator = other.gameObject.GetComponent<WolfAnimator>();
                 wolfAnimator.Animator.SetFloat("speedPercent", 0);
+                wolfNormalController.gameObject.AddComponent<NavMeshObstacle>();
                 Destroy(wolfAnimator);
                 Destroy(wolfNormalController);
             }
