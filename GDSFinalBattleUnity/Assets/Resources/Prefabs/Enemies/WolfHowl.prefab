@@ -436,6 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd327631b04a6649806dc7892895680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  axeActive: 0
   attackSpeed: 0.8
   attackCooldown: 0
   attackDelay: 0.5
@@ -502,6 +503,18 @@ MonoBehaviour:
   _howlAnimationTime: 3
   _howlRate: 7
   _howlAnimationOffset: 1
+--- !u!114 &5453704735312837992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2674324977948542305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04868342cca6a644d8021860c0c2e773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &7456215626945162669
 Animator:
   serializedVersion: 3
@@ -595,18 +608,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5453704735312837992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2674324977948542305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04868342cca6a644d8021860c0c2e773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8026061380370159442
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,7 +736,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 97a093964d6042343bcafbe5a8068371, type: 2}
+      objectReference: {fileID: 2100000, guid: e51a7f1d3af25fe4c98c6c7e7992f109, type: 2}
     - target: {fileID: -5859423666505519952, guid: ec9a4ad6778f8a04b8347efd4f2de9bd,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
