@@ -29,5 +29,6 @@ public class EatableCorpse : Interactable
     {
         Debug.Log("EATING! HUNGRY MOTHERFUCKER");
         playerStats.Heal();
+        PlayerTextures.Instance.ChangeHoodTexture();
     }
 }

@@ -46,6 +46,7 @@ public class Forester : Interactable
 
     private void ForesterDie()
     {
+        PlayerTextures.Instance.ChangeHoodTexture();
         Healthbar.gameObject.SetActive(false);
         _audio.clip = _dieSound;
         _audio.loop = false;
