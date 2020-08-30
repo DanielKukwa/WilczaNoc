@@ -144,11 +144,19 @@ public class CharacterStats : MonoBehaviour
 
     void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        SceneManager.LoadScene("LevelDesignAnti", LoadSceneMode.Additive);
-        SceneManager.LoadScene("Kamil_enviro", LoadSceneMode.Additive);
-        SceneManager.LoadScene("Events", LoadSceneMode.Additive);
-        SceneManager.LoadScene("DanInteracts", LoadSceneMode.Additive);
+        if (Application.isEditor)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("LevelDesignAnti", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Kamil_enviro", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Events", LoadSceneMode.Additive);
+            SceneManager.LoadScene("DanInteracts", LoadSceneMode.Additive);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        
     }
 
 
