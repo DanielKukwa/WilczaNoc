@@ -15,15 +15,8 @@ public class PlayerTextures : MonoBehaviour
     // Start is called before the first frame update
 
     private void Awake()
-    {
-        if(Instance != null)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            Instance = this;
-        }
+    {       
+            Instance = this;     
     }
 
     void Start()
