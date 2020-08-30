@@ -660,7 +660,7 @@ Transform:
   - {fileID: 1329826958}
   - {fileID: 1421346393}
   m_Father: {fileID: 2098202751}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &69891010
 AudioSource:
@@ -6514,7 +6514,7 @@ Transform:
   - {fileID: 1400077876}
   - {fileID: 241159976}
   m_Father: {fileID: 2098202751}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &229280415 stripped
 Transform:
@@ -31098,7 +31098,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e5b9a28bb1b27b743abe86b4755f32fe, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 852cd82115e00c340ba3956e064f4a42, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -31206,7 +31206,7 @@ MonoBehaviour:
   _spawner: {fileID: 307627562}
   _blackScreenTime: 2
   _blackScreen: {fileID: 2123973146}
-  _audioTime: 3
+  _audioTime: 5
   _cameraDestination: {fileID: 884385657}
   _camLight: {fileID: 624936935}
   _camFlyTime: 2
@@ -31343,8 +31343,8 @@ Transform:
   - {fileID: 1241232639}
   - {fileID: 797163273}
   - {fileID: 42285900}
-  - {fileID: 220600888}
   - {fileID: 69891009}
+  - {fileID: 220600888}
   - {fileID: 2083565459}
   - {fileID: 481764008}
   - {fileID: 40689573}
