@@ -30,7 +30,7 @@ public class PlayerTextures : MonoBehaviour
     public void ChangeHoodTexture()
     {
         _currentTex++;
-        if (_currentTex >= _textures.Length) _currentTex = 0;
+        if (_currentTex >= _textures.Length) _currentTex = _textures.Length - 1;
         if (_currentTex == 4)
         {
             _material.SetColor("_EmissiveColor", new Color(_lastCoatColor, _lastCoatColor, _lastCoatColor, 1));
