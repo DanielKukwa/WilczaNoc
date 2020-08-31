@@ -1,6 +1,7 @@
 ﻿
 using UnityEngine;
 using System;
+using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 
@@ -11,11 +12,13 @@ public class CharacterStats : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth; //{ get; private set; }
     private Healthbar _healthbar;
+    public float healAnimTime = 1.5f;
     bool gameEnded = false;
     public float restartDelay = 1f;
     Animator animator;
     public bool godMode = false;
     NavMeshAgent agent;
+
     
 
     [Header("Damage")]
@@ -109,6 +112,17 @@ public class CharacterStats : MonoBehaviour
 
     public void Heal()
     {
+        agent.enabled = false;
+        StartCoroutine(DoHeal(healAnimTime));
+        Debug.Log("HEALED!");
+        _healthbar.UpdateHealth(currentHealth);
+
+
+    }
+
+    public IEnumerator DoHeal(float animTime)
+    {
+       
         if (currentHealth <= maxHealth / 2)
         {
             currentHealth += (maxHealth / 2);
@@ -117,10 +131,13 @@ public class CharacterStats : MonoBehaviour
         {
             currentHealth += (maxHealth - currentHealth);
         }
-        Debug.Log("HEALED!");
-        _healthbar.UpdateHealth(currentHealth);
+
         animator.SetTrigger("eat");
+
+        yield return new WaitForSeconds(animTime);
+        agent.enabled = true;
     }
+
 
     public virtual void Die()
     {

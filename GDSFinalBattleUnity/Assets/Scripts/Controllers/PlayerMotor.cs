@@ -21,10 +21,10 @@ public class PlayerMotor : MonoBehaviour
 
     void Update()
     {
-        if (target != null)
+        if (target != null && agent.enabled)
         {
             agent.SetDestination(target.position);
-            FaceTarget();
+            FaceTarget(); 
         }
     }
 
@@ -32,8 +32,8 @@ public class PlayerMotor : MonoBehaviour
 
     public void MoveToPoint(Vector3 point)
     {
-
-        agent.SetDestination(point);
+        if(agent.enabled)
+            agent.SetDestination(point);
 
     }
 

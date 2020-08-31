@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(CharacterStats))]
 public class CharacterCombat : MonoBehaviour
 {
     CharacterStats myStats;
+    GameObject handAxe;
+    NavMeshAgent agent;
 
     const float combatCooldown = 5f;
     float lastAttackTime;
@@ -13,14 +16,15 @@ public class CharacterCombat : MonoBehaviour
     
     [Header("First Attack")]
     public float attackSpeed = 1f;
-    public float attackCooldown = 0f;
+    private float attackCooldown = 0f;
     public float attackDelay = 0.6f;
 
 
     [Header("Second Attack")]
     public float attack2Speed = 1f;
-    public float attack2Cooldown = 0f;
+    private float attack2Cooldown = 0f;
     public float attack2Delay = 0.6f;
+    public float animDelay = 2f;
 
 
     public bool InCombat{ get; private set; }
@@ -34,7 +38,7 @@ public class CharacterCombat : MonoBehaviour
     private GameObject bloodDecay;
     private RaycastHit hitInfo;
 
-    GameObject handAxe;
+    
 
     protected virtual void Start()
     {
@@ -45,6 +49,7 @@ public class CharacterCombat : MonoBehaviour
         bloodSplash = blood as GameObject;
 
         handAxe = GameObject.Find("HandAxe");
+        agent = GetComponent<NavMeshAgent>();
     }
 
      void Update()
@@ -100,6 +105,7 @@ public class CharacterCombat : MonoBehaviour
     {
         if (attack2Cooldown <= 0f && targetStats != null && handAxe.active)
         {
+            agent.enabled = false;
             StartCoroutine(DoDamage2(targetStats, attack2Delay));
 
             if (OnAttack2 != null)
@@ -157,6 +163,9 @@ public class CharacterCombat : MonoBehaviour
         {
             InCombat = false;
         }
+        yield return new WaitForSeconds(animDelay);
+        agent.enabled = true;
+        
     }
 
 }
