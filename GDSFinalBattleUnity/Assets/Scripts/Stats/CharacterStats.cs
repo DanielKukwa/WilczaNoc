@@ -11,8 +11,6 @@ public class CharacterStats : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth; //{ get; private set; }
     private Healthbar _healthbar;
-    //public Stat damage;
-    //public Stat damage2;
     bool gameEnded = false;
     public float restartDelay = 1f;
     Animator animator;
@@ -121,6 +119,7 @@ public class CharacterStats : MonoBehaviour
         }
         Debug.Log("HEALED!");
         _healthbar.UpdateHealth(currentHealth);
+        animator.SetTrigger("eat");
     }
 
     public virtual void Die()
