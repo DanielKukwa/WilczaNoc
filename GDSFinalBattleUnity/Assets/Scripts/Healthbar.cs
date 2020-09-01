@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class Healthbar : MonoBehaviour
 {
     private Slider _slider;
-
+    [HideInInspector] public Animator Animator;
     private Vector3 _offsetPosition;
 
     private void Awake()
     {
+        Animator = GetComponentInChildren<Animator>();
         _slider = GetComponentInChildren<Slider>();
     }
 

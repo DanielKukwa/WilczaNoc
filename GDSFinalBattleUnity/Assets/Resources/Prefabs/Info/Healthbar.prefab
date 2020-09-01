@@ -120,6 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9049027926184495850}
   - component: {fileID: 688411526747649831}
+  - component: {fileID: 4260810569880714743}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -198,6 +199,25 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!95 &4260810569880714743
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049097396587959328}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ce60c37f63f5ce04cba011d85a17fa0f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6779358606654337362
 GameObject:
   m_ObjectHideFlags: 0

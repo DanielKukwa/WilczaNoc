@@ -36,7 +36,16 @@ public class CharacterStats : MonoBehaviour
     protected virtual void Start()
     {
         _healthbar = GetComponentInChildren<Healthbar>();
-        if(_healthbar) _healthbar.SetSliderMaxValue(maxHealth);
+        if (_healthbar)
+        {
+            if(gameObject.tag == "Player")
+            {
+                _healthbar.Animator.SetTrigger("Show");
+            }
+
+            _healthbar.SetSliderMaxValue(maxHealth);
+        }
+        
 
         animator = GetComponentInChildren<Animator>();
         agent = GetComponent<NavMeshAgent>();
