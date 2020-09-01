@@ -12,6 +12,7 @@ public class CharacterStats : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth; //{ get; private set; }
     private Healthbar _healthbar;
+    private bool _firstHit = false;
     public float healAnimTime = 1.5f;
     bool gameEnded = false;
     public float restartDelay = 1f;
@@ -72,7 +73,16 @@ public class CharacterStats : MonoBehaviour
         // Damage the character
         currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
-        if(_healthbar) _healthbar.UpdateHealth(currentHealth);
+        if (_healthbar)
+        {
+            if(gameObject.tag != "Player" && _firstHit == false)
+            {
+                _firstHit = true;
+                _healthbar.Animator.SetTrigger("Show");
+            }
+            _healthbar.UpdateHealth(currentHealth);
+        }
+        
         if(animator) animator.SetTrigger("hurt");
         //IncreaseDamage();    UNCOMMENT IF NEEDED
 
@@ -100,7 +110,15 @@ public class CharacterStats : MonoBehaviour
         // Damage the character
         currentHealth -= damage2;
         Debug.Log(transform.name + " takes " + damage2 + " damage.");
-        _healthbar.UpdateHealth(currentHealth);
+        if (_healthbar)
+        {
+            if (gameObject.tag != "Player" && _firstHit == false)
+            {
+                _firstHit = true;
+                _healthbar.Animator.SetTrigger("Show");
+            }
+            _healthbar.UpdateHealth(currentHealth);
+        }
         //IncreaseDamage();  UNCOMMENT IF NEEDED
 
         if (this.tag != "Player")
