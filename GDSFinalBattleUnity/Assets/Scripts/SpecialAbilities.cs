@@ -24,6 +24,8 @@ public class SpecialAbilities : MonoBehaviour
     [SerializeField] private AnimationCurve jumpCurve;
     private float elapsedTime = 0;
     public float dashHigh = 0.01f;
+    public float dashCooldown = 2f;
+    private bool dashEnabled = true;
     public float camSmoothSpeed = 0.125f;
 
 
@@ -66,11 +68,14 @@ public class SpecialAbilities : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && dashEnabled == true)
         {
+            dashEnabled = false;
+
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
+            
 
             animator.SetTrigger("dash");
             if (Physics.Raycast(ray, out hit, 100))
@@ -84,7 +89,7 @@ public class SpecialAbilities : MonoBehaviour
                 Vector3 vecDirection = targetPosition - startPosition;
                 targetPosition = startPosition + vecDirection.normalized * dashDistance;
                 elapsedTime = 0;
-                StartCoroutine(Dash());
+                StartCoroutine(Dash(dashCooldown));
                 FaceMousePoint(hit.point);
                 
 
@@ -100,10 +105,11 @@ public class SpecialAbilities : MonoBehaviour
 
     }
 
-    public IEnumerator Dash()
+    public IEnumerator Dash(float cooldown)
     {
         while (elapsedTime <= dashDuration)
         {
+            
             dashTrails.SetActive(true);
             particles.enableEmission = true;
             elapsedTime += Time.deltaTime;
@@ -116,6 +122,8 @@ public class SpecialAbilities : MonoBehaviour
             yield return null;
             
         }
+        yield return new WaitForSeconds(cooldown);
+        dashEnabled = true;
     }
 
     private void Blink()

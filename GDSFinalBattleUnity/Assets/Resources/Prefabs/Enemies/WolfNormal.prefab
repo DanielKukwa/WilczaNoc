@@ -93,6 +93,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5286661399100616410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596625325789847551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04868342cca6a644d8021860c0c2e773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3892848896853018867
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  healAnimTime: 1.5
   restartDelay: 1
   godMode: 0
   damageValue: 10
@@ -233,12 +246,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fd327631b04a6649806dc7892895680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  axeActive: 0
   attackSpeed: 0.8
-  attackCooldown: 0
   attackDelay: 0.5
   attack2Speed: 1
-  attack2Cooldown: 0
   attack2Delay: 0.6
+  animDelay: 2
 --- !u!114 &3892848896853018872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,18 +533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d3d48cbb4d9e644b3b375699edd620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5286661399100616410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3596625325789847551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04868342cca6a644d8021860c0c2e773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7499394747090199255
 GameObject:
   m_ObjectHideFlags: 0
@@ -617,7 +618,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 1e44fdeea67c49b4fb77627ff1f42223, type: 2}
+      objectReference: {fileID: 2100000, guid: a46bb018a0380aa43974d82fafece220, type: 2}
     - target: {fileID: -5859423666505519952, guid: ec9a4ad6778f8a04b8347efd4f2de9bd,
         type: 3}
       propertyPath: m_Materials.Array.data[2]

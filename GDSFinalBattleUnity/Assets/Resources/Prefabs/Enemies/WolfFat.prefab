@@ -338,6 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 150
   currentHealth: 0
+  healAnimTime: 1.5
   restartDelay: 1
   godMode: 0
   damageValue: 10
@@ -359,11 +360,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axeActive: 0
   attackSpeed: 0.8
-  attackCooldown: 0
   attackDelay: 0.5
   attack2Speed: 1
-  attack2Cooldown: 0
   attack2Delay: 0.6
+  animDelay: 2
 --- !u!114 &4877682431554951927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +618,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: cde9a898bcddf1d43b186b4aa7c4fdbe, type: 2}
+      objectReference: {fileID: 2100000, guid: 99bd6492ffd237d4994b5969552f8757, type: 2}
     - target: {fileID: -5859423666505519952, guid: ec9a4ad6778f8a04b8347efd4f2de9bd,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
