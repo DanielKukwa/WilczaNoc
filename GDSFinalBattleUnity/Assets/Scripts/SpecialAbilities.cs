@@ -15,6 +15,7 @@ public class SpecialAbilities : MonoBehaviour
     //TrailRenderer trail;
     GameObject dashTrails;
     ParticleSystem particles;
+    DashBar dashBar;
 
     private Vector3 startPosition;
     private Vector3 targetPosition;
@@ -47,12 +48,15 @@ public class SpecialAbilities : MonoBehaviour
         //trail = GetComponentInChildren<TrailRenderer>();
         dashTrails = GameObject.Find("DashTrails");
         particles = GetComponentInChildren<ParticleSystem>();
+        dashBar = GetComponent<DashBar>();
+        dashBar.SetCooldownMaxValue(dashCooldown);
     }
 
     void Update()
     {
         dashTrails.SetActive(false);
         particles.enableEmission = false;
+        
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
@@ -62,7 +66,7 @@ public class SpecialAbilities : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.P))
         {
             Blink();
 
@@ -91,7 +95,7 @@ public class SpecialAbilities : MonoBehaviour
                 elapsedTime = 0;
                 StartCoroutine(Dash(dashCooldown));
                 FaceMousePoint(hit.point);
-                
+                dashBar.SetCooldownValue(dashCooldown);
 
 
                 //camController.SlowDownCam();
@@ -123,6 +127,7 @@ public class SpecialAbilities : MonoBehaviour
             
         }
         yield return new WaitForSeconds(cooldown);
+        
         dashEnabled = true;
     }
 
