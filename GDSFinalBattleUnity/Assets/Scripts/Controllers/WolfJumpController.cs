@@ -14,8 +14,9 @@ public class WolfJumpController : MonoBehaviour
     private WolfAnimator _wolfAnimator;
 
     [SerializeField] private float _attackDistance = 1f;
-    
+    [SerializeField] private float _normalAttackDistance = 1.25f;
 
+    private float _agentStoppingDistance;
     private bool _isMark = false;
     private bool _isJump = false;
     private bool _isPathBlocked = false;
@@ -79,16 +80,19 @@ public class WolfJumpController : MonoBehaviour
                 CharacterStats targetStats = target.GetComponent<CharacterStats>();
                 if (targetStats != null)
                 {
-                    combat.Attack(targetStats);
+                    combat.Attack2(targetStats);
                 }
             }
-            else if(distance <= _attackDistance + 0.75f)
+            else if(distance <= _attackDistance + _normalAttackDistance)
             {
-                CharacterStats targetStats = target.GetComponent<CharacterStats>();
-                if (targetStats != null)
+                if (!_isMark && !_isJump)
                 {
-                    combat.Attack(targetStats);
-                }
+                    CharacterStats targetStats = target.GetComponent<CharacterStats>();
+                    if (targetStats != null)
+                    {
+                        combat.Attack(targetStats);
+                    }
+                }              
             }
            
 
@@ -125,7 +129,8 @@ public class WolfJumpController : MonoBehaviour
             _isPathBlocked = true;
             _isJump = false;
             agent.enabled = true;
-            StartCoroutine(FindSpot());
+            agent.stoppingDistance = 2f;
+            //StartCoroutine(FindSpot());
             StopCoroutine(Jump());          
         }
        //else
@@ -162,6 +167,7 @@ public class WolfJumpController : MonoBehaviour
 
         if (!_isPathBlocked)
         {
+            agent.stoppingDistance = _jumpRadiusTrigger;
             _isJump = true;
             _isMark = true;
             agent.enabled = false;
