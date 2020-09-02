@@ -18,7 +18,13 @@ public class WolfJumpController : MonoBehaviour
 
     private bool _isMark = false;
     private bool _isJump = false;
+    private bool _isPathBlocked = false;
     [SerializeField] private float _jumpRate = 5f;
+    // empty GO to store spot when in finding spot mode
+    private GameObject _newSpot;
+    [SerializeField] private float _findingSpotTime = 2f;
+    [SerializeField] private int _minFindSpotAreaSize = 7;
+    [SerializeField] private int _maxFindSpotAreaSize = 10;
     private float _jumpCooldown = 0f;
     [SerializeField] private float _jumpRadiusTrigger = 5f;
     [SerializeField] private float _landingDistanceBehindPlayer = 2f;
@@ -37,6 +43,7 @@ public class WolfJumpController : MonoBehaviour
 
     void Start()
     {
+        _newSpot = new GameObject("Spot");
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
         agent.stoppingDistance = _jumpRadiusTrigger;
@@ -99,46 +106,136 @@ public class WolfJumpController : MonoBehaviour
         Vector3 startPosition = transform.position;
         //Vector3 direction = target.position - transform.position;
         Vector3 targetPosition = transform.position + transform.forward *( _jumpRadiusTrigger + _landingDistanceBehindPlayer);
+        //NavMeshPath path = new NavMeshPath();
+        
+
+        _isPathBlocked = false;
+
+        Vector3 direction = targetPosition - startPosition;
+
+        NavMeshHit hit;
+
+        if(agent.Raycast(targetPosition, out hit))
+        {
+            GameObject newLine = new GameObject("Line");
+            LineRenderer line = newLine.AddComponent<LineRenderer>();
+            line.widthMultiplier = 0.1f;
+            line.SetPosition(0, transform.position);
+            line.SetPosition(1, hit.position);
+            _isPathBlocked = true;
+            _isJump = false;
+            agent.enabled = true;
+            StartCoroutine(FindSpot());
+            StopCoroutine(Jump());          
+        }
+       //else
+       //{
+       //    GameObject newLine = new GameObject("Line");
+       //    LineRenderer line = newLine.AddComponent<LineRenderer>();
+       //    line.widthMultiplier = 0.1f;
+       //    line.SetPosition(0, transform.position);
+       //    line.SetPosition(1, hit.position);
+       //}
+        /* for(int i = 1; i <= direction.magnitude; i++)
+         {
+             Vector3 pathVector = direction.normalized * i ;
+             agent.CalculatePath(pathVector, path);
+             Debug.Log("Lenght of path: " + pathVector.magnitude);
+             if (path.status == NavMeshPathStatus.PathPartial)
+             {
+                 Debug.Log("Blocked path at: " + pathVector.magnitude);
+                 GameObject newLine = new GameObject("Line");
+                 LineRenderer line = newLine.AddComponent<LineRenderer>();
+                 //line.positionCount = 2;
+                 line.widthMultiplier = 0.2f;
+                 line.SetPosition(0, transform.position);
+                 line.SetPosition(1, transform.position + pathVector);
+                 _isPathBlocked = true;
+                 _isJump = false;
+                 agent.enabled = true;
+                 StopCoroutine(Jump());
+                 break;
+             }
+         }*/
+
+
+
+        if (!_isPathBlocked)
+        {
+            _isJump = true;
+            _isMark = true;
+            agent.enabled = false;
+            _wolfAnimator.Animator.SetTrigger("Mark");
+            float _timeMarked = 0f;
+            _slider.gameObject.SetActive(true);
+
+            while (_timeMarked <= _markingTime)
+            {
+                _timeMarked += Time.deltaTime;
+                _arrowImage.fillAmount = _timeMarked / _markingTime;
+                yield return null;
+            }
+
+            _arrowImage.fillAmount = 0f;
+            _slider.gameObject.SetActive(false);
+            _isMark = false;
+            _wolfAnimator.Animator.SetTrigger("Jump");
+
+            float elapsedTime = 0f;
+            _correctAnimationTime = 0f;
+            while (elapsedTime < _jumpingTime)
+            {
+                elapsedTime += Time.deltaTime;
+                float t = _animationCurve.Evaluate(elapsedTime / _jumpingTime);
+
+                transform.position = Vector3.LerpUnclamped(startPosition, targetPosition, t);
+                yield return null;
+            }
+
+
+            yield return new WaitForSeconds(_restingTime);
+            _wolfAnimator.Animator.SetTrigger("BattlePose");
+            _isJump = false;
+            agent.enabled = true;
+        }
+        
+
+    }
+
+    private IEnumerator FindSpot()
+    {
         _isJump = true;
-        _isMark = true;
-        agent.enabled = false;
-        _wolfAnimator.Animator.SetTrigger("Mark");
-        float _timeMarked = 0f;
-        _slider.gameObject.SetActive(true);
-
-        while(_timeMarked <= _markingTime)
+        int spotDistance = _maxFindSpotAreaSize - _minFindSpotAreaSize;
+        int randSize = Random.Range(0, spotDistance);
+        int randX = Random.Range(-1, 1);
+        if(randX < 0)
         {
-            _timeMarked += Time.deltaTime;
-            _arrowImage.fillAmount = _timeMarked / _markingTime;
-            yield return null;
+            randX = -_minFindSpotAreaSize - randSize;
         }
-        // yield return new WaitForSeconds(_markingTime);
-        _arrowImage.fillAmount = 0f;
-        _slider.gameObject.SetActive(false);
-        _isMark = false;
-        _wolfAnimator.Animator.SetTrigger("Jump");
-        
-        //Vector3 startPosition = transform.position;
-        //Vector3 direction = target.position - transform.position;
-        //Vector3 targetPosition = transform.position + direction.normalized * _jumpRadius * 2;
-
-        float elapsedTime = 0f;
-        _correctAnimationTime = 0f;
-        while (elapsedTime < _jumpingTime)
+        else
         {
-            elapsedTime += Time.deltaTime;
-            float t = _animationCurve.Evaluate(elapsedTime / _jumpingTime);
-
-            transform.position = Vector3.LerpUnclamped(startPosition, targetPosition, t);
-            yield return null;
+            randX = _minFindSpotAreaSize + randSize;
+        }
+        int randZ = Random.Range(-1, 1);
+        if (randZ < 0)
+        {
+            randZ = -_minFindSpotAreaSize - randSize;
+        }
+        else
+        {
+            randZ = _minFindSpotAreaSize + randSize;
         }
 
-        
-        yield return new WaitForSeconds(_restingTime);
-        _wolfAnimator.Animator.SetTrigger("BattlePose");
+        Vector3 newPosition = new Vector3(transform.position.x + randX, transform.position.y, transform.position.z + randZ);
+       // Vector3 newPosition = new Vector3(transform.position.x + 10, transform.position.y, transform.position.z + 10);
+        _newSpot.transform.position = newPosition;
+        agent.SetDestination(newPosition);
+        float oldStop = agent.stoppingDistance;
+        agent.stoppingDistance = 1f;
+        yield return new WaitForSeconds(_findingSpotTime);
         _isJump = false;
-        agent.enabled = true;
-
+        agent.stoppingDistance = oldStop;
+        //target = PlayerManager.instance.player.transform;
     }
 
     void FaceTarget()
