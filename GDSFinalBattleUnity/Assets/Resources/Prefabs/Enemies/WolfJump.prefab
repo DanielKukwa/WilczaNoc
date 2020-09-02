@@ -665,8 +665,8 @@ MonoBehaviour:
   healAnimTime: 1.5
   restartDelay: 1
   godMode: 0
-  damageValue: 100
-  damageValue2: 0
+  damageValue: 20
+  damageValue2: 100
   damageModifier: 0
   _ragdollPrefab: {fileID: 1667079743465688880, guid: 4fec615941a7b124b9002679b40067fa,
     type: 3}
@@ -734,7 +734,11 @@ MonoBehaviour:
   lookRadius: 1000
   target: {fileID: 0}
   _attackDistance: 0.75
+  _normalAttackDistance: 1.25
   _jumpRate: 6
+  _findingSpotTime: 2
+  _minFindSpotAreaSize: 7
+  _maxFindSpotAreaSize: 10
   _jumpRadiusTrigger: 9.5
   _landingDistanceBehindPlayer: 3.5
   _markingTime: 1.5
