@@ -8302,6 +8302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  healAnimTime: 1.5
   restartDelay: 1
   godMode: 0
   damageValue: 0
@@ -14940,6 +14941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  healAnimTime: 1.5
   restartDelay: 1
   godMode: 0
   damageValue: 0
@@ -15248,6 +15250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 0
+  healAnimTime: 1.5
   restartDelay: 1
   godMode: 0
   damageValue: 0
@@ -15303,6 +15306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 0
+  healAnimTime: 1.5
   restartDelay: 1
   godMode: 0
   damageValue: 0
@@ -18241,6 +18245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 30
   currentHealth: 0
+  healAnimTime: 1.5
   restartDelay: 1
   godMode: 0
   damageValue: 0
@@ -25649,6 +25654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 0
+  healAnimTime: 1.5
   restartDelay: 1
   godMode: 0
   damageValue: 0
@@ -26286,6 +26292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 0
+  healAnimTime: 1.5
   restartDelay: 1
   godMode: 0
   damageValue: 0
@@ -26906,7 +26913,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 70046635356e4484bb5a86727056eefd,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -134.61821
+      value: -138.64
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 70046635356e4484bb5a86727056eefd,
         type: 3}
@@ -26916,7 +26923,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 70046635356e4484bb5a86727056eefd,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -433.81808
+      value: -467.52
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 70046635356e4484bb5a86727056eefd,
         type: 3}
@@ -31115,6 +31122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   currentHealth: 0
+  healAnimTime: 1.5
   restartDelay: 1
   godMode: 0
   damageValue: 0
