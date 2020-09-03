@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class DashBar : MonoBehaviour
 {
-    public Slider dashSlider;
+    private Slider dashSlider;
     //public float cooldown;
         
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         dashSlider = GetComponentInChildren<Slider>();
 
@@ -31,5 +31,6 @@ public class DashBar : MonoBehaviour
     public void SetCooldownMaxValue(float maxValue)
     {
         dashSlider.maxValue = maxValue;
+        dashSlider.value = maxValue;
     }
 }
