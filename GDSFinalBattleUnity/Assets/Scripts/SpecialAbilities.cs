@@ -27,6 +27,7 @@ public class SpecialAbilities : MonoBehaviour
     public float dashHigh = 0.01f;
     public float dashCooldown = 2f;
     private bool dashEnabled = true;
+    private float dashElapsedTime = 0;
     public float camSmoothSpeed = 0.125f;
 
 
@@ -48,7 +49,9 @@ public class SpecialAbilities : MonoBehaviour
         //trail = GetComponentInChildren<TrailRenderer>();
         dashTrails = GameObject.Find("DashTrails");
         particles = GetComponentInChildren<ParticleSystem>();
-        dashBar = GetComponent<DashBar>();
+        dashBar = GetComponentInChildren<DashBar>();
+        if (dashBar == null)
+            Debug.Log("NULL DASH");
         dashBar.SetCooldownMaxValue(dashCooldown);
     }
 
@@ -93,9 +96,11 @@ public class SpecialAbilities : MonoBehaviour
                 Vector3 vecDirection = targetPosition - startPosition;
                 targetPosition = startPosition + vecDirection.normalized * dashDistance;
                 elapsedTime = 0;
+                dashElapsedTime = 0;
                 StartCoroutine(Dash(dashCooldown));
+                StartCoroutine(DashCooldown(dashCooldown));
                 FaceMousePoint(hit.point);
-                dashBar.SetCooldownValue(dashCooldown);
+                
 
 
                 //camController.SlowDownCam();
@@ -129,6 +134,18 @@ public class SpecialAbilities : MonoBehaviour
         yield return new WaitForSeconds(cooldown);
         
         dashEnabled = true;
+    }
+
+    public IEnumerator DashCooldown(float cooldown)
+    {
+        while(dashElapsedTime <= cooldown)
+        {            
+            dashElapsedTime += Time.deltaTime;
+            dashBar.SetCooldownValue(dashElapsedTime);
+            yield return null;
+        } 
+
+
     }
 
     private void Blink()
