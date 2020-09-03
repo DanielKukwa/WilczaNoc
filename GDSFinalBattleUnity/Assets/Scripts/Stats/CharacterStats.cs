@@ -150,14 +150,14 @@ public class CharacterStats : MonoBehaviour
     public IEnumerator DoHeal(float animTime)
     {
        
-        if (currentHealth <= maxHealth / 2)
-        {
-            currentHealth += (maxHealth / 2);
-        }
-        else
-        {
+        //if (currentHealth <= maxHealth / 2)
+        //{
+        //    currentHealth += (maxHealth / 2);
+        //}
+        //else
+        //{
             currentHealth += (maxHealth - currentHealth);
-        }
+        //}
 
         animator.SetTrigger("eat");
 
