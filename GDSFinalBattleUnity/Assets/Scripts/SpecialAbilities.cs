@@ -100,7 +100,22 @@ public class SpecialAbilities : MonoBehaviour
 
                 targetPosition = new Vector3(hit.point.x, dashHigh, hit.point.z);
                 Vector3 vecDirection = targetPosition - startPosition;
+
                 targetPosition = startPosition + vecDirection.normalized * dashDistance;
+
+                NavMeshHit navHit;
+
+                if (agent.Raycast(targetPosition, out navHit))
+                {
+                    GameObject newLine = new GameObject("Line");
+                    LineRenderer line = newLine.AddComponent<LineRenderer>();
+                    line.widthMultiplier = 0.1f;
+                    line.SetPosition(0, transform.position);
+                    line.SetPosition(1, navHit.position);
+
+                    targetPosition = navHit.position;
+                }
+                
                 elapsedTime = 0;              
                 StartCoroutine(Dash(dashCooldown));
                 StartCoroutine(DashCooldown(dashCooldown));
