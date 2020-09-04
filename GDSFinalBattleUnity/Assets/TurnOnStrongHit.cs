@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class TurnOnStrongHit : MonoBehaviour
 {
+    EventTrigger _eventTrigger;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _eventTrigger = GetComponent<EventTrigger>();
+        _eventTrigger.OnEventTrigger += OnTriggerActive;
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerActive()
     {
-        
+        PlayerManager.instance.player.GetComponent<PlayerController>().HeavySlashEnabled = true;
     }
 }

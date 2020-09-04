@@ -22,12 +22,12 @@ public class SpecialAbilities : MonoBehaviour
     [SerializeField] private float dashDistance = 5f;
     //[SerializeField] private float dashForce = 5;
     [SerializeField] private float dashDuration;
+    [SerializeField] private float nextDashOffset = 0.2f;
     [SerializeField] private AnimationCurve jumpCurve;
     private float elapsedTime = 0;
     public float dashHigh = 0.01f;
     public float dashCooldown = 2f;
     public bool DashEnabled = false;
-    private float dashElapsedTime = 0;
     public float camSmoothSpeed = 0.125f;
 
 
@@ -82,6 +82,7 @@ public class SpecialAbilities : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && DashEnabled == true)
         {
+            StopAllCoroutines();
             DashEnabled = false;
 
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -99,9 +100,23 @@ public class SpecialAbilities : MonoBehaviour
 
                 targetPosition = new Vector3(hit.point.x, dashHigh, hit.point.z);
                 Vector3 vecDirection = targetPosition - startPosition;
+
                 targetPosition = startPosition + vecDirection.normalized * dashDistance;
-                elapsedTime = 0;
-                dashElapsedTime = 0;
+
+                NavMeshHit navHit;
+
+                if (agent.Raycast(targetPosition, out navHit))
+                {
+                    GameObject newLine = new GameObject("Line");
+                    LineRenderer line = newLine.AddComponent<LineRenderer>();
+                    line.widthMultiplier = 0.1f;
+                    line.SetPosition(0, transform.position);
+                    line.SetPosition(1, navHit.position);
+
+                    targetPosition = navHit.position;
+                }
+                
+                elapsedTime = 0;              
                 StartCoroutine(Dash(dashCooldown));
                 StartCoroutine(DashCooldown(dashCooldown));
                 FaceMousePoint(hit.point);
@@ -136,14 +151,16 @@ public class SpecialAbilities : MonoBehaviour
             yield return null;
             
         }
-        yield return new WaitForSeconds(cooldown);
+        yield return new WaitForSeconds(cooldown - dashDuration - nextDashOffset);
         
         DashEnabled = true;
     }
 
     public IEnumerator DashCooldown(float cooldown)
     {
-        while(dashElapsedTime <= cooldown)
+        float dashElapsedTime = 0;
+
+        while (dashElapsedTime <= cooldown)
         {            
             dashElapsedTime += Time.deltaTime;
             dashBar.SetCooldownValue(dashElapsedTime);

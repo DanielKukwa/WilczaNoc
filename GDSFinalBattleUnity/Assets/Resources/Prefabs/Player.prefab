@@ -6483,9 +6483,9 @@ MonoBehaviour:
   axeActive: 1
   attackSpeed: 2.6
   attackDelay: 0.4
-  attack2Speed: 0.9
+  attack2Speed: 0.5
   attack2Delay: 0.4
-  animDelay: 2
+  animDelay: 1.7
 --- !u!114 &5862628165221569481
 MonoBehaviour:
   m_ObjectHideFlags: 0

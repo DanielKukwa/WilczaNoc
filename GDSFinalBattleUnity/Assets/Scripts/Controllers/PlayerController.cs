@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public PlayerMotor motor;
     public Interactable focus;
     public bool isFirstAttack;
+    public bool HeavySlashEnabled = false;
 
 
 
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && HeavySlashEnabled)
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
