@@ -15,7 +15,7 @@ public class SpecialAbilities : MonoBehaviour
     //TrailRenderer trail;
     GameObject dashTrails;
     ParticleSystem particles;
-    DashBar dashBar;
+    [HideInInspector] public DashBar dashBar;
 
     private Vector3 startPosition;
     private Vector3 targetPosition;
@@ -26,7 +26,7 @@ public class SpecialAbilities : MonoBehaviour
     private float elapsedTime = 0;
     public float dashHigh = 0.01f;
     public float dashCooldown = 2f;
-    private bool dashEnabled = true;
+    public bool DashEnabled = false;
     private float dashElapsedTime = 0;
     public float camSmoothSpeed = 0.125f;
 
@@ -53,6 +53,11 @@ public class SpecialAbilities : MonoBehaviour
         if (dashBar == null)
             Debug.Log("NULL DASH");
         dashBar.SetCooldownMaxValue(dashCooldown);
+        if (!DashEnabled)
+        {
+            dashBar.gameObject.SetActive(false);
+        }
+        
     }
 
     void Update()
@@ -75,9 +80,9 @@ public class SpecialAbilities : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && dashEnabled == true)
+        if (Input.GetKeyDown(KeyCode.Space) && DashEnabled == true)
         {
-            dashEnabled = false;
+            DashEnabled = false;
 
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -133,7 +138,7 @@ public class SpecialAbilities : MonoBehaviour
         }
         yield return new WaitForSeconds(cooldown);
         
-        dashEnabled = true;
+        DashEnabled = true;
     }
 
     public IEnumerator DashCooldown(float cooldown)
