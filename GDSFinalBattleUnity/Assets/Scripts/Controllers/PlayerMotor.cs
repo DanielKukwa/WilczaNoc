@@ -23,7 +23,7 @@ public class PlayerMotor : MonoBehaviour
 
     void Update()
     {
-        if (target != null && SecondAttack)
+        if (target != null && !SecondAttack)
         {
             agent.SetDestination(target.position);
             FaceTarget(); 
