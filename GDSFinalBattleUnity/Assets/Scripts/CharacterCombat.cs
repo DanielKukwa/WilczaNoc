@@ -19,6 +19,8 @@ public class CharacterCombat : MonoBehaviour
     public float attackSpeed = 1f;
     private float attackCooldown = 0f;
     public float attackDelay = 0.6f;
+    [HideInInspector] public bool FirstAttackEnabled = true;
+    private float _firstAttackDelay = 1.25f;
 
 
     [Header("Second Attack")]
@@ -73,7 +75,7 @@ public class CharacterCombat : MonoBehaviour
 
     public void Attack(CharacterStats targetStats)
     {
-        if (this.gameObject.tag == "Player" && handAxe.active)
+        if (this.gameObject.tag == "Player" && handAxe.active && FirstAttackEnabled)
         {
             if (attackCooldown <= 0f && targetStats != null)
             {
@@ -111,6 +113,7 @@ public class CharacterCombat : MonoBehaviour
     {
         if (attack2Cooldown <= 0f && targetStats != null && handAxe.active)
         {
+            StartCoroutine(DisableFirstAttack());
             if (_motor)
             {
                 _motor.SecondAttack = true;
@@ -131,6 +134,11 @@ public class CharacterCombat : MonoBehaviour
 
     IEnumerator DoDamage(CharacterStats stats, float delay)
     {
+        if (_motor)
+        {
+            _motor.SecondAttack = false;
+        }
+
         if (stats.gameObject.tag == "Player") AudioManager.Instance.PlayWolfAttack();
 
         yield return new WaitForSeconds(delay);
@@ -154,10 +162,7 @@ public class CharacterCombat : MonoBehaviour
         {
             InCombat = false;
         }
-        if (_motor)
-        {
-            _motor.SecondAttack = false;
-        }
+        
     }
 
     IEnumerator DoDamage2(CharacterStats stats, float delay)
@@ -185,6 +190,13 @@ public class CharacterCombat : MonoBehaviour
         {
             _motor.SecondAttack = false;
         }
+    }
+
+    private IEnumerator DisableFirstAttack()
+    {
+        FirstAttackEnabled = false;
+        yield return new WaitForSeconds(_firstAttackDelay);
+        FirstAttackEnabled = true;
     }
 
 }

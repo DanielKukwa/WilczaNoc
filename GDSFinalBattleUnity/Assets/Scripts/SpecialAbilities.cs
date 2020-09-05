@@ -7,6 +7,8 @@ public class SpecialAbilities : MonoBehaviour
 
     CharacterStats myStats;
     PlayerManager playerManager;
+    PlayerMotor _motor;
+    CharacterCombat _combat;
     Transform playerPosition;
     Camera cam;
     NavMeshAgent agent;
@@ -38,6 +40,8 @@ public class SpecialAbilities : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _combat = GetComponent<CharacterCombat>();
+        _motor = GetComponent<PlayerMotor>();
         rb = GetComponent<Rigidbody>();
         myStats = GetComponent<CharacterStats>();
         playerManager = PlayerManager.instance;
@@ -136,6 +140,9 @@ public class SpecialAbilities : MonoBehaviour
 
     public IEnumerator Dash(float cooldown)
     {
+        _motor.SecondAttack = false;
+        _combat.FirstAttackEnabled = true;
+
         while (elapsedTime <= dashDuration)
         {
             
