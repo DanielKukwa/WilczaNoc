@@ -6455,6 +6455,7 @@ MonoBehaviour:
   motor: {fileID: 0}
   focus: {fileID: 0}
   isFirstAttack: 0
+  HeavySlashEnabled: 0
 --- !u!114 &5862628165221569483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6537,8 +6538,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashBar: {fileID: 0}
-  dashDistance: 5
+  dashDistance: 7
   dashDuration: 0.2
+  nextDashOffset: 0.2
   jumpCurve:
     serializedVersion: 2
     m_Curve:
@@ -6593,7 +6595,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:

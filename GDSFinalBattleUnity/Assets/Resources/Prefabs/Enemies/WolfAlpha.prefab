@@ -151,12 +151,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29a3273995ec5cb4197d491ad566cb60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 450
+  maxHealth: 460
   currentHealth: 0
   healAnimTime: 1.5
   restartDelay: 1
   godMode: 0
-  damageValue: 10
+  damageValue: 15
   damageValue2: 0
   damageModifier: 0
   _ragdollPrefab: {fileID: 1667079743465688880, guid: 4fec615941a7b124b9002679b40067fa,
