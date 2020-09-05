@@ -20,7 +20,7 @@ public class CharacterCombat : MonoBehaviour
     private float attackCooldown = 0f;
     public float attackDelay = 0.6f;
     [HideInInspector] public bool FirstAttackEnabled = true;
-    private float _firstAttackDelay = 1.25f;
+    [SerializeField] private float _firstAttackDelay = 1.25f;
 
 
     [Header("Second Attack")]
