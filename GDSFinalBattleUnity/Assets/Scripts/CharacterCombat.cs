@@ -114,6 +114,7 @@ public class CharacterCombat : MonoBehaviour
             if (_motor)
             {
                 _motor.SecondAttack = true;
+                agent.SetDestination(transform.position);
                 _motor.FaceTargetImmediately(targetStats.gameObject.transform);
             }
 
