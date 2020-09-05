@@ -10,8 +10,10 @@ public class PlayerMotor : MonoBehaviour
 {
     Transform target;
     [SerializeField] float rotationSpeed = 5f;
-
+    CharacterCombat combat;
     NavMeshAgent agent;
+
+    public bool SecondAttack = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +23,7 @@ public class PlayerMotor : MonoBehaviour
 
     void Update()
     {
-        if (target != null && agent.enabled)
+        if (target != null && SecondAttack)
         {
             agent.SetDestination(target.position);
             FaceTarget(); 
@@ -58,6 +60,13 @@ public class PlayerMotor : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
 
+    }
+
+    public void FaceTargetImmediately(Transform targetToFace)
+    {
+        Vector3 direction = (targetToFace.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
+        transform.rotation = lookRotation;
     }
 
     public void SetTarget(Transform target)

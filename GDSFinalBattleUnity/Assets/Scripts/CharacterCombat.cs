@@ -9,6 +9,7 @@ public class CharacterCombat : MonoBehaviour
     CharacterStats myStats;
     GameObject handAxe;
     NavMeshAgent agent;
+    PlayerMotor _motor;
 
     const float combatCooldown = 5f;
     float lastAttackTime;
@@ -26,7 +27,6 @@ public class CharacterCombat : MonoBehaviour
     public float attack2Delay = 0.6f;
     public float animDelay = 2f;
 
-
     public bool InCombat{ get; private set; }
 
     public event System.Action OnAttack;
@@ -42,6 +42,7 @@ public class CharacterCombat : MonoBehaviour
 
     protected virtual void Start()
     {
+        _motor = GetComponent<PlayerMotor>();
         myStats = GetComponent<CharacterStats>();
         var blood = Resources.Load("Prefabs/Blood/HitSplashNormal");
         bloodDecay = (GameObject) Resources.Load("Prefabs/Blood/BloodDecay");
@@ -76,6 +77,11 @@ public class CharacterCombat : MonoBehaviour
         {
             if (attackCooldown <= 0f && targetStats != null)
             {
+                if (_motor)
+                {
+                    _motor.FaceTargetImmediately(targetStats.gameObject.transform);
+                }
+
                 StartCoroutine(DoDamage(targetStats, attackDelay));
 
                 if (OnAttack != null)
@@ -105,7 +111,12 @@ public class CharacterCombat : MonoBehaviour
     {
         if (attack2Cooldown <= 0f && targetStats != null && handAxe.active)
         {
-            agent.enabled = false;
+            if (_motor)
+            {
+                _motor.SecondAttack = true;
+                _motor.FaceTargetImmediately(targetStats.gameObject.transform);
+            }
+
             StartCoroutine(DoDamage2(targetStats, attack2Delay));
 
             if (OnAttack2 != null)
@@ -142,6 +153,10 @@ public class CharacterCombat : MonoBehaviour
         {
             InCombat = false;
         }
+        if (_motor)
+        {
+            _motor.SecondAttack = false;
+        }
     }
 
     IEnumerator DoDamage2(CharacterStats stats, float delay)
@@ -164,8 +179,11 @@ public class CharacterCombat : MonoBehaviour
             InCombat = false;
         }
         yield return new WaitForSeconds(animDelay);
-        agent.enabled = true;
-        
+        //agent.enabled = true;
+        if (_motor)
+        {
+            _motor.SecondAttack = false;
+        }
     }
 
 }

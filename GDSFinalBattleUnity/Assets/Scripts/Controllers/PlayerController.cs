@@ -25,53 +25,60 @@ public class PlayerController : MonoBehaviour
    
     void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-
-            isFirstAttack = true;
-            if (Physics.Raycast(ray, out hit, 100))
+        
+        
+            if (Input.GetMouseButton(0))
             {
-                
-                Interactable interactable = hit.collider.GetComponent<Interactable>();
-                if (interactable != null)
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+
+
+                isFirstAttack = true;
+                if (Physics.Raycast(ray, out hit, 100))
                 {
-                    SetFocus(interactable);
-                }
-                else
-                {
-                    motor.MoveToPoint(hit.point);
-                    RemoveFocus();
-                }
 
-                
-
-            }
-
-        }
-
-        if (Input.GetMouseButtonDown(1) && HeavySlashEnabled)
-        {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
+                    Interactable interactable = hit.collider.GetComponent<Interactable>();
+                    if (interactable != null)
+                    {
+                        SetFocus(interactable);
+                    }
+                    else
+                    {
+                        if (!motor.SecondAttack) motor.MoveToPoint(hit.point);
+                        RemoveFocus();
+                    }
 
 
-            isFirstAttack = false;
-            if (Physics.Raycast(ray, out hit, 100))
-            {
-                
-                Interactable interactable = hit.collider.GetComponent<Interactable>();
-                if (interactable != null)
-                {
-                    SetFocus(interactable);
+
                 }
 
             }
 
-        }
+        if (!motor.SecondAttack)
+        {
+            if (Input.GetMouseButtonDown(1) && HeavySlashEnabled)
+            {
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
 
+
+                isFirstAttack = false;
+                if (Physics.Raycast(ray, out hit, 100))
+                {
+
+                    Interactable interactable = hit.collider.GetComponent<Interactable>();
+                    if (interactable != null)
+                    {
+                        SetFocus(interactable);
+                    }
+
+                }
+
+            }
+        }
+            
+
+        
     }
 
     public bool GetAttackInfo()
