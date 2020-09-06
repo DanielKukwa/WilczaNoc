@@ -18,6 +18,7 @@ public class SpecialAbilities : MonoBehaviour
     GameObject dashTrails;
     ParticleSystem particles;
     [HideInInspector] public DashBar dashBar;
+    [SerializeField] private bool _dashHelpLines = false;
 
     private Vector3 startPosition;
     private Vector3 targetPosition;
@@ -111,12 +112,14 @@ public class SpecialAbilities : MonoBehaviour
 
                 if (agent.Raycast(targetPosition, out navHit))
                 {
-                    GameObject newLine = new GameObject("Line");
-                    LineRenderer line = newLine.AddComponent<LineRenderer>();
-                    line.widthMultiplier = 0.1f;
-                    line.SetPosition(0, transform.position);
-                    line.SetPosition(1, navHit.position);
-
+                    if (_dashHelpLines)
+                    {
+                        GameObject newLine = new GameObject("Line");
+                        LineRenderer line = newLine.AddComponent<LineRenderer>();
+                        line.widthMultiplier = 0.1f;
+                        line.SetPosition(0, transform.position);
+                        line.SetPosition(1, navHit.position);
+                    }                  
                     targetPosition = navHit.position;
                 }
                 

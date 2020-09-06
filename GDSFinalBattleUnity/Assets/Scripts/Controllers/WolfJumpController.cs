@@ -29,6 +29,7 @@ public class WolfJumpController : MonoBehaviour
     private float _jumpCooldown = 0f;
     [SerializeField] private float _jumpRadiusTrigger = 5f;
     [SerializeField] private float _landingDistanceBehindPlayer = 2f;
+    [SerializeField] private bool _jumpBlockedHelpLines = false;
     [SerializeField] private float _markingTime = 2f;
     [SerializeField] private float _jumpingTime = 1f;
     [SerializeField] private float _restingTime = 2f;
@@ -121,11 +122,14 @@ public class WolfJumpController : MonoBehaviour
 
         if(agent.Raycast(targetPosition, out hit))
         {
-            GameObject newLine = new GameObject("Line");
-            LineRenderer line = newLine.AddComponent<LineRenderer>();
-            line.widthMultiplier = 0.1f;
-            line.SetPosition(0, transform.position);
-            line.SetPosition(1, hit.position);
+            if (_jumpBlockedHelpLines)
+            {
+                GameObject newLine = new GameObject("Line");
+                LineRenderer line = newLine.AddComponent<LineRenderer>();
+                line.widthMultiplier = 0.1f;
+                line.SetPosition(0, transform.position);
+                line.SetPosition(1, hit.position);
+            }         
             _isPathBlocked = true;
             _isJump = false;
             agent.enabled = true;
