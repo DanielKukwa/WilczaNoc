@@ -541,7 +541,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: de50682c07c594643811a2a18db3f300, type: 3}
+  m_audioClip: {fileID: 8300000, guid: adc0d718dab771a429f9b27d56b8d28b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -640,7 +640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unmovableTime: 1
-  _audioTime: 12
+  _audioTime: 14
   _destination: {fileID: 1329826958}
   _destinationDistanceOffset: 2
   _lookAt: {fileID: 1421346392}
@@ -701,7 +701,7 @@ MonoBehaviour:
   _destination: {fileID: 1956725527}
   _destinationDistanceOffset: 3
   _audio: {fileID: 76166943}
-  _audioTime: 10
+  _audioTime: 11
 --- !u!82 &76166943
 AudioSource:
   m_ObjectHideFlags: 0
@@ -712,7 +712,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ef368fb9875d08346ada0a40f8bb1572, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e25995cf60800da4788edcc274433753, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -25446,10 +25446,10 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545923210}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a3796eae7362e0e42a677f36781e882f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a9c028fa864ec7f49908cebd1e9a94d7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
