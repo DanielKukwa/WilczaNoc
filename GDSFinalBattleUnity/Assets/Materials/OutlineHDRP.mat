@@ -22,8 +22,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: OutlineHDRP
   m_Shader: {fileID: 4800000, guid: 9dff909c182ebfc4b874fadddc299432, type: 3}
-  m_ShaderKeywords: _BASECOLOR_NONE _FRESNEL _NORMALMAP_TANGENT_SPACE _UVSET_UV0
-    _ZWRITE_ON
+  m_ShaderKeywords: _BASECOLOR_NONE _NORMALMAP_TANGENT_SPACE _UVSET_UV0 _ZWRITE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -176,7 +175,7 @@ Material:
     - _EnableFogOnTransparent: 1
     - _EnableGeometricSpecularAA: 0
     - _EnergyConservingSpecularColor: 1
-    - _Fresnel: 1
+    - _Fresnel: 0
     - _FresnelPower: 2
     - _FresnelScale: 2
     - _HeightAmplitude: 0.02

@@ -17550,8 +17550,8 @@ MonoBehaviour:
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
   color: {r: 0.990566, g: 0.023362402, b: 0.023362402, a: 1}
   mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
+  fresnelScale: 1
+  fresnelPower: 0
   alphaThreshold: 0.5
 --- !u!114 &1138300985
 MonoBehaviour:
@@ -17569,7 +17569,7 @@ MonoBehaviour:
   color: {r: 1, g: 1, b: 1, a: 1}
   mask: {fileID: 0}
   fresnelScale: 1
-  fresnelPower: 1
+  fresnelPower: 0
   alphaThreshold: 0.5
 --- !u!114 &1138300986
 MonoBehaviour:
@@ -26289,6 +26289,7 @@ GameObject:
   - component: {fileID: 744834096}
   - component: {fileID: 1616878046}
   - component: {fileID: 1616878045}
+  - component: {fileID: 1616878047}
   m_Layer: 0
   m_Name: cage (5)
   m_TagString: Thing
@@ -26332,6 +26333,18 @@ MonoBehaviour:
   fresnelScale: 1
   fresnelPower: 1
   alphaThreshold: 0.5
+--- !u!114 &1616878047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616878044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6294588f5c5d34cb6a68be5d8e1d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &1617753230
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26512,6 +26525,7 @@ GameObject:
   - component: {fileID: 732533538}
   - component: {fileID: 1638539513}
   - component: {fileID: 1638539512}
+  - component: {fileID: 1638539514}
   m_Layer: 0
   m_Name: cage (6)
   m_TagString: Thing
@@ -26555,6 +26569,18 @@ MonoBehaviour:
   fresnelScale: 1
   fresnelPower: 1
   alphaThreshold: 0.5
+--- !u!114 &1638539514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638539511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6294588f5c5d34cb6a68be5d8e1d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1638745645
 Transform:
   m_ObjectHideFlags: 0
@@ -27318,6 +27344,7 @@ GameObject:
   - component: {fileID: 1541431888}
   - component: {fileID: 1708531674}
   - component: {fileID: 1708531673}
+  - component: {fileID: 1708531675}
   m_Layer: 0
   m_Name: cage (4)
   m_TagString: Thing
@@ -27361,6 +27388,18 @@ MonoBehaviour:
   fresnelScale: 1
   fresnelPower: 1
   alphaThreshold: 0.5
+--- !u!114 &1708531675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708531672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6294588f5c5d34cb6a68be5d8e1d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &1709535882
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -29043,7 +29082,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1948145092}
-  - component: {fileID: 1948145093}
   m_Layer: 0
   m_Name: Cages
   m_TagString: Untagged
@@ -29071,18 +29109,6 @@ Transform:
   m_Father: {fileID: 51690281}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 139.972, z: 0}
---- !u!114 &1948145093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948145091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c6294588f5c5d34cb6a68be5d8e1d7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1949282779
 GameObject:
   m_ObjectHideFlags: 0
