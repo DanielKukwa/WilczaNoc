@@ -31,6 +31,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04868342cca6a644d8021860c0c2e773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1234204405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596625325789847551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  mask: {fileID: 0}
+  fresnelScale: 2
+  fresnelPower: 2
+  alphaThreshold: 0.5
 --- !u!1 &3892848896853018867
 GameObject:
   m_ObjectHideFlags: 0
@@ -49,6 +67,7 @@ GameObject:
   - component: {fileID: 3892848896853018872}
   - component: {fileID: 8732187426268294301}
   - component: {fileID: 1410557538}
+  - component: {fileID: 982730048}
   m_Layer: 0
   m_Name: WolfNormal
   m_TagString: Untagged
@@ -175,6 +194,8 @@ MonoBehaviour:
   axeActive: 0
   attackSpeed: 0.8
   attackDelay: 0.5
+  FirstAttackEnabled: 1
+  _firstAttackDelay: 1.25
   attack2Speed: 1
   attack2Delay: 0.6
   animDelay: 2
@@ -223,6 +244,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 0}
+--- !u!114 &982730048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3892848896853018867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6294588f5c5d34cb6a68be5d8e1d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2858212233628621469
 PrefabInstance:
   m_ObjectHideFlags: 0

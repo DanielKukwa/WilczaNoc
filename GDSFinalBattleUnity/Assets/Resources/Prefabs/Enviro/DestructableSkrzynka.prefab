@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 3255579294571367413}
   - component: {fileID: 3255579294571367415}
   - component: {fileID: 3255579294571367414}
+  - component: {fileID: 5510489204626799547}
+  - component: {fileID: 1181994460486253969}
   m_Layer: 0
   m_Name: DestructableSkrzynka
   m_TagString: Thing
@@ -62,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 20
   currentHealth: 0
+  healAnimTime: 1.5
   restartDelay: 1
   godMode: 0
   damageValue: 0
@@ -81,6 +84,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 3
   isFirstAttack: 0
+--- !u!114 &5510489204626799547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255579294571367412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6294588f5c5d34cb6a68be5d8e1d7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1181994460486253969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255579294571367412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e1c95751aae3443bf366b1dc7b5c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &68664536327499204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,24 +125,6 @@ MonoBehaviour:
   mask: {fileID: 0}
   fresnelScale: 1
   fresnelPower: 1
-  alphaThreshold: 0.5
---- !u!114 &5745726642793148285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8918778694041785728}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 0.990566, g: 0.014017418, b: 0.014017418, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!1001 &640690792580615305
 PrefabInstance:

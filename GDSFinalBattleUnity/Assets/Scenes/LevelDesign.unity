@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 2181782}
   - component: {fileID: 2181781}
   - component: {fileID: 2181780}
-  - component: {fileID: 2181779}
   m_Layer: 0
   m_Name: bone1
   m_TagString: Untagged
@@ -155,24 +154,6 @@ Transform:
   m_Father: {fileID: 2025010193}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2181779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2181777}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &2181780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4020,7 +4001,6 @@ GameObject:
   - component: {fileID: 210377742}
   - component: {fileID: 210377741}
   - component: {fileID: 210377740}
-  - component: {fileID: 210377739}
   m_Layer: 0
   m_Name: deer_corp_head
   m_TagString: Untagged
@@ -4042,24 +4022,6 @@ Transform:
   m_Father: {fileID: 2025010193}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &210377739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210377737}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &210377740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4721,24 +4683,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 244002095}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &244493085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4238320515545488660}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &244493086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4752,7 +4696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   mask: {fileID: 0}
   fresnelScale: 1
   fresnelPower: 1
@@ -5340,24 +5284,6 @@ Transform:
   m_Father: {fileID: 2057533903}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &267854521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1894397715054416448}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &267854522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5371,7 +5297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   mask: {fileID: 0}
   fresnelScale: 1
   fresnelPower: 1
@@ -7346,24 +7272,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &409555908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3077447020568554299}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &409555909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7377,28 +7285,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   mask: {fileID: 0}
   fresnelScale: 1
   fresnelPower: 1
-  alphaThreshold: 0.5
---- !u!114 &411510098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5471715524552091970}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
   alphaThreshold: 0.5
 --- !u!114 &411510099
 MonoBehaviour:
@@ -7413,7 +7303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   mask: {fileID: 0}
   fresnelScale: 1
   fresnelPower: 1
@@ -7430,24 +7320,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 991979353}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &416774153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1754450539878406204}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &416774154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7461,7 +7333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   mask: {fileID: 0}
   fresnelScale: 1
   fresnelPower: 1
@@ -8659,24 +8531,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1435225895}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &477520730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4793437063033597191}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &477520731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8690,7 +8544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   mask: {fileID: 0}
   fresnelScale: 1
   fresnelPower: 1
@@ -13202,6 +13056,7 @@ GameObject:
   - component: {fileID: 680233244}
   - component: {fileID: 680233249}
   - component: {fileID: 680233248}
+  - component: {fileID: 680233250}
   - component: {fileID: 680233247}
   - component: {fileID: 680233246}
   - component: {fileID: 680233245}
@@ -13374,6 +13229,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 1.42
+--- !u!114 &680233250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680233243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e1c95751aae3443bf366b1dc7b5c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &681458309 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011695518034, guid: 465c505844950da499dcf096a6da4409,
@@ -13492,24 +13359,6 @@ Transform:
   m_Father: {fileID: 2057533903}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &694391937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3602223478241474942}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &694391938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13523,7 +13372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   mask: {fileID: 0}
   fresnelScale: 1
   fresnelPower: 1
@@ -13540,7 +13389,6 @@ GameObject:
   - component: {fileID: 694621668}
   - component: {fileID: 694621667}
   - component: {fileID: 694621666}
-  - component: {fileID: 694621665}
   m_Layer: 0
   m_Name: deer_corp_chest
   m_TagString: Untagged
@@ -13562,24 +13410,6 @@ Transform:
   m_Father: {fileID: 2025010193}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &694621665
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 694621663}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &694621666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13899,24 +13729,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 039955465bfc4da4797372188e39d5e1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 465c505844950da499dcf096a6da4409, type: 3}
---- !u!114 &712469224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4615045995956034520}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &712469225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13930,7 +13742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   mask: {fileID: 0}
   fresnelScale: 1
   fresnelPower: 1
@@ -21145,24 +20957,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 886937240}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1019845106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1917128282351617832}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &1019845107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21176,7 +20970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   mask: {fileID: 0}
   fresnelScale: 1
   fresnelPower: 1
@@ -22933,7 +22727,6 @@ GameObject:
   - component: {fileID: 1098040516}
   - component: {fileID: 1098040515}
   - component: {fileID: 1098040514}
-  - component: {fileID: 1098040513}
   m_Layer: 0
   m_Name: deer_horns
   m_TagString: Untagged
@@ -22955,24 +22748,6 @@ Transform:
   m_Father: {fileID: 2025010193}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1098040513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098040511}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &1098040514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24303,7 +24078,6 @@ GameObject:
   - component: {fileID: 1199553288}
   - component: {fileID: 1199553287}
   - component: {fileID: 1199553286}
-  - component: {fileID: 1199553285}
   m_Layer: 0
   m_Name: spine
   m_TagString: Untagged
@@ -24325,24 +24099,6 @@ Transform:
   m_Father: {fileID: 2025010193}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1199553285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199553283}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &1199553286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24863,24 +24619,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1229630872}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1237208719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3010952044251820100}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &1237208720
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24894,7 +24632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   mask: {fileID: 0}
   fresnelScale: 1
   fresnelPower: 1
@@ -30976,7 +30714,6 @@ GameObject:
   - component: {fileID: 1587231882}
   - component: {fileID: 1587231881}
   - component: {fileID: 1587231880}
-  - component: {fileID: 1587231879}
   m_Layer: 0
   m_Name: deer_eyes.001
   m_TagString: Untagged
@@ -30998,24 +30735,6 @@ Transform:
   m_Father: {fileID: 2025010193}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1587231879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1587231877}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &1587231880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32624,24 +32343,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49e8bd74df9ba2148af86720b0a2142f, type: 3}
---- !u!114 &1657779763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2522823931014740910}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 0.023584902, b: 0.023584902, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &1657779764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32655,7 +32356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 1}
   mask: {fileID: 0}
   fresnelScale: 1
   fresnelPower: 1
@@ -35548,7 +35249,6 @@ GameObject:
   - component: {fileID: 1845357811}
   - component: {fileID: 1845357810}
   - component: {fileID: 1845357809}
-  - component: {fileID: 1845357808}
   m_Layer: 0
   m_Name: deer_corp_ass
   m_TagString: Untagged
@@ -35570,24 +35270,6 @@ Transform:
   m_Father: {fileID: 2025010193}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1845357808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845357806}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &1845357809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38759,6 +38441,7 @@ GameObject:
   - component: {fileID: 1961920458}
   - component: {fileID: 1961920459}
   - component: {fileID: 1961920460}
+  - component: {fileID: 1961920461}
   m_Layer: 0
   m_Name: Forester
   m_TagString: Forester
@@ -38940,6 +38623,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1961920461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1961920454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73e1c95751aae3443bf366b1dc7b5c5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1965487361 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8781937998715656674, guid: 6d23eaf44a3f101418dad1b782b09c27,
@@ -39732,7 +39427,6 @@ GameObject:
   - component: {fileID: 2029776091}
   - component: {fileID: 2029776090}
   - component: {fileID: 2029776089}
-  - component: {fileID: 2029776088}
   m_Layer: 0
   m_Name: deer_ribcage.001
   m_TagString: Untagged
@@ -39754,24 +39448,6 @@ Transform:
   m_Father: {fileID: 2025010193}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2029776088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029776086}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &2029776089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40710,7 +40386,6 @@ GameObject:
   - component: {fileID: 2100618070}
   - component: {fileID: 2100618069}
   - component: {fileID: 2100618068}
-  - component: {fileID: 2100618067}
   m_Layer: 0
   m_Name: deer_corp_frl
   m_TagString: Untagged
@@ -40732,24 +40407,6 @@ Transform:
   m_Father: {fileID: 2025010193}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2100618067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2100618065}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a34dce33c4213c4393266fbcd799d5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  material: {fileID: 2100000, guid: 1009139988fad8042836c45bfe338ed1, type: 2}
-  color: {r: 0.9339623, g: 0.118948035, b: 0.118948035, a: 1}
-  mask: {fileID: 0}
-  fresnelScale: 5
-  fresnelPower: 3
-  alphaThreshold: 0.5
 --- !u!114 &2100618068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42557,7 +42214,6 @@ GameObject:
   - component: {fileID: 8770763519486500253}
   - component: {fileID: 3722931253072126148}
   - component: {fileID: 416774154}
-  - component: {fileID: 416774153}
   m_Layer: 0
   m_Name: suit_r
   m_TagString: Untagged
@@ -42577,7 +42233,6 @@ GameObject:
   - component: {fileID: 386214718165384916}
   - component: {fileID: 1707045946908905277}
   - component: {fileID: 267854522}
-  - component: {fileID: 267854521}
   m_Layer: 0
   m_Name: jaw_r
   m_TagString: Untagged
@@ -42597,7 +42252,6 @@ GameObject:
   - component: {fileID: 2401331751372003263}
   - component: {fileID: 774881896461812387}
   - component: {fileID: 1019845107}
-  - component: {fileID: 1019845106}
   m_Layer: 0
   m_Name: gloves_r
   m_TagString: Untagged
@@ -42661,7 +42315,6 @@ GameObject:
   - component: {fileID: 6365729501315525468}
   - component: {fileID: 7949014926742114595}
   - component: {fileID: 1657779764}
-  - component: {fileID: 1657779763}
   m_Layer: 0
   m_Name: skull_r
   m_TagString: Untagged
@@ -42728,7 +42381,6 @@ GameObject:
   - component: {fileID: 3392150013020469043}
   - component: {fileID: 1229598965953610266}
   - component: {fileID: 1237208720}
-  - component: {fileID: 1237208719}
   m_Layer: 0
   m_Name: shoes_r
   m_TagString: Untagged
@@ -42748,7 +42400,6 @@ GameObject:
   - component: {fileID: 5659657308363789569}
   - component: {fileID: 746747207635810910}
   - component: {fileID: 409555909}
-  - component: {fileID: 409555908}
   m_Layer: 0
   m_Name: chest
   m_TagString: Untagged
@@ -42815,7 +42466,6 @@ GameObject:
   - component: {fileID: 2189992189805772574}
   - component: {fileID: 1145663924065844815}
   - component: {fileID: 694391938}
-  - component: {fileID: 694391937}
   m_Layer: 0
   m_Name: guts_r
   m_TagString: Untagged
@@ -42874,7 +42524,6 @@ GameObject:
   - component: {fileID: 6116302855439057736}
   - component: {fileID: 3094266452054744732}
   - component: {fileID: 244493086}
-  - component: {fileID: 244493085}
   m_Layer: 0
   m_Name: head_r
   m_TagString: Untagged
@@ -42908,7 +42557,6 @@ GameObject:
   - component: {fileID: 9109302265510965532}
   - component: {fileID: 6808387155658361696}
   - component: {fileID: 712469225}
-  - component: {fileID: 712469224}
   m_Layer: 0
   m_Name: eyes
   m_TagString: Untagged
@@ -42928,7 +42576,6 @@ GameObject:
   - component: {fileID: 647218073099022453}
   - component: {fileID: 1260823184707512317}
   - component: {fileID: 477520731}
-  - component: {fileID: 477520730}
   m_Layer: 0
   m_Name: hair_r
   m_TagString: Untagged
@@ -43009,7 +42656,6 @@ GameObject:
   - component: {fileID: 2582553428811313519}
   - component: {fileID: 2612872574264717608}
   - component: {fileID: 411510099}
-  - component: {fileID: 411510098}
   m_Layer: 0
   m_Name: trousers_r
   m_TagString: Untagged
