@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Bridge : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Bridge : MonoBehaviour
     private AudioSource _audio;
     [SerializeField] private GameObject[] _lines;
     [SerializeField] private GameObject[] _wolfToDestroy;
+    [SerializeField] private GameObject[] _wolfAlive;
+    [SerializeField] private Transform _wolfFinalDestination;
 
     private void Start()
     {
@@ -25,6 +28,16 @@ public class Bridge : MonoBehaviour
             foreach(GameObject wolf in _wolfToDestroy)
             {
                 Destroy(wolf.gameObject);
+            }
+            foreach (GameObject wolf in _wolfAlive)
+            {
+                if (wolf)
+                {
+                    WolfNormalController wolfNormal = wolf.GetComponent<WolfNormalController>();
+                    Destroy(wolfNormal);
+                    NavMeshAgent agent = wolf.GetComponent<NavMeshAgent>();
+                    agent.SetDestination(_wolfFinalDestination.position);
+                }
             }
             Destroy(this);
         }

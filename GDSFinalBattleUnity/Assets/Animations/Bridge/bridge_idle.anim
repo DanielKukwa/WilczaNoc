@@ -55,7 +55,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 5.016667
+        time: 5.0333333
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -66,9 +66,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_IsActive
-    path: NavAgentDestroyer
-    classID: 1
+    attribute: m_Enabled
+    path: Drewienko (17)
+    classID: 208
     script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -79,10 +79,10 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3480602288
-      attribute: 2086281974
+      path: 3921770472
+      attribute: 3305885265
       script: {fileID: 0}
-      typeID: 1
+      typeID: 208
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
@@ -98,7 +98,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 5.016667
+    m_StopTime: 5.0333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -211,7 +211,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 5.016667
+        time: 5.0333333
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -222,9 +222,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_IsActive
-    path: NavAgentDestroyer
-    classID: 1
+    attribute: m_Enabled
+    path: Drewienko (17)
+    classID: 208
     script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
