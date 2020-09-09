@@ -7,6 +7,7 @@ public class Bridge : MonoBehaviour
     private Animator _anim;
     private AudioSource _audio;
     [SerializeField] private GameObject[] _lines;
+    [SerializeField] private GameObject[] _wolfToDestroy;
 
     private void Start()
     {
@@ -21,6 +22,10 @@ public class Bridge : MonoBehaviour
         {
             _anim.SetTrigger("Fall");
             _audio.Play();
+            foreach(GameObject wolf in _wolfToDestroy)
+            {
+                Destroy(wolf.gameObject);
+            }
             Destroy(this);
         }
     }
