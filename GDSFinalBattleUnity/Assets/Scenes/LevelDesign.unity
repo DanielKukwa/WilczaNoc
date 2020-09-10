@@ -38441,7 +38441,6 @@ GameObject:
   - component: {fileID: 1961920458}
   - component: {fileID: 1961920459}
   - component: {fileID: 1961920460}
-  - component: {fileID: 1961920461}
   m_Layer: 0
   m_Name: Forester
   m_TagString: Forester
@@ -38623,18 +38622,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1961920461
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1961920454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73e1c95751aae3443bf366b1dc7b5c5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1965487361 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8781937998715656674, guid: 6d23eaf44a3f101418dad1b782b09c27,
@@ -42895,6 +42882,16 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5862628165221569479, guid: f3165760c2431a34095b6f259126fc17,
+        type: 3}
+      propertyPath: m_Speed
+      value: 5.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862628165221569479, guid: f3165760c2431a34095b6f259126fc17,
+        type: 3}
+      propertyPath: m_WalkableMask
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5862628165221569480, guid: f3165760c2431a34095b6f259126fc17,
         type: 3}
       propertyPath: axeActive
@@ -42908,7 +42905,7 @@ PrefabInstance:
     - target: {fileID: 5862628165221569484, guid: f3165760c2431a34095b6f259126fc17,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 222.3
+      value: 79.71
       objectReference: {fileID: 0}
     - target: {fileID: 5862628165221569484, guid: f3165760c2431a34095b6f259126fc17,
         type: 3}
@@ -42918,7 +42915,7 @@ PrefabInstance:
     - target: {fileID: 5862628165221569484, guid: f3165760c2431a34095b6f259126fc17,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 336.5
+      value: -127.2
       objectReference: {fileID: 0}
     - target: {fileID: 5862628165221569484, guid: f3165760c2431a34095b6f259126fc17,
         type: 3}
