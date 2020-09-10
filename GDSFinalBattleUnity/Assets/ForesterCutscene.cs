@@ -81,6 +81,7 @@ public class ForesterCutscene : Cutscene
         _forester.Healthbar.gameObject.SetActive(true);
         _forester.Healthbar.SetSliderMaxValue(10);
         _forester.Healthbar.SetSliderValue(1);
+        _forester.Healthbar.Animator.SetTrigger("Show");
         base.Final();
     }
 }
