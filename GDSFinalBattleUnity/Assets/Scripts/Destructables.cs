@@ -73,9 +73,13 @@ public class Destructables : Interactable
         Destroy(this.gameObject);
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
-        playerController.RemoveFocus();
-        playerController.motor.agent.SetDestination(playerController.transform.position);
+        if (playerController)
+        {
+            playerController.RemoveFocus();
+            playerController.motor.agent.SetDestination(playerController.transform.position);
+        }
+        
     }
 }

@@ -8,6 +8,8 @@ public class CutsceneBabcia : Cutscene
     [SerializeField] private Transform _destination;
     [SerializeField] private Transform _doors;
     [SerializeField] private Destructables[] _barricades;
+    private OutlineVisibility _outVis;
+    private OutlineController _outController;
     [SerializeField] private GameObject _leaveTrigger;
 
     [SerializeField] private float _destinationDistanceOffset = 2f;
@@ -17,6 +19,7 @@ public class CutsceneBabcia : Cutscene
     private AudioSource _audio;
     [SerializeField] private float _audioTime = 2f;
 
+    [SerializeField] private Animator _gunAnimator;
     protected override void Start()
     {
         base.Start();
@@ -24,7 +27,12 @@ public class CutsceneBabcia : Cutscene
         _eventTrigger.OnEventTrigger += StartEvent;
         _eventTrigger.gameObject.SetActive(false);
 
-        foreach(Destructables d in _barricades)
+        _outVis = _barricades[0].GetComponent<OutlineVisibility>();
+        _outVis.enabled = false;
+        _outController = _barricades[0].GetComponent<OutlineController>();
+        _outController.enabled = false;
+
+        foreach (Destructables d in _barricades)
         {
             d.enabled = false;
         }
@@ -49,7 +57,7 @@ public class CutsceneBabcia : Cutscene
         StartCoroutine(LookAt(_doors.transform));
         // gadka szmatka babci
         _audio.Play();
-
+        _gunAnimator.SetTrigger("GunOut");
         yield return new WaitForSeconds(_audioTime);
 
         Final();
@@ -61,6 +69,8 @@ public class CutsceneBabcia : Cutscene
         // włączyć destructables na barykadzie
         foreach (Destructables d in _barricades)
         {
+            _outVis.enabled = true;
+            _outController.enabled = true;
             d.enabled = true;
         }
         // i trigger końcowy
