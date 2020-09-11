@@ -20,6 +20,7 @@ public class WolfJumpController : MonoBehaviour
     private bool _isMark = false;
     private bool _isJump = false;
     private bool _isPathBlocked = false;
+    private bool _isPlayerOnFront = false;
     [SerializeField] private float _jumpRate = 5f;
     // empty GO to store spot when in finding spot mode
     private GameObject _newSpot;
@@ -115,8 +116,24 @@ public class WolfJumpController : MonoBehaviour
         
 
         _isPathBlocked = false;
+        _isPlayerOnFront = false;
 
         Vector3 direction = targetPosition - startPosition;
+
+        Ray ray = new Ray(transform.position, direction);
+        RaycastHit[] hitInfos = Physics.SphereCastAll(ray, 1f, direction.magnitude);
+
+        if(hitInfos.Length > 0)
+        {
+            foreach(RaycastHit hitInfo in hitInfos)
+            {
+                if(hitInfo.collider.tag == "Player")
+                {
+                    _isPlayerOnFront = true;
+                }
+            }
+        }
+
 
         NavMeshHit hit;
 
@@ -169,8 +186,9 @@ public class WolfJumpController : MonoBehaviour
 
 
 
-        if (!_isPathBlocked)
+        if (!_isPathBlocked && _isPlayerOnFront)
         {
+
             agent.stoppingDistance = _jumpRadiusTrigger;
             _isJump = true;
             _isMark = true;
