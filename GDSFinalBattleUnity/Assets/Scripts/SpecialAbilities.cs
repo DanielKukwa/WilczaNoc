@@ -7,6 +7,7 @@ public class SpecialAbilities : MonoBehaviour
 
     CharacterStats myStats;
     PlayerManager playerManager;
+    PlayerController _playerController;
     PlayerMotor _motor;
     CharacterCombat _combat;
     Transform playerPosition;
@@ -46,6 +47,7 @@ public class SpecialAbilities : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         myStats = GetComponent<CharacterStats>();
         playerManager = PlayerManager.instance;
+        _playerController = playerManager.player.GetComponent<PlayerController>();
         playerPosition = playerManager.player.GetComponent<Transform>();
         cam = Camera.main;
         agent = GetComponent<NavMeshAgent>();
@@ -89,6 +91,7 @@ public class SpecialAbilities : MonoBehaviour
         {
             StopAllCoroutines();
             DashEnabled = false;
+            _playerController.RemoveFocus();
 
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
