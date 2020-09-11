@@ -11,7 +11,7 @@ public class PlayerMotor : MonoBehaviour
     Transform target;
     [SerializeField] float rotationSpeed = 5f;
     CharacterCombat combat;
-    NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     public bool SecondAttack = false;
     // Start is called before the first frame update

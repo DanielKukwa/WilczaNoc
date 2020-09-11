@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterStats))]
 public class Destructables : Interactable
 {
+    public System.Action OnHit;
     PlayerManager playerManager;
     CharacterStats myStats;
     PlayerController playerController;
@@ -43,6 +44,7 @@ public class Destructables : Interactable
             {
                 _playOnce = true;
                 playerCombat.OnDeleyedAttack += SmallParticles;
+                OnHit?.Invoke();
             }
             
         }
@@ -52,6 +54,7 @@ public class Destructables : Interactable
             {
                 _playOnce = true;
                 playerCombat.OnDeleyedAttack += SmallParticles;
+                OnHit?.Invoke();
             }
         }
 
@@ -68,5 +71,11 @@ public class Destructables : Interactable
     private void Destruct()
     {
         Destroy(this.gameObject);
+    }
+
+    private void OnDisable()
+    {
+        playerController.RemoveFocus();
+        playerController.motor.agent.SetDestination(playerController.transform.position);
     }
 }
