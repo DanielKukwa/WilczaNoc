@@ -756,7 +756,7 @@ MonoBehaviour:
   target: {fileID: 0}
   _attackDistance: 0.75
   _normalAttackDistance: 1.25
-  _jumpRate: 6
+  _jumpRate: 1
   _findingSpotTime: 2
   _minFindSpotAreaSize: 7
   _maxFindSpotAreaSize: 10
