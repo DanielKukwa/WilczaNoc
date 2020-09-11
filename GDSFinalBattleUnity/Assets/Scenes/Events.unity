@@ -6687,6 +6687,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Thing
       objectReference: {fileID: 0}
+    - target: {fileID: 165424, guid: e17090a47b884224e92e6bf7126d1eca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 407748, guid: e17090a47b884224e92e6bf7126d1eca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 224.87
@@ -16775,6 +16779,10 @@ PrefabInstance:
     - target: {fileID: 165424, guid: e17090a47b884224e92e6bf7126d1eca, type: 3}
       propertyPath: m_TagString
       value: Thing
+      objectReference: {fileID: 0}
+    - target: {fileID: 165424, guid: e17090a47b884224e92e6bf7126d1eca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 407748, guid: e17090a47b884224e92e6bf7126d1eca, type: 3}
       propertyPath: m_LocalPosition.x
