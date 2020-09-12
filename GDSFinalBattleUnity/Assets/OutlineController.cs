@@ -19,33 +19,40 @@ public class OutlineController : MonoBehaviour
 
     public void ShowOutline()
     {
-        if (outVis) { outVis.enabled = false; }
-
-        foreach (Knife.HDRPOutline.Core.OutlineObject outline in outlinesList)
+        if (this.isActiveAndEnabled)
         {
-            
-            //outline.enabled = true;
-            outline.Color = new Color(1, 0, 0, 1f);
-            
+            if (outVis) { outVis.enabled = false; }
+
+            foreach (Knife.HDRPOutline.Core.OutlineObject outline in outlinesList)
+            {
+
+                //outline.enabled = true;
+                outline.Color = new Color(1, 0, 0, 1f);
+
+            }
+            //outlinesList[1].enabled = true;
+            //outlinesList[0].enabled = false;
         }
-        //outlinesList[1].enabled = true;
-        //outlinesList[0].enabled = false;
-        
-       
+
+
+
     }
 
     public void HideOutline()
     {
-        
-        foreach (Knife.HDRPOutline.Core.OutlineObject outline in outlinesList)
+        if (this.isActiveAndEnabled)
         {
-           
-            outline.Color = new Color(0, 0, 0, 0f);
-           
+            foreach (Knife.HDRPOutline.Core.OutlineObject outline in outlinesList)
+            {
+
+                outline.Color = new Color(0, 0, 0, 0f);
+
+            }
+            //outlinesList[1].enabled = false;
+            //outlinesList[0].enabled = true;
+            if (outVis) { outVis.enabled = true; }
         }
-        //outlinesList[1].enabled = false;
-        //outlinesList[0].enabled = true;
-        if (outVis) { outVis.enabled = true; }
+        
     }
 
 }
