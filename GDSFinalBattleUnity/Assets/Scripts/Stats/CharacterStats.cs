@@ -19,7 +19,7 @@ public class CharacterStats : MonoBehaviour
     Animator animator;
     public bool godMode = false;
     NavMeshAgent agent;
-
+    SceneLoader sceneLoader;
     
 
     [Header("Damage")]
@@ -50,6 +50,7 @@ public class CharacterStats : MonoBehaviour
 
         animator = GetComponentInChildren<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        sceneLoader = FindObjectOfType<SceneLoader>();
 
 
     }
@@ -72,7 +73,7 @@ public class CharacterStats : MonoBehaviour
 
         // Damage the character
         currentHealth -= damage;
-        Debug.Log(transform.name + " takes " + damage + " damage.");
+        //Debug.Log(transform.name + " takes " + damage + " damage.");
         if (_healthbar)
         {
             if(gameObject.tag != "Player" && _firstHit == false)
@@ -188,19 +189,8 @@ public class CharacterStats : MonoBehaviour
 
     void Restart()
     {
-        if (Application.isEditor)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            SceneManager.LoadScene("LevelDesignAnti", LoadSceneMode.Additive);
-            SceneManager.LoadScene("Kamil_enviro", LoadSceneMode.Additive);
-            SceneManager.LoadScene("Events", LoadSceneMode.Additive);
-            SceneManager.LoadScene("DanInteracts", LoadSceneMode.Additive);
-        }
-        else
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-        
+
+        sceneLoader.LoadGameOver();
     }
 
 

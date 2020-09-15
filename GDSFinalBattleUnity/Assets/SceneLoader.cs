@@ -15,7 +15,7 @@ public class SceneLoader : MonoBehaviour
     {
         if (Application.isEditor)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("LevelDesign");
             SceneManager.LoadScene("LevelDesignAnti", LoadSceneMode.Additive);
             SceneManager.LoadScene("Kamil_enviro", LoadSceneMode.Additive);
             SceneManager.LoadScene("Events", LoadSceneMode.Additive);
@@ -23,7 +23,8 @@ public class SceneLoader : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("LevelDesign");
         }
     }
 
@@ -36,7 +37,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadGameOver()
     {
 
-        SceneManager.LoadScene("Game Over");
+        SceneManager.LoadScene("GameOver");
     }
 
     public void QuitGame()
