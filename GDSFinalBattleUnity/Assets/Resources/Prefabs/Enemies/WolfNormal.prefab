@@ -19,18 +19,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &5286661399100616410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3596625325789847551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04868342cca6a644d8021860c0c2e773, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1234204405
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49,6 +37,18 @@ MonoBehaviour:
   fresnelScale: 2
   fresnelPower: 2
   alphaThreshold: 0.5
+--- !u!114 &5286661399100616410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3596625325789847551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04868342cca6a644d8021860c0c2e773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3892848896853018867
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,7 +402,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a46bb018a0380aa43974d82fafece220, type: 2}
+      objectReference: {fileID: 2100000, guid: 1e44fdeea67c49b4fb77627ff1f42223, type: 2}
     - target: {fileID: -5859423666505519952, guid: ec9a4ad6778f8a04b8347efd4f2de9bd,
         type: 3}
       propertyPath: m_Materials.Array.data[2]
