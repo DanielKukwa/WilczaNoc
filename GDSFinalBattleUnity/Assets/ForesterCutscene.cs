@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ForesterCutscene : Cutscene
 {
+    private SelectecedInfo _selectecedInfo;
     [SerializeField] Animator[] _wolfAnimators;
 
     [SerializeField] LookRadiusTrigger _trigger;
@@ -22,6 +23,10 @@ public class ForesterCutscene : Cutscene
         base.Start();
 
         _forester = GameObject.FindGameObjectWithTag("Forester").GetComponent<Forester>();
+        _selectecedInfo = _forester.GetComponentInChildren<SelectecedInfo>();
+
+        _selectecedInfo.OnClick += StartEvent;
+        if (!_selectecedInfo) Debug.Log("BRAK SELECTED INFO!!!!");
         foreach (Animator anim in _wolfAnimators)
         {
             anim.SetTrigger("Eat");
@@ -40,22 +45,23 @@ public class ForesterCutscene : Cutscene
             _wolfStopEat = true;
         }
 
-        if (!_play)
-        {
-            if (!_wolves[0] && !_wolves[1])
-            {
-                StartEvent();
-            }
-        }
-        else
-        {
+        //if (!_play)
+        //{
+        //    if (!_wolves[0] && !_wolves[1])
+        //    {
+        //        StartEvent();
+        //    }
+        //}
+        //else
+        //{
             base.Update();
-        }      
+       // }      
     }
 
     protected override void StartEvent()
     {
         _play = true;
+        _forester.enabled = true;
         base.StartEvent();
         StartCoroutine(GoToPoint());
     }

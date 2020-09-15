@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
                 {
 
                     Interactable interactable = hit.collider.GetComponent<Interactable>();
-                    if (interactable != null)
+                    if (interactable != null && interactable.enabled)
                     {
                         SetFocus(interactable);
                     }

@@ -16,6 +16,7 @@ public class SelectecedInfo : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 OnClick?.Invoke();
+                Destroy(this.gameObject);
             }
         }
     }
