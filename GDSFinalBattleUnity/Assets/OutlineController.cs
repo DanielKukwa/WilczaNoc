@@ -7,10 +7,13 @@ public class OutlineController : MonoBehaviour
     Knife.HDRPOutline.Core.OutlineObject outline;
     Knife.HDRPOutline.Core.OutlineObject[] outlinesList;
     OutlineVisibility outVis;
+    private SelectecedInfo _selectedInfo;
 
     void Start()
     {
-        
+        _selectedInfo = GetComponentInChildren<SelectecedInfo>();
+        if(_selectedInfo) _selectedInfo.gameObject.SetActive(false);
+
         outline = GetComponentInChildren<Knife.HDRPOutline.Core.OutlineObject>();
         outlinesList = GetComponentsInChildren<Knife.HDRPOutline.Core.OutlineObject>();
         //outline.enabled = false;
@@ -22,6 +25,14 @@ public class OutlineController : MonoBehaviour
         if (this.isActiveAndEnabled)
         {
             if (outVis) { outVis.enabled = false; }
+
+            if (_selectedInfo)
+            {
+                if (!_selectedInfo.isActiveAndEnabled)
+                {
+                    _selectedInfo.gameObject.SetActive(true);
+                }
+            }
 
             foreach (Knife.HDRPOutline.Core.OutlineObject outline in outlinesList)
             {
@@ -42,6 +53,14 @@ public class OutlineController : MonoBehaviour
     {
         if (this.isActiveAndEnabled)
         {
+            if (_selectedInfo)
+            {
+                if (_selectedInfo.isActiveAndEnabled)
+                {
+                    _selectedInfo.gameObject.SetActive(false);
+                }
+            }
+
             foreach (Knife.HDRPOutline.Core.OutlineObject outline in outlinesList)
             {
 
