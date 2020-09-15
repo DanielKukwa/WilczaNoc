@@ -3,7 +3,22 @@ guid: 1530dbea58be80548ae572e579758ffd
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: handle_m
+    second: {fileID: 2100000, guid: 6ac930f013797bb4fa1d624a56f45466, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shotgun_m
+    second: {fileID: 2100000, guid: 94211cf57075a2c44af6ecda22d0438a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: women4_m
+    second: {fileID: 2100000, guid: 5e8bc3395646ef3428d78b98639557c1, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
