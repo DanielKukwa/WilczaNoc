@@ -6395,17 +6395,17 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 4
-  m_Acceleration: 1500
+  m_Speed: 5.25
+  m_Acceleration: 1700
   avoidancePriority: 50
-  m_AngularSpeed: 5500000
+  m_AngularSpeed: 6500000
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 7
   m_ObstacleAvoidanceType: 4
 --- !u!136 &5862628165221569476
 CapsuleCollider:
@@ -6455,7 +6455,7 @@ MonoBehaviour:
   motor: {fileID: 0}
   focus: {fileID: 0}
   isFirstAttack: 0
-  HeavySlashEnabled: 0
+  HeavySlashEnabled: 1
 --- !u!114 &5862628165221569483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6469,6 +6469,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 10
+  agent: {fileID: 0}
+  SecondAttack: 0
 --- !u!114 &5862628165221569480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6483,10 +6485,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   axeActive: 1
   attackSpeed: 2.6
-  attackDelay: 0.4
-  attack2Speed: 0.5
-  attack2Delay: 0.4
-  animDelay: 1.7
+  attackDelay: 0.5
+  FirstAttackEnabled: 1
+  _firstAttackDelay: 1.25
+  attack2Speed: 0.43
+  attack2Delay: 0.5
+  animDelay: 1.4
 --- !u!114 &5862628165221569481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6538,6 +6542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashBar: {fileID: 0}
+  _dashHelpLines: 0
   dashDistance: 7
   dashDuration: 0.2
   nextDashOffset: 0.2
