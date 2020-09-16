@@ -12,7 +12,12 @@ public class OutlineController : MonoBehaviour
     void Start()
     {
         _selectedInfo = GetComponentInChildren<SelectecedInfo>();
-        if(_selectedInfo) _selectedInfo.gameObject.SetActive(false);
+        if (_selectedInfo)
+        {
+            _selectedInfo.MoveToCamera();
+            _selectedInfo.gameObject.SetActive(false);
+        }
+        
 
         outline = GetComponentInChildren<Knife.HDRPOutline.Core.OutlineObject>();
         outlinesList = GetComponentsInChildren<Knife.HDRPOutline.Core.OutlineObject>();
@@ -28,7 +33,7 @@ public class OutlineController : MonoBehaviour
 
             if (_selectedInfo)
             {
-                if (!_selectedInfo.isActiveAndEnabled)
+                if (!_selectedInfo.isActiveAndEnabled && _selectedInfo.IsActive())
                 {
                     _selectedInfo.gameObject.SetActive(true);
                 }
@@ -74,4 +79,11 @@ public class OutlineController : MonoBehaviour
         
     }
 
+    private void OnDestroy()
+    {
+        foreach (Knife.HDRPOutline.Core.OutlineObject outline in outlinesList)
+        {
+            outline.Color = new Color(0, 0, 0, 0f);
+        }
+    }
 }

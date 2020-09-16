@@ -5,6 +5,8 @@ using UnityEngine;
 public class ForesterCutscene : Cutscene
 {
     private SelectecedInfo _selectecedInfo;
+    private OutlineController _outlineController;
+    private OutlineVisibility _outlineVisibility;
     [SerializeField] Animator[] _wolfAnimators;
 
     [SerializeField] LookRadiusTrigger _trigger;
@@ -24,9 +26,13 @@ public class ForesterCutscene : Cutscene
 
         _forester = GameObject.FindGameObjectWithTag("Forester").GetComponent<Forester>();
         _selectecedInfo = _forester.GetComponentInChildren<SelectecedInfo>();
-
-        _selectecedInfo.OnClick += StartEvent;
+        _outlineController = _forester.GetComponent<OutlineController>();
+        _outlineVisibility = _forester.GetComponentInChildren<OutlineVisibility>();
+        StartCoroutine(DeactivateForesterOutline());
         if (!_selectecedInfo) Debug.Log("BRAK SELECTED INFO!!!!");
+        _selectecedInfo.OnClick += StartEvent;
+
+
         foreach (Animator anim in _wolfAnimators)
         {
             anim.SetTrigger("Eat");
@@ -45,23 +51,31 @@ public class ForesterCutscene : Cutscene
             _wolfStopEat = true;
         }
 
-        //if (!_play)
-        //{
-        //    if (!_wolves[0] && !_wolves[1])
-        //    {
-        //        StartEvent();
-        //    }
-        //}
-        //else
-        //{
+        if (!_play)
+        {
+            if (!_wolves[0] && !_wolves[1])
+            {
+                if (!_selectecedInfo.IsActive())
+                {
+                    _outlineController.enabled = true;
+                    _outlineVisibility.enabled = true;
+
+                    _selectecedInfo.Activate();
+                }
+                
+            }
+        }
+        else
+        {
             base.Update();
-       // }      
+        }      
     }
 
     protected override void StartEvent()
     {
         _play = true;
         _forester.enabled = true;
+        
         base.StartEvent();
         StartCoroutine(GoToPoint());
     }
@@ -89,5 +103,13 @@ public class ForesterCutscene : Cutscene
         _forester.Healthbar.SetSliderValue(1);
         _forester.Healthbar.Animator.SetTrigger("Show");
         base.Final();
+    }
+
+    private IEnumerator DeactivateForesterOutline()
+    {
+        yield return new WaitForSeconds(2f);
+        _outlineController.enabled = false;
+        _outlineVisibility.enabled = false;
+
     }
 }

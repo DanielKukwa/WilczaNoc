@@ -51,6 +51,10 @@ public class Forester : Interactable
         _audio.clip = _dieSound;
         _audio.loop = false;
         _audio.Play();
+        OutlineVisibility outVis = GetComponentInChildren<OutlineVisibility>();
+        Destroy(outVis);
+        OutlineController outlineController = GetComponent<OutlineController>();
+        Destroy(outlineController);
         myStats.OnCharacterDie -= ForesterDie;
         //Destroy(this);
     }
