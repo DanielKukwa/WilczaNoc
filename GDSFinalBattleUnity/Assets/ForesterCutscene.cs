@@ -25,13 +25,11 @@ public class ForesterCutscene : Cutscene
         base.Start();
 
         _forester = GameObject.FindGameObjectWithTag("Forester").GetComponent<Forester>();
-        _selectecedInfo = _forester.GetComponentInChildren<SelectecedInfo>();
+
+        StartCoroutine(SubscribeSelectedInfo());
         _outlineController = _forester.GetComponent<OutlineController>();
         _outlineVisibility = _forester.GetComponentInChildren<OutlineVisibility>();
         StartCoroutine(DeactivateForesterOutline());
-        if (!_selectecedInfo) Debug.Log("BRAK SELECTED INFO!!!!");
-        _selectecedInfo.OnClick += StartEvent;
-
 
         foreach (Animator anim in _wolfAnimators)
         {
@@ -111,5 +109,17 @@ public class ForesterCutscene : Cutscene
         _outlineController.enabled = false;
         _outlineVisibility.enabled = false;
 
+    }
+
+    private IEnumerator SubscribeSelectedInfo()
+    {
+        while (!_selectecedInfo)
+        {
+            _selectecedInfo = _forester.GetComponentInChildren<SelectecedInfo>();
+           
+            yield return null;
+        }
+
+        _selectecedInfo.OnClick += StartEvent;
     }
 }
