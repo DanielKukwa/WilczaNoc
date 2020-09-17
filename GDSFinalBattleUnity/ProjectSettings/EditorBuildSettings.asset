@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DanInteracts.unity
     guid: 1984d3a1e938e064aad9d46213ddcf17
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 3168e9cea12de66429b0b6cededb502f
   m_configObjects: {}
