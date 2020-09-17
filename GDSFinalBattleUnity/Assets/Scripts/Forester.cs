@@ -12,6 +12,9 @@ public class Forester : Interactable
     [HideInInspector] public Healthbar Healthbar;
     private AudioSource _audio;
     [SerializeField] private AudioClip _dieSound;
+    [SerializeField] private AudioSource _normalEnding;
+    [SerializeField] private GameObject _alternativeEnding;
+    [SerializeField] private float _normalEndingDelay = 2f;
 
     private void Start()
     {
@@ -46,6 +49,8 @@ public class Forester : Interactable
 
     private void ForesterDie()
     {
+        Destroy(_alternativeEnding.gameObject);
+        _normalEnding.PlayDelayed(_normalEndingDelay);
         PlayerTextures.Instance.ChangeHoodTexture();
         Healthbar.gameObject.SetActive(false);
         _audio.clip = _dieSound;

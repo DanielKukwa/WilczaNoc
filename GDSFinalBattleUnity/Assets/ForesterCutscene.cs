@@ -19,6 +19,7 @@ public class ForesterCutscene : Cutscene
     [SerializeField] private AudioSource _audio;
     [SerializeField] private float _audioTime = 10f;
 
+    [SerializeField] private GameObject _alternativeEnding;
 
     protected override void Start()
     {
@@ -100,6 +101,7 @@ public class ForesterCutscene : Cutscene
         _forester.Healthbar.SetSliderMaxValue(10);
         _forester.Healthbar.SetSliderValue(1);
         _forester.Healthbar.Animator.SetTrigger("Show");
+        _alternativeEnding.gameObject.SetActive(true);
         base.Final();
     }
 
