@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
 
                 isFirstAttack = true;
-                if (Physics.Raycast(ray, out hit, 100))
+                if (Physics.Raycast(ray, out hit, 100, movementMask))
                 {
 
                     Interactable interactable = hit.collider.GetComponent<Interactable>();
@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
 
                 isFirstAttack = false;
-                if (Physics.Raycast(ray, out hit, 100))
+                if (Physics.Raycast(ray, out hit, 100, movementMask))
                 {
 
                     Interactable interactable = hit.collider.GetComponent<Interactable>();
