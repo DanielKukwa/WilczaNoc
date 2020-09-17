@@ -123,5 +123,6 @@ public class ForesterCutscene : Cutscene
         }
 
         _selectecedInfo.OnClick += StartEvent;
+        _selectecedInfo.Deactivate();
     }
 }

@@ -7,7 +7,7 @@ public class SelectecedInfo : MonoBehaviour
 {
     public Action OnClick;
 
-    private bool _active = false;
+    private bool _active = true;
 
     void Update()
     {
@@ -31,6 +31,11 @@ public class SelectecedInfo : MonoBehaviour
     public void Activate()
     {
         _active = true;
+    }
+
+    public void Deactivate()
+    {
+        _active = false;
     }
 
     public bool IsActive()
