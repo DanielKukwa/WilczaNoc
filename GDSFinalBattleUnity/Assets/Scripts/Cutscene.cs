@@ -11,7 +11,7 @@ public class Cutscene : MonoBehaviour
     [SerializeField] private float _unmovableTime = 1f;
 
     protected Animator _letterbox;
-
+    protected OutlineLookAt _outlineLookAt;
     protected bool _skip = false;
     private float _holdTime = 1f;
     private float _currentHoldTime = 0f;
@@ -33,6 +33,7 @@ public class Cutscene : MonoBehaviour
         _playerAgent = PlayerManager.instance.player.GetComponent<NavMeshAgent>();
         _playerController = PlayerManager.instance.player.GetComponent<PlayerController>();
         _playerAbilities = PlayerManager.instance.player.GetComponent<SpecialAbilities>();
+        _outlineLookAt = PlayerManager.instance.player.GetComponent<OutlineLookAt>();
     }
 
     // Update is called once per frame
@@ -66,10 +67,12 @@ public class Cutscene : MonoBehaviour
         _playerController.enabled = false;
         _playerAbilities.enabled = false;
         _letterbox.SetTrigger("LetterIn");
+        _outlineLookAt.enabled = false;
     }
 
     protected virtual void Final()
     {
+        _outlineLookAt.enabled = true;
         _skip = true;
         _letterbox.SetTrigger("LetterOut");
         _slider.value = 0f;

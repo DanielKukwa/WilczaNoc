@@ -5,6 +5,7 @@ using UnityEngine;
 public class EatEvent : MonoBehaviour
 {
     private EatableCorpse _eatableCorpse;
+    [SerializeField] private GameObject _alternativeEnding;
     private bool _eated = false;
     private AudioSource _audio;
 
@@ -20,6 +21,8 @@ public class EatEvent : MonoBehaviour
         {
             _eated = true;
             _audio.Play();
+            if(_alternativeEnding) Destroy(_alternativeEnding);
+
         }
     }
 }

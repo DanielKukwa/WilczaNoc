@@ -9,11 +9,16 @@ public class SelectecedInfo : MonoBehaviour
 
     private bool _active = true;
 
+    private void OnEnable()
+    {
+        transform.rotation = Quaternion.Euler(new Vector3(35, 37, 0));
+    }
+
     void Update()
     {
         if (this.isActiveAndEnabled && _active)
         {
-            transform.rotation = Quaternion.Euler(new Vector3(0, 37, 0));
+            
 
             if (Input.GetMouseButtonDown(0))
             {

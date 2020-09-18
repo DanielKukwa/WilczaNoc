@@ -21,6 +21,11 @@ public class EatableCorpse : Interactable
         base.Interact();
 
         Eat();
+        OutlineController outlineController = GetComponent<OutlineController>();
+        outlineController.HideOutline();
+        Destroy(outlineController);
+        OutlineVisibility outlineVisibility = GetComponent<OutlineVisibility>();
+        Destroy(outlineVisibility);
         Destroy(this);
 
     }

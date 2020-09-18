@@ -31,6 +31,8 @@ public class OutlineController : MonoBehaviour
         {
             if (outVis) { outVis.enabled = false; }
 
+            if (!_selectedInfo) _selectedInfo = GetComponentInChildren<SelectecedInfo>();
+
             if (_selectedInfo)
             {
                 if (!_selectedInfo.isActiveAndEnabled && _selectedInfo.IsActive())
@@ -85,5 +87,10 @@ public class OutlineController : MonoBehaviour
         {
             outline.Color = new Color(0, 0, 0, 0f);
         }
+    }
+
+    public void SetSelectedInfo(SelectecedInfo info)
+    {
+        _selectedInfo = info;
     }
 }
