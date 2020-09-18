@@ -34,8 +34,15 @@ public class PlayerMotor : MonoBehaviour
 
     public void MoveToPoint(Vector3 point)
     {
-        if(agent.enabled)
-            agent.SetDestination(point);
+        NavMeshPath path = new NavMeshPath();
+        if (agent.enabled)
+            agent.CalculatePath(point, path);
+        //agent.SetDestination(point);
+        if(path.status == NavMeshPathStatus.PathPartial || path.status==NavMeshPathStatus.PathComplete)
+        {
+            agent.SetDestination(path.corners[path.corners.Length - 1]);
+        }
+        
 
     }
 
