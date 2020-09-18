@@ -20,6 +20,7 @@ public class CharacterCombat : MonoBehaviour
     private float attackCooldown = 0f;
     public float attackDelay = 0.6f;
     [HideInInspector] public bool FirstAttackEnabled = true;
+    [HideInInspector] public bool SecondAttackEnabled = true;
     [SerializeField] private float _firstAttackDelay = 1.25f;
 
 
@@ -111,7 +112,7 @@ public class CharacterCombat : MonoBehaviour
 
     public void Attack2(CharacterStats targetStats)
     {
-        if (attack2Cooldown <= 0f && targetStats != null && handAxe.active)
+        if (attack2Cooldown <= 0f && targetStats != null && handAxe.active && SecondAttackEnabled == true)
         {
             StartCoroutine(DisableFirstAttack());
             if (_motor)
@@ -197,6 +198,13 @@ public class CharacterCombat : MonoBehaviour
         FirstAttackEnabled = false;
         yield return new WaitForSeconds(_firstAttackDelay);
         FirstAttackEnabled = true;
+    }
+
+    public void DisableAttacks()
+    {
+        FirstAttackEnabled = false;
+        SecondAttackEnabled = false;
+
     }
 
 }

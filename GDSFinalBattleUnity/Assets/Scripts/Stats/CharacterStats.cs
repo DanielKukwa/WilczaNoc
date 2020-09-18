@@ -20,6 +20,8 @@ public class CharacterStats : MonoBehaviour
     public bool godMode = false;
     NavMeshAgent agent;
     SceneLoader sceneLoader;
+    CharacterCombat combat;
+    PlayerMotor motor;
     
 
     [Header("Damage")]
@@ -51,6 +53,8 @@ public class CharacterStats : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         agent = GetComponent<NavMeshAgent>();
         sceneLoader = FindObjectOfType<SceneLoader>();
+        combat = GetComponent<CharacterCombat>();
+        motor = GetComponent<PlayerMotor>();
 
 
     }
@@ -181,6 +185,8 @@ public class CharacterStats : MonoBehaviour
                 animator.SetTrigger("died");
                 gameEnded = true;
                 agent.isStopped = true;
+                combat.DisableAttacks();
+                motor.enabled = false;
                 Invoke("Restart", restartDelay);
             }
         }
