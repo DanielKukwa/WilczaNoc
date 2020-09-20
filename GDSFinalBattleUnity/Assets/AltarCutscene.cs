@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class AltarCutscene : Cutscene
 {
-    private EventTrigger _eventTrigger;
+    [SerializeField] SelectecedInfo _selectedInfo;
+    [SerializeField] SelectecedInfo _selectedInfoSecond;
 
+    [SerializeField] OutlineController _outController;
+    [SerializeField] private EatableCorpse _eatableCorpse;
+    [SerializeField] private GameObject _alternativeEnding;
+    [SerializeField] private EatEvent _eatEvent;
     private AudioSource _audio;
     [SerializeField] private float _audioTime = 2f;
     [SerializeField] private Transform _destination;
@@ -16,13 +21,13 @@ public class AltarCutscene : Cutscene
     {
         base.Start();
         _audio = GetComponent<AudioSource>();
-        _eventTrigger = GetComponentInChildren<EventTrigger>();
-        _eventTrigger.OnEventTrigger += OnTriggerActive;
+        _selectedInfo.OnClick += OnTriggerActive;
     }
 
     protected override void StartEvent()
     {
         base.StartEvent();
+        _outController.HideOutline();
         StartCoroutine(GoToPoint());
 
     }
@@ -48,6 +53,10 @@ public class AltarCutscene : Cutscene
     protected override void Final()
     {
         _playerAgent.SetDestination(_destination.position);
+        _alternativeEnding.gameObject.SetActive(true);
+        _eatableCorpse.enabled = true;
+        _eatEvent.enabled = true;
+        _outController.SetSelectedInfo(_selectedInfoSecond);
         base.Final();
     }
 }
