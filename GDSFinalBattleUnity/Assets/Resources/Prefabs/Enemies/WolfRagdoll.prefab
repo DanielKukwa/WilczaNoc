@@ -933,7 +933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _particles: {fileID: 6177555917020471987, guid: d32ba7b5e4b1e40429615535e5a1dd22,
     type: 3}
-  _hitForce: 300
+  _hitForce: 230
   _timeToStop: 3
 --- !u!1 &7408643747284944580
 GameObject:
