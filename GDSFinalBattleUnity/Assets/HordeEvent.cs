@@ -32,12 +32,18 @@ public class HordeEvent : Cutscene
 
     private void OnTriggerActive()
     {
+        OutlineController outlineController = _screemingGuy.GetComponent<OutlineController>();
+        outlineController.HideOutline();
+        Destroy(outlineController);
+        OutlineVisibility outlineVisibility = _screemingGuy.GetComponent<OutlineVisibility>();
+        Destroy(outlineVisibility);
         StartCoroutine(GoToPoint());
         StartEvent();       
     }
 
     private IEnumerator HordeAttackDelay()
     {
+        
         _audio.Play();
 
         _spawner.SetActive(true);
@@ -82,6 +88,7 @@ public class HordeEvent : Cutscene
     {
         if (_skip)
         {
+            _spawner.SetActive(true);
             _playerAgent.SetDestination(_destination.position);
             StopAllCoroutines();
             _camController.enabled = true;
