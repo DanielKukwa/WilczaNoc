@@ -13,6 +13,7 @@ public class Destructables : Interactable
     private GameObject _particlesSmall;
     //private GameObject _particlesBig;
     private bool _playOnce = false;
+    AudioSource audio;
 
     void Start()
     {
@@ -24,6 +25,7 @@ public class Destructables : Interactable
         playerController = playerManager.player.GetComponent<PlayerController>();
 
         myStats.OnCharacterDie += Destruct;
+        audio = GetComponent<AudioSource>();
 
     }
 
@@ -46,7 +48,7 @@ public class Destructables : Interactable
                 playerCombat.OnDeleyedAttack += SmallParticles;
                 OnHit?.Invoke();
             }
-            
+
         }
         else if (playerCombat != null && isFirstAttack == false)
         {
@@ -56,8 +58,12 @@ public class Destructables : Interactable
                 playerCombat.OnDeleyedAttack += SmallParticles;
                 OnHit?.Invoke();
             }
+
+
         }
 
+        if (this.gameObject.name == "Line0" || gameObject.name == "Line1")
+            audio.Play();
 
     }
 
@@ -70,6 +76,7 @@ public class Destructables : Interactable
 
     private void Destruct()
     {
+
         Destroy(this.gameObject);
     }
 
@@ -77,6 +84,7 @@ public class Destructables : Interactable
     {
         if (playerController)
         {
+
             playerController.RemoveFocus();
             playerController.motor.agent.SetDestination(playerController.transform.position);
         }
