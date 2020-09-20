@@ -1711,6 +1711,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd2badeec77ddc44b9c329de415174d, type: 3}
+--- !u!1 &374123182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3477918965523656697, guid: ce6ce7a55a27c774f9bb921dd08e2e58,
+    type: 3}
+  m_PrefabInstance: {fileID: 1389965679}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &374123183
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374123182}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &397093227
 GameObject:
   m_ObjectHideFlags: 0
@@ -6379,7 +6398,7 @@ PrefabInstance:
     - target: {fileID: 3477918965523656690, guid: ce6ce7a55a27c774f9bb921dd08e2e58,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.9229883
+      value: -1.88
       objectReference: {fileID: 0}
     - target: {fileID: 3477918965523656690, guid: ce6ce7a55a27c774f9bb921dd08e2e58,
         type: 3}
@@ -6389,7 +6408,7 @@ PrefabInstance:
     - target: {fileID: 3477918965523656690, guid: ce6ce7a55a27c774f9bb921dd08e2e58,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.322008
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 3477918965523656690, guid: ce6ce7a55a27c774f9bb921dd08e2e58,
         type: 3}
@@ -6434,17 +6453,17 @@ PrefabInstance:
     - target: {fileID: 3477918965523656690, guid: ce6ce7a55a27c774f9bb921dd08e2e58,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 5.835312
+      value: 6.6211743
       objectReference: {fileID: 0}
     - target: {fileID: 3477918965523656690, guid: ce6ce7a55a27c774f9bb921dd08e2e58,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.1061503
+      value: -1.9086295
       objectReference: {fileID: 0}
     - target: {fileID: 3477918965523656690, guid: ce6ce7a55a27c774f9bb921dd08e2e58,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 5.4410653
+      value: 6.173833
       objectReference: {fileID: 0}
     - target: {fileID: 3477918965523656696, guid: ce6ce7a55a27c774f9bb921dd08e2e58,
         type: 3}
@@ -6471,7 +6490,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: LookRadiusTrigger
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3477918965523656701, guid: ce6ce7a55a27c774f9bb921dd08e2e58,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    m_RemovedComponents:
+    - {fileID: 4166507679175044710, guid: ce6ce7a55a27c774f9bb921dd08e2e58, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ce6ce7a55a27c774f9bb921dd08e2e58, type: 3}
 --- !u!4 &1389965680 stripped
 Transform:
@@ -7728,6 +7753,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: dead_body1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: b07c2c9a9f3b2164aa78e2fc61e6a2bb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -162788174120461413, guid: b07c2c9a9f3b2164aa78e2fc61e6a2bb,
         type: 3}
