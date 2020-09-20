@@ -35,6 +35,7 @@ public class Tree : MonoBehaviour
 
     public void ActivateParticles()
     {
+        if(_particles)
         _particles.SetActive(true);
     }
 }

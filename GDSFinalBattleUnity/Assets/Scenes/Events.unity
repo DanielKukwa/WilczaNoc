@@ -25564,7 +25564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unmovableTime: 1
-  _blackScreenTime: 7
+  _blackScreenTime: 20
   _blackScreen: {fileID: 2123973146}
   _destination: {fileID: 171151398}
   _destinationDistanceOffset: 0.7
@@ -25579,7 +25579,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5f09563f0c441494cb436598c6577bf1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 24e8aee5cc6d44449b004f6e0985ac08, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -27407,7 +27407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _destroyParticles: {fileID: 595827063}
-  _particles: {fileID: 112158473}
+  _particles: {fileID: 0}
   _eventTrigger: {fileID: 1677685165}
 --- !u!82 &1138300982
 AudioSource:
@@ -36815,10 +36815,10 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545923210}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a9c028fa864ec7f49908cebd1e9a94d7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d54ce986cfcb2bf459d2537e4e33ce54, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
