@@ -19,6 +19,7 @@ public class WolfJumpController : MonoBehaviour
     private float _agentStoppingDistance;
     private bool _isMark = false;
     private bool _isJump = false;
+    private bool _isRest = false;
     private bool _isPathBlocked = false;
     private bool _isPlayerOnFront = false;
     [SerializeField] private float _jumpRate = 5f;
@@ -64,12 +65,12 @@ public class WolfJumpController : MonoBehaviour
 
         if (distance <= lookRadius)
         {
-            if (distance <= _jumpRadiusTrigger && !_isJump && _jumpCooldown < Time.time)
+            if (distance <= _jumpRadiusTrigger && !_isMark && !_isJump && !_isRest && _jumpCooldown < Time.time)
             {      
                _jumpCooldown = Time.time + _jumpRate;
                StartCoroutine(Jump());
             }
-            else if (!_isJump)
+            else if (!_isJump && !_isMark && !_isRest)
             {
                 agent.SetDestination(target.position);
                 FaceTarget();
@@ -190,7 +191,7 @@ public class WolfJumpController : MonoBehaviour
         {
 
             agent.stoppingDistance = _jumpRadiusTrigger;
-            _isJump = true;
+            
             _isMark = true;
             agent.enabled = false;
             _wolfAnimator.Animator.SetTrigger("Mark");
@@ -207,6 +208,7 @@ public class WolfJumpController : MonoBehaviour
             _arrowImage.fillAmount = 0f;
             _slider.gameObject.SetActive(false);
             _isMark = false;
+            _isJump = true;
             _wolfAnimator.Animator.SetTrigger("Jump");
 
             float elapsedTime = 0f;
@@ -219,11 +221,12 @@ public class WolfJumpController : MonoBehaviour
                 transform.position = Vector3.LerpUnclamped(startPosition, targetPosition, t);
                 yield return null;
             }
-
+            _isJump = false;
+            _isRest = true;
 
             yield return new WaitForSeconds(_restingTime);
             _wolfAnimator.Animator.SetTrigger("BattlePose");
-            _isJump = false;
+            _isRest = false;
             agent.enabled = true;
         }
         
