@@ -749,6 +749,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CursorChange
       objectReference: {fileID: 0}
+    - target: {fileID: 5364915268063992145, guid: bb719973f95b5ae4cbabf0be2b8a99bc,
+        type: 3}
+      propertyPath: cursorArrow
+      value: 
+      objectReference: {fileID: 2800000, guid: 80c38a73d260ba947a48426c271853f7, type: 3}
     - target: {fileID: 5364915268063992150, guid: bb719973f95b5ae4cbabf0be2b8a99bc,
         type: 3}
       propertyPath: m_LocalPosition.x
