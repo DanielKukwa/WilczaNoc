@@ -14,5 +14,16 @@ public class Ending : MonoBehaviour
     private void Start()
     {
         _blackScreen.SetTrigger("FadeOut");
+        StartCoroutine(DestroyPlayer());
+    }
+
+    IEnumerator DestroyPlayer()
+    {
+        yield return new WaitForSeconds(1f);
+        PlayerManager.instance.player.GetComponent<PlayerController>().enabled = false;
+        PlayerManager.instance.player.GetComponent<SpecialAbilities>().enabled = false;
+        yield return new WaitForSeconds(12f);
+        SceneLoader loader = FindObjectOfType<SceneLoader>();
+        loader.LoadStartMenu();
     }
 }

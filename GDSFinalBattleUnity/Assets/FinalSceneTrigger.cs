@@ -6,11 +6,22 @@ public class FinalSceneTrigger : MonoBehaviour
 {
     private Animator _lightAnim;
     private GameObject _finalSceneTrigger;
+
+    private OutlineController outController;
+    private OutlineVisibility outVis;
     // Start is called before the first frame update
     void Start()
     {
         _lightAnim = GameObject.FindGameObjectWithTag("BabciaLight").GetComponent< Animator >();
         _finalSceneTrigger = GameObject.FindGameObjectWithTag("FinalSceneTrigger");
+        outController = _finalSceneTrigger.GetComponentInChildren<OutlineController>();
+        outVis = _finalSceneTrigger.GetComponentInChildren<OutlineVisibility>();
+        //SelectecedInfo selectecedInfo = _finalSceneTrigger.GetComponentInChildren<SelectecedInfo>();
+       // outController.SetSelectedInfo(selectecedInfo);
+        outController.enabled = false;
+        outVis.enabled = false;
+        
+        //_finalSceneTrigger.SetActive(false);
         GetComponent<CharacterStats>().OnCharacterDie += OnDie;
     }
 
@@ -18,7 +29,8 @@ public class FinalSceneTrigger : MonoBehaviour
     private void OnDie()
     {
         _lightAnim.SetTrigger("LightOn");
-        // BabciaCutscene wyłącza trigger
-        _finalSceneTrigger.transform.GetChild(0).gameObject.SetActive(true);
+        outController.enabled = true;
+        outVis.enabled = true;
+        _finalSceneTrigger.SetActive(true);
     }
 }

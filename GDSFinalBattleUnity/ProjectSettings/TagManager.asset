@@ -15,6 +15,7 @@ TagManager:
   - Interact
   - SnowOld
   - SnowNew
+  - FinalSelectedInfo
   layers:
   - Default
   - TransparentFX

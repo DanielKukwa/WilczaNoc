@@ -10,11 +10,12 @@ public class CutsceneBabcia : Cutscene
     [SerializeField] private Destructables[] _barricades;
     private OutlineVisibility _outVis;
     private OutlineController _outController;
+    [SerializeField] private SelectecedInfo _selectecedInfo;
     [SerializeField] private GameObject _leaveTrigger;
 
     [SerializeField] private float _destinationDistanceOffset = 2f;
 
-    [SerializeField] EventTrigger _eventTrigger;
+    //[SerializeField] EventTrigger _eventTrigger;
 
     private AudioSource _audio;
     [SerializeField] private float _audioTime = 2f;
@@ -24,9 +25,9 @@ public class CutsceneBabcia : Cutscene
     {
         base.Start();
         _audio = GetComponent<AudioSource>();
-        _eventTrigger.OnEventTrigger += StartEvent;
-        _eventTrigger.gameObject.SetActive(false);
-
+        // _eventTrigger.OnEventTrigger += StartEvent;
+        // _eventTrigger.gameObject.SetActive(false);
+        _selectecedInfo.OnClick += StartEvent;
         _outVis = _barricades[0].GetComponent<OutlineVisibility>();
         _outVis.enabled = false;
         _outController = _barricades[0].GetComponent<OutlineController>();

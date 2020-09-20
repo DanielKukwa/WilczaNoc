@@ -11,7 +11,9 @@ public class OutlineController : MonoBehaviour
 
     void Start()
     {
-        _selectedInfo = GetComponentInChildren<SelectecedInfo>();
+        //if(!_selectedInfo)
+            _selectedInfo = GetComponentInChildren<SelectecedInfo>();
+
         if (_selectedInfo)
         {
             _selectedInfo.MoveToCamera();
