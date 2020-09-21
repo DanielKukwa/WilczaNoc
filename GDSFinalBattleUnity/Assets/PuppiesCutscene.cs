@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PuppiesCutscene : Cutscene
 {
-    private EventTrigger _eventTrigger;
+    //private EventTrigger _eventTrigger;
+    [SerializeField] Destructables[] _destructables;
+    [SerializeField] SelectecedInfo[] _selectecedInfos;
+    [SerializeField] SelectecedInfo[] _selectecedInfosSecond;
 
     private AudioSource _audio;
     [SerializeField] private float _audioTime = 3f;
@@ -16,12 +19,29 @@ public class PuppiesCutscene : Cutscene
     {
         base.Start();
         _audio = GetComponent<AudioSource>();
-        _eventTrigger = GetComponentInChildren<EventTrigger>();
-        _eventTrigger.OnEventTrigger += OnTriggerActive;
+        //_eventTrigger = GetComponentInChildren<EventTrigger>();
+        //_eventTrigger.OnEventTrigger += OnTriggerActive;
+        foreach(SelectecedInfo info in _selectecedInfos)
+        {
+            info.OnClick += OnTriggerActive;
+        }
+
     }
 
     protected override void StartEvent()
     {
+        for(int i = 0; i <_selectecedInfos.Length; i++)
+        {
+            OutlineController outlineController = _selectecedInfos[i].transform.parent.GetComponent<OutlineController>();
+            outlineController.SetSelectedInfo(_selectecedInfosSecond[i]);
+            Destroy(_selectecedInfos[i].gameObject);
+        }
+
+        foreach(Destructables d in _destructables)
+        {
+            d.enabled = true;
+        }
+
         base.StartEvent();
         StartCoroutine(GoToPoint());
 
