@@ -33,6 +33,7 @@ public class SpecialAbilities : MonoBehaviour
     public float dashCooldown = 2f;
     public bool DashEnabled = false;
     public float camSmoothSpeed = 0.125f;
+    SoundManagerControl soundManager;
 
 
     Rigidbody rb;
@@ -64,7 +65,8 @@ public class SpecialAbilities : MonoBehaviour
         {
             dashBar.gameObject.SetActive(false);
         }
-        
+
+        soundManager = GameObject.Find("SoundManager").GetComponent<SoundManagerControl>();
     }
 
     void Update()
@@ -89,6 +91,7 @@ public class SpecialAbilities : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && DashEnabled == true)
         {
+            
             StopAllCoroutines();
             DashEnabled = false;
             _playerController.RemoveFocus();
@@ -99,13 +102,13 @@ public class SpecialAbilities : MonoBehaviour
             
 
             animator.SetTrigger("dash");
-            if (Physics.Raycast(ray, out hit, 100))
-            {
+            soundManager.PlayDashSound();
+           
 
+            if (Physics.Raycast(ray, out hit, 100))
+            {   
                 
                 startPosition = transform.position;
-
-
                 targetPosition = new Vector3(hit.point.x, dashHigh, hit.point.z);
                 Vector3 vecDirection = targetPosition - startPosition;
 
@@ -148,6 +151,7 @@ public class SpecialAbilities : MonoBehaviour
     {
         _motor.SecondAttack = false;
         _combat.FirstAttackEnabled = true;
+        
 
         while (elapsedTime <= dashDuration)
         {
