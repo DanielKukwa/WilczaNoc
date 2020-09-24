@@ -41,10 +41,10 @@ public class CharacterStats : MonoBehaviour
         _healthbar = GetComponentInChildren<Healthbar>();
         if (_healthbar)
         {
-            if(gameObject.tag == "Player")
-            {
-                _healthbar.Animator.SetTrigger("Show");
-            }
+            //if(gameObject.tag == "Player")
+            //{
+            //    _healthbar.Animator.SetTrigger("Show");
+            //}
 
             _healthbar.SetSliderMaxValue(maxHealth);
         }
@@ -80,7 +80,7 @@ public class CharacterStats : MonoBehaviour
         //Debug.Log(transform.name + " takes " + damage + " damage.");
         if (_healthbar)
         {
-            if(gameObject.tag != "Player" && _firstHit == false)
+            if(/*gameObject.tag != "Player" &&*/ _firstHit == false)
             {
                 _firstHit = true;
                 _healthbar.Animator.SetTrigger("Show");
@@ -117,7 +117,7 @@ public class CharacterStats : MonoBehaviour
         Debug.Log(transform.name + " takes " + damage2 + " damage.");
         if (_healthbar)
         {
-            if (gameObject.tag != "Player" && _firstHit == false)
+            if (/*gameObject.tag != "Player" && */_firstHit == false)
             {
                 _firstHit = true;
                 _healthbar.Animator.SetTrigger("Show");
