@@ -57,10 +57,11 @@ public class CutsceneBabcia : Cutscene
         }
         StartCoroutine(LookAt(_doors.transform));
         // gadka szmatka babci
-        _audio.Play();
+        
         _gunAnimator.SetTrigger("GunOut");
+        yield return new WaitForSeconds(2.5f);
+        _audio.Play();
         yield return new WaitForSeconds(_audioTime);
-
         Final();
     }
 
