@@ -84,7 +84,7 @@ Transform:
   m_GameObject: {fileID: 3892848896853018867}
   m_LocalRotation: {x: 0, y: -0.55212617, z: 0, w: 0.8337606}
   m_LocalPosition: {x: 6.02, y: 0, z: -1.67}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
   m_Children:
   - {fileID: 2255071646125722600}
   - {fileID: 4915617258652312589}
@@ -195,6 +195,7 @@ MonoBehaviour:
   attackSpeed: 0.8
   attackDelay: 0.5
   FirstAttackEnabled: 1
+  SecondAttackEnabled: 1
   _firstAttackDelay: 1.25
   attack2Speed: 1
   attack2Delay: 0.6

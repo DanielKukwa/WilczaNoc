@@ -6395,7 +6395,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5.25
+  m_Speed: 4.75
   m_Acceleration: 1700
   avoidancePriority: 50
   m_AngularSpeed: 6500000
@@ -6573,7 +6573,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   dashHigh: 0.08
   dashCooldown: 2
-  DashEnabled: 1
+  DashEnabled: 0
   camSmoothSpeed: 0.01
 --- !u!82 &5862628165221569478
 AudioSource:
