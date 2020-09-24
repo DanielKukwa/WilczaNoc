@@ -286,7 +286,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 144, y: -0.0000041331}
+  m_AnchoredPosition: {x: 144, y: -6.9}
   m_SizeDelta: {x: 305, y: 106}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &83724948
@@ -723,7 +723,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LITTLE RED REVENGE
+  m_text: WILCZA NOC
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6611dfe8eb90490459060becd4937b43, type: 2}
   m_sharedMaterial: {fileID: 7359749542979827794, guid: 6611dfe8eb90490459060becd4937b43,
@@ -752,8 +752,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -793,10 +793,10 @@ MonoBehaviour:
   m_margin: {x: -2.243332, y: 0, z: 4.352722, w: 3.7561646}
   m_textInfo:
     textComponent: {fileID: 1156892237}
-    characterCount: 18
+    characterCount: 10
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -1696,7 +1696,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 1990310558}
   m_TextComponent: {fileID: 83724948}
   m_materialReferenceIndex: 1
