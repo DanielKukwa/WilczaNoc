@@ -178,7 +178,7 @@ MonoBehaviour:
   damageValue: 15
   damageValue2: 0
   damageModifier: 0
-  _ragdollPrefab: {fileID: 1667079743465688880, guid: 4fec615941a7b124b9002679b40067fa,
+  _ragdollPrefab: {fileID: 454604764756091542, guid: 64e642768dcf1454fb1deb8c5f9d7e69,
     type: 3}
 --- !u!114 &7675390102808432312
 MonoBehaviour:

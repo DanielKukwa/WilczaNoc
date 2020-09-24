@@ -177,7 +177,7 @@ MonoBehaviour:
   damageValue: 10
   damageValue2: 0
   damageModifier: 0
-  _ragdollPrefab: {fileID: 1667079743465688880, guid: 4fec615941a7b124b9002679b40067fa,
+  _ragdollPrefab: {fileID: 8395796375998703388, guid: dd1f604071bd909449c8faa716fb2fca,
     type: 3}
 --- !u!114 &4877682431554951935
 MonoBehaviour:
@@ -195,6 +195,7 @@ MonoBehaviour:
   attackSpeed: 0.8
   attackDelay: 0.5
   FirstAttackEnabled: 1
+  SecondAttackEnabled: 1
   _firstAttackDelay: 1.25
   attack2Speed: 1
   attack2Delay: 0.6
