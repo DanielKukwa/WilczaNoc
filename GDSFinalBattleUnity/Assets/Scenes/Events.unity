@@ -28470,7 +28470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unmovableTime: 1
-  _blackScreenTime: 20
+  _blackScreenTime: 18
   _blackScreen: {fileID: 2123973146}
   _destination: {fileID: 171151398}
   _destinationDistanceOffset: 0.7
