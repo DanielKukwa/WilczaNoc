@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    AudioSource audio;
+
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     public void LoadStartMenu()
     {
         SceneManager.LoadScene(0);
@@ -12,6 +19,12 @@ public class SceneLoader : MonoBehaviour
 
 
     public void LoadGameScene()
+    {
+        Invoke("StartGame", 4f);
+        PlayHowlingSound();
+    }
+
+    public void StartGame()
     {
         if (Application.isEditor)
         {
@@ -45,5 +58,10 @@ public class SceneLoader : MonoBehaviour
 
         Application.Quit();
 
+    }
+
+    void PlayHowlingSound()
+    {
+        audio.Play();
     }
 }
