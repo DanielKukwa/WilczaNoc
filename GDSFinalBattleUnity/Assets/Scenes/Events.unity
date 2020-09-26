@@ -1679,7 +1679,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _voiceOver
       value: 
-      objectReference: {fileID: 8300000, guid: 91cfab29f1b72884eb0d4a0552cd5415, type: 3}
+      objectReference: {fileID: 8300000, guid: 0bab31358444a3547a9d8bf67e7fde39, type: 3}
     - target: {fileID: 8781937999471631229, guid: 6d23eaf44a3f101418dad1b782b09c27,
         type: 3}
       propertyPath: m_Material
