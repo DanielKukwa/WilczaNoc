@@ -6,10 +6,20 @@ using UnityEngine.SceneManagement;
 public class SceneLoader : MonoBehaviour
 {
     AudioSource audio;
+    PauseMenu pauseMenu;
 
     private void Start()
     {
         audio = GetComponent<AudioSource>();
+        pauseMenu = GameObject.Find("Canvas").GetComponent<PauseMenu>();
+    }
+
+    public void LoadMenuAfterPause()
+    {
+      
+        Time.timeScale = 1f;
+        LoadStartMenu();
+        
     }
 
     public void LoadStartMenu()
