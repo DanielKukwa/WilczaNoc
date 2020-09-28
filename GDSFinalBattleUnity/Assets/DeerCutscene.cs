@@ -19,9 +19,12 @@ public class DeerCutscene : Cutscene
     // Start is called before the first frame update
     protected override void Start()
     {
+        if (_selectedInfo)
+            _selectedInfo.OnClick += StartEvent;
+
         base.Start();
         _audio = GetComponent<AudioSource>();
-        _selectedInfo.OnClick += StartEvent;
+        
     }
 
     protected override void StartEvent()
