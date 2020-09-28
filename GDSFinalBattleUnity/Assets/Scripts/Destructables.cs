@@ -62,15 +62,18 @@ public class Destructables : Interactable
 
         }
 
-        if (this.gameObject.name == "Line0" || gameObject.name == "Line1")
+        if (this.gameObject.name == "Line")
             audio.Play();
 
     }
 
     private void SmallParticles()
     {
-        Vector3 partPosition = new Vector3(transform.position.x, 1f, transform.position.z);
-        Instantiate(_particlesSmall, partPosition, Quaternion.LookRotation(Vector3.up));
+        if (this.gameObject.name != "Line")
+        {
+            Vector3 partPosition = new Vector3(transform.position.x, 1f, transform.position.z);
+            Instantiate(_particlesSmall, partPosition, Quaternion.LookRotation(Vector3.up));
+        }        
         _playOnce = false;
     }
 

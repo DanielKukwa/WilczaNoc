@@ -39597,7 +39597,7 @@ GameObject:
   - component: {fileID: 1424925317}
   - component: {fileID: 1424925318}
   m_Layer: 0
-  m_Name: Line0
+  m_Name: Line
   m_TagString: Thing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53157,7 +53157,7 @@ GameObject:
   - component: {fileID: 2081676174}
   - component: {fileID: 2081676175}
   m_Layer: 0
-  m_Name: Line1
+  m_Name: Line
   m_TagString: Thing
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
