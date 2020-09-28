@@ -39971,6 +39971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2587481b50b09b34e88e226f445b4502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameIsPaused: 0
   pauseMenuUI: {fileID: 631275338}
 --- !u!1 &1430245966 stripped
 GameObject:
@@ -46036,7 +46037,7 @@ PrefabInstance:
     - target: {fileID: 8781937998715656674, guid: 6d23eaf44a3f101418dad1b782b09c27,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.28114906
+      value: 2.6435041
       objectReference: {fileID: 0}
     - target: {fileID: 8781937998715656674, guid: 6d23eaf44a3f101418dad1b782b09c27,
         type: 3}
